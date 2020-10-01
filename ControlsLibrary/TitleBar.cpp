@@ -33,7 +33,7 @@ System::Void TitleBar::m_Button_MouseEnter(System::Object^ sender, System::Event
 System::Void TitleBar::m_Button_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
 	auto source = safe_cast<System::Windows::Forms::Label^>(sender);
 	source->BackColor = System::Drawing::Color::FromArgb(0, source->BackColor.R, source->BackColor.G, source->BackColor.B);
-	source->ForeColor = System::Drawing::SystemColors::ControlDark;
+	source->ForeColor = System::Drawing::SystemColors::ControlText;
 }
 
 System::Void TitleBar::TitleBar_Load(System::Object^ sender, System::EventArgs^ e) {
