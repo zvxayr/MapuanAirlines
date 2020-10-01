@@ -16,27 +16,12 @@ namespace UserInterface {
 	public ref class MainMenuControl : public System::Windows::Forms::UserControl
 	{
 	public:
-		MainMenuControl(void)
-		{
-			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
-		}
+		MainMenuControl();
 
 	protected:
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		~MainMenuControl()
-		{
-			if (components)
-			{
-				delete components;
-			}
-		}
+		~MainMenuControl();
+
 	private: System::Windows::Forms::Button^ button1;
-	protected:
 
 	private:
 		/// <summary>
@@ -56,7 +41,7 @@ namespace UserInterface {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(770, 100);
+			this->button1->Location = System::Drawing::Point(374, 404);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(75, 23);
 			this->button1->TabIndex = 0;

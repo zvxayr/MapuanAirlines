@@ -15,31 +15,14 @@ namespace UserInterface {
 	public ref class MainForm : public System::Windows::Forms::Form
 	{
 	public:
-		MainForm()
-		{
-			InitializeComponent();
-		}
+		MainForm();
 
 	protected:
-		~MainForm()
-		{
-			if (components)
-			{
-				delete components;
-			}
-		}
+		~MainForm();
+
 	private: ControlsLibrary::TitleBar^ m_TitleBar;
-	protected:
+	private: System::Windows::Forms::Panel^ m_ControlContainer;
 
-	protected:
-
-	protected:
-
-	protected:
-
-	protected:
-
-	protected:
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -54,6 +37,7 @@ namespace UserInterface {
 		void InitializeComponent(void)
 		{
 			this->m_TitleBar = (gcnew ControlsLibrary::TitleBar());
+			this->m_ControlContainer = (gcnew System::Windows::Forms::Panel());
 			this->SuspendLayout();
 			// 
 			// m_TitleBar
@@ -68,23 +52,42 @@ namespace UserInterface {
 			this->m_TitleBar->MinimumSize = System::Drawing::Size(848, 30);
 			this->m_TitleBar->Name = L"m_TitleBar";
 			this->m_TitleBar->Size = System::Drawing::Size(848, 30);
-			this->m_TitleBar->TabIndex = 0;
+			this->m_TitleBar->TabIndex = 1;
+			// 
+			// m_ControlContainer
+			// 
+			this->m_ControlContainer->AutoSize = true;
+			this->m_ControlContainer->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
+			this->m_ControlContainer->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->m_ControlContainer->Location = System::Drawing::Point(0, 30);
+			this->m_ControlContainer->Margin = System::Windows::Forms::Padding(0);
+			this->m_ControlContainer->Name = L"m_ControlContainer";
+			this->m_ControlContainer->Size = System::Drawing::Size(848, 480);
+			this->m_ControlContainer->TabIndex = 0;
 			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(848, 510);
+			this->Controls->Add(this->m_ControlContainer);
 			this->Controls->Add(this->m_TitleBar);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->MinimumSize = System::Drawing::Size(848, 510);
 			this->Name = L"MainForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"MainForm";
+			this->Load += gcnew System::EventHandler(this, &MainForm::MainForm_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
+
+	public:
+		void loadControl(System::Windows::Forms::UserControl^ control);
+
+	private: System::Void MainForm_Load(System::Object^ sender, System::EventArgs^ e);
 	};
+
 }
