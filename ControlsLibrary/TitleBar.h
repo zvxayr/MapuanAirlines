@@ -71,10 +71,10 @@ namespace ControlsLibrary {
 			this->m_CloseButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->m_CloseButton->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->m_CloseButton->Location = System::Drawing::Point(818, 0);
-			this->m_CloseButton->MinimumSize = System::Drawing::Size(30, 30);
+			this->m_CloseButton->Location = System::Drawing::Point(808, 0);
+			this->m_CloseButton->MinimumSize = System::Drawing::Size(40, 30);
 			this->m_CloseButton->Name = L"m_CloseButton";
-			this->m_CloseButton->Size = System::Drawing::Size(30, 30);
+			this->m_CloseButton->Size = System::Drawing::Size(40, 30);
 			this->m_CloseButton->TabIndex = 4;
 			this->m_CloseButton->Text = L"✕";
 			this->m_CloseButton->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -90,10 +90,10 @@ namespace ControlsLibrary {
 			this->m_MinimizeButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->m_MinimizeButton->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->m_MinimizeButton->Location = System::Drawing::Point(788, 0);
-			this->m_MinimizeButton->MinimumSize = System::Drawing::Size(30, 30);
+			this->m_MinimizeButton->Location = System::Drawing::Point(768, 0);
+			this->m_MinimizeButton->MinimumSize = System::Drawing::Size(40, 30);
 			this->m_MinimizeButton->Name = L"m_MinimizeButton";
-			this->m_MinimizeButton->Size = System::Drawing::Size(30, 30);
+			this->m_MinimizeButton->Size = System::Drawing::Size(40, 30);
 			this->m_MinimizeButton->TabIndex = 5;
 			this->m_MinimizeButton->Text = L"—";
 			this->m_MinimizeButton->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
