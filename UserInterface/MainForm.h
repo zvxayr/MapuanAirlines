@@ -1,5 +1,4 @@
 #pragma once
-#include "MainMenuControl.h"
 
 namespace UserInterface {
 	using namespace System;

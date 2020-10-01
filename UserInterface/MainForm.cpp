@@ -1,5 +1,5 @@
 #include "MainForm.h"
-#include "MainMenuControl.h"
+#include "MainMenu.h"
 
 using namespace UserInterface;
 
@@ -18,7 +18,7 @@ MainForm::~MainForm()
 
 System::Void MainForm::MainForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
-	loadControl(gcnew MainMenuControl());
+	loadControl(gcnew MainMenu());
 }
 
 void MainForm::loadControl(System::Windows::Forms::UserControl^ control)

@@ -13,13 +13,13 @@ namespace UserInterface {
 	/// <summary>
 	/// Summary for MainMenuControl
 	/// </summary>
-	public ref class MainMenuControl : public System::Windows::Forms::UserControl
+	public ref class MainMenu : public System::Windows::Forms::UserControl
 	{
 	public:
-		MainMenuControl();
+		MainMenu();
 
 	protected:
-		~MainMenuControl();
+		~MainMenu();
 
 	private: System::Windows::Forms::Button^ button1;
 

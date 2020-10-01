@@ -1,13 +1,13 @@
-#include "MainMenuControl.h"
+#include "MainMenu.h"
 
 using namespace UserInterface;
 
-MainMenuControl::MainMenuControl()
+UserInterface::MainMenu::MainMenu()
 {
 	InitializeComponent();
 }
 
-MainMenuControl::~MainMenuControl()
+UserInterface::MainMenu::~MainMenu()
 {
 	if (components)
 	{
