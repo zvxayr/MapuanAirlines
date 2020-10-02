@@ -1,4 +1,5 @@
 #pragma once
+#include "FlightDetailForm.h"
 
 using namespace System;
 using namespace System::ComponentModel;
@@ -20,6 +21,8 @@ namespace UserInterface {
 
 	protected:
 		~BuyTicketsControl();
+	private: System::Windows::Forms::Panel^ m_FormContainer;
+	protected:
 
 	private:
 		/// <summary>
@@ -34,20 +37,41 @@ namespace UserInterface {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->m_FormContainer = (gcnew System::Windows::Forms::Panel());
 			this->SuspendLayout();
+			// 
+			// m_FormContainer
+			// 
+			this->m_FormContainer->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
+			this->m_FormContainer->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->m_FormContainer->Location = System::Drawing::Point(0, 0);
+			this->m_FormContainer->Margin = System::Windows::Forms::Padding(0);
+			this->m_FormContainer->Name = L"m_FormContainer";
+			this->m_FormContainer->Size = System::Drawing::Size(848, 380);
+			this->m_FormContainer->TabIndex = 0;
 			// 
 			// BuyTicketsControl
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->Controls->Add(this->m_FormContainer);
 			this->Margin = System::Windows::Forms::Padding(0);
 			this->MaximumSize = System::Drawing::Size(848, 380);
 			this->MinimumSize = System::Drawing::Size(848, 380);
 			this->Name = L"BuyTicketsControl";
 			this->Size = System::Drawing::Size(848, 380);
+			this->Load += gcnew System::EventHandler(this, &BuyTicketsControl::BuyTicketsControl_Load);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
+	
+	private:
+		FlightDetailForm^ m_FlightDetailForm;
+
+	private:
+		void MountForm(System::Windows::Forms::UserControl^ form);
+	
+	private: System::Void BuyTicketsControl_Load(System::Object^ sender, System::EventArgs^ e);
 	};
 }

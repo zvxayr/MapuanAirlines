@@ -128,6 +128,7 @@
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="BuyTicketsControl.cpp" />
+    <ClCompile Include="FlightDetailForm.cpp" />
     <ClCompile Include="FlightStatusForm.cpp" />
     <ClCompile Include="MainForm.cpp" />
     <ClCompile Include="PaymentHistoryForm.cpp" />
@@ -143,6 +144,9 @@
     <ClInclude Include="BuyTicketsControl.h">
       <FileType>CppControl</FileType>
     </ClInclude>
+    <ClInclude Include="FlightDetailForm.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="FlightStatusForm.h">
       <FileType>CppControl</FileType>
     </ClInclude>
@@ -156,6 +160,9 @@
   <ItemGroup>
     <EmbeddedResource Include="BuyTicketsControl.resx">
       <DependentUpon>BuyTicketsControl.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FlightDetailForm.resx">
+      <DependentUpon>FlightDetailForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FlightStatusForm.resx">
       <DependentUpon>FlightStatusForm.h</DependentUpon>

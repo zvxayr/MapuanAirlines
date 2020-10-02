@@ -30,6 +30,9 @@
     <ClCompile Include="BuyTicketsControl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FlightDetailForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainForm.h">
@@ -42,6 +45,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BuyTicketsControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlightDetailForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
