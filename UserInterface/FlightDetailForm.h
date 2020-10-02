@@ -89,35 +89,55 @@ namespace UserInterface {
             // 
             // m_OneWay
             // 
+            m_OneWay->Appearance = System::Windows::Forms::Appearance::Button;
+            m_OneWay->BackColor = System::Drawing::Color::Gainsboro;
             m_OneWay->CheckAlign = System::Drawing::ContentAlignment::MiddleRight;
             m_OneWay->Checked = true;
+            m_OneWay->FlatAppearance->BorderSize = 0;
+            m_OneWay->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(253)),
+                static_cast<System::Int32>(static_cast<System::Byte>(215)), static_cast<System::Int32>(static_cast<System::Byte>(75)));
+            m_OneWay->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(254)),
+                static_cast<System::Int32>(static_cast<System::Byte>(232)), static_cast<System::Int32>(static_cast<System::Byte>(154)));
+            m_OneWay->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(254)),
+                static_cast<System::Int32>(static_cast<System::Byte>(227)), static_cast<System::Int32>(static_cast<System::Byte>(129)));
+            m_OneWay->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             m_OneWay->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             m_OneWay->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
                 static_cast<System::Int32>(static_cast<System::Byte>(1)));
-            m_OneWay->Location = System::Drawing::Point(162, 64);
+            m_OneWay->Location = System::Drawing::Point(162, 61);
             m_OneWay->Margin = System::Windows::Forms::Padding(0, 10, 0, 0);
             m_OneWay->Name = L"m_OneWay";
-            m_OneWay->Size = System::Drawing::Size(250, 24);
+            m_OneWay->Size = System::Drawing::Size(250, 29);
             m_OneWay->TabIndex = 5;
             m_OneWay->TabStop = true;
             m_OneWay->Text = L"One-Way";
             m_OneWay->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
-            m_OneWay->UseVisualStyleBackColor = true;
+            m_OneWay->UseVisualStyleBackColor = false;
             // 
             // m_RoundTrip
             // 
+            m_RoundTrip->Appearance = System::Windows::Forms::Appearance::Button;
+            m_RoundTrip->BackColor = System::Drawing::Color::Gainsboro;
+            m_RoundTrip->FlatAppearance->BorderSize = 0;
+            m_RoundTrip->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(253)),
+                static_cast<System::Int32>(static_cast<System::Byte>(215)), static_cast<System::Int32>(static_cast<System::Byte>(75)));
+            m_RoundTrip->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(254)),
+                static_cast<System::Int32>(static_cast<System::Byte>(232)), static_cast<System::Int32>(static_cast<System::Byte>(154)));
+            m_RoundTrip->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(254)),
+                static_cast<System::Int32>(static_cast<System::Byte>(227)), static_cast<System::Int32>(static_cast<System::Byte>(129)));
+            m_RoundTrip->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             m_RoundTrip->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             m_RoundTrip->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
                 static_cast<System::Int32>(static_cast<System::Byte>(1)));
-            m_RoundTrip->Location = System::Drawing::Point(436, 64);
+            m_RoundTrip->Location = System::Drawing::Point(436, 61);
             m_RoundTrip->Margin = System::Windows::Forms::Padding(0, 10, 0, 0);
             m_RoundTrip->Name = L"m_RoundTrip";
-            m_RoundTrip->Size = System::Drawing::Size(250, 26);
+            m_RoundTrip->Size = System::Drawing::Size(250, 29);
             m_RoundTrip->TabIndex = 5;
             m_RoundTrip->Text = L"Round-Trip";
-            m_RoundTrip->UseVisualStyleBackColor = true;
+            m_RoundTrip->UseVisualStyleBackColor = false;
             // 
             // m_lbl_Header
             // 
