@@ -90,6 +90,7 @@ namespace UserInterface {
             // m_OneWay
             // 
             m_OneWay->CheckAlign = System::Drawing::ContentAlignment::MiddleRight;
+            m_OneWay->Checked = true;
             m_OneWay->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             m_OneWay->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
@@ -115,7 +116,6 @@ namespace UserInterface {
             m_RoundTrip->Name = L"m_RoundTrip";
             m_RoundTrip->Size = System::Drawing::Size(250, 26);
             m_RoundTrip->TabIndex = 5;
-            m_RoundTrip->TabStop = true;
             m_RoundTrip->Text = L"Round-Trip";
             m_RoundTrip->UseVisualStyleBackColor = true;
             // 
