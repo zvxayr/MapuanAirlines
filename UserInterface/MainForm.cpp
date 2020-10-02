@@ -1,4 +1,7 @@
 #include "MainForm.h"
+#include "BuyTicketsControl.h"
+#include "PaymentHistoryForm.h"
+#include "FlightStatusForm.h"
 
 using namespace UserInterface;
 
@@ -34,21 +37,25 @@ void MainForm::LoadControl(System::Windows::Forms::UserControl^ control)
 
 void MainForm::BuyTickets()
 {
+	LoadControl(gcnew BuyTicketsControl());
 }
 
 void MainForm::PaymentHistory()
 {
+	LoadControl(gcnew PaymentHistoryForm());
 }
 
 void MainForm::FlightStatus()
 {
+	LoadControl(gcnew FlightStatusForm());
 }
 
 void MainForm::Exit()
 {
 	System::Windows::Forms::DialogResult response = MessageBox::Show(
 		"Are you sure you want to exit?", "Exit?",
-		MessageBoxButtons::YesNo, MessageBoxIcon::Question);
+		MessageBoxButtons::YesNo, MessageBoxIcon::Question
+	);
 
 	if (response == System::Windows::Forms::DialogResult::Yes)
 		Application::Exit();

@@ -127,7 +127,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="BuyTicketsControl.cpp" />
+    <ClCompile Include="FlightStatusForm.cpp" />
     <ClCompile Include="MainForm.cpp" />
+    <ClCompile Include="PaymentHistoryForm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -137,13 +140,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BuyTicketsControl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="FlightStatusForm.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="MainForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="PaymentHistoryForm.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BuyTicketsControl.resx">
+      <DependentUpon>BuyTicketsControl.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FlightStatusForm.resx">
+      <DependentUpon>FlightStatusForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentHistoryForm.resx">
+      <DependentUpon>PaymentHistoryForm.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
