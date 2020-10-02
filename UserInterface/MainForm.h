@@ -20,6 +20,7 @@ namespace UserInterface {
 		~MainForm();
 
 	private: ControlsLibrary::TitleBar^ m_TitleBar;
+	private: ControlsLibrary::NavigationBar^ m_NavigationBar;
 	private: System::Windows::Forms::Panel^ m_ControlContainer;
 
 	private:
@@ -35,16 +36,43 @@ namespace UserInterface {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->m_TitleBar = (gcnew ControlsLibrary::TitleBar());
 			this->m_ControlContainer = (gcnew System::Windows::Forms::Panel());
+			this->m_NavigationBar = (gcnew ControlsLibrary::NavigationBar());
+			this->m_TitleBar = (gcnew ControlsLibrary::TitleBar());
 			this->SuspendLayout();
+			// 
+			// m_ControlContainer
+			// 
+			this->m_ControlContainer->AutoSize = true;
+			this->m_ControlContainer->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
+			this->m_ControlContainer->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->m_ControlContainer->Location = System::Drawing::Point(0, 130);
+			this->m_ControlContainer->Margin = System::Windows::Forms::Padding(0);
+			this->m_ControlContainer->MinimumSize = System::Drawing::Size(100, 100);
+			this->m_ControlContainer->Name = L"m_ControlContainer";
+			this->m_ControlContainer->Size = System::Drawing::Size(848, 380);
+			this->m_ControlContainer->TabIndex = 3;
+			// 
+			// m_NavigationBar
+			// 
+			this->m_NavigationBar->BackColor = System::Drawing::Color::Gainsboro;
+			this->m_NavigationBar->Dock = System::Windows::Forms::DockStyle::Top;
+			this->m_NavigationBar->Location = System::Drawing::Point(0, 30);
+			this->m_NavigationBar->MaximumSize = System::Drawing::Size(848, 100);
+			this->m_NavigationBar->MinimumSize = System::Drawing::Size(848, 100);
+			this->m_NavigationBar->Name = L"m_NavigationBar";
+			this->m_NavigationBar->Size = System::Drawing::Size(848, 100);
+			this->m_NavigationBar->TabIndex = 2;
 			// 
 			// m_TitleBar
 			// 
 			this->m_TitleBar->AutoSize = true;
 			this->m_TitleBar->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
-			this->m_TitleBar->BackColor = System::Drawing::Color::Gainsboro;
+			this->m_TitleBar->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(253)), static_cast<System::Int32>(static_cast<System::Byte>(215)),
+				static_cast<System::Int32>(static_cast<System::Byte>(75)));
 			this->m_TitleBar->Dock = System::Windows::Forms::DockStyle::Top;
+			this->m_TitleBar->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
+				static_cast<System::Int32>(static_cast<System::Byte>(1)));
 			this->m_TitleBar->Location = System::Drawing::Point(0, 0);
 			this->m_TitleBar->Margin = System::Windows::Forms::Padding(0);
 			this->m_TitleBar->MaximumSize = System::Drawing::Size(0, 30);
@@ -53,23 +81,13 @@ namespace UserInterface {
 			this->m_TitleBar->Size = System::Drawing::Size(848, 30);
 			this->m_TitleBar->TabIndex = 1;
 			// 
-			// m_ControlContainer
-			// 
-			this->m_ControlContainer->AutoSize = true;
-			this->m_ControlContainer->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
-			this->m_ControlContainer->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->m_ControlContainer->Location = System::Drawing::Point(0, 30);
-			this->m_ControlContainer->Margin = System::Windows::Forms::Padding(0);
-			this->m_ControlContainer->Name = L"m_ControlContainer";
-			this->m_ControlContainer->Size = System::Drawing::Size(848, 480);
-			this->m_ControlContainer->TabIndex = 0;
-			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(848, 510);
 			this->Controls->Add(this->m_ControlContainer);
+			this->Controls->Add(this->m_NavigationBar);
 			this->Controls->Add(this->m_TitleBar);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->MinimumSize = System::Drawing::Size(848, 510);
@@ -83,10 +101,17 @@ namespace UserInterface {
 		}
 #pragma endregion
 
-	public:
-		void loadControl(System::Windows::Forms::UserControl^ control);
+	private:
+		void LoadControl(System::Windows::Forms::UserControl^ control);
 
-	private: System::Void MainForm_Load(System::Object^ sender, System::EventArgs^ e);
+	private:
+		void BuyTickets();
+		void PaymentHistory();
+		void FlightStatus();
+		void Exit();
+
+	private:
+		System::Void MainForm_Load(System::Object^ sender, System::EventArgs^ e);
 	};
 
 }
