@@ -70,7 +70,8 @@ namespace ControlsLibrary {
 			this->m_CloseButton->Dock = System::Windows::Forms::DockStyle::Right;
 			this->m_CloseButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->m_CloseButton->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->m_CloseButton->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
+				static_cast<System::Int32>(static_cast<System::Byte>(1)));
 			this->m_CloseButton->Location = System::Drawing::Point(808, 0);
 			this->m_CloseButton->MinimumSize = System::Drawing::Size(40, 30);
 			this->m_CloseButton->Name = L"m_CloseButton";
@@ -89,7 +90,8 @@ namespace ControlsLibrary {
 			this->m_MinimizeButton->Dock = System::Windows::Forms::DockStyle::Right;
 			this->m_MinimizeButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->m_MinimizeButton->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->m_MinimizeButton->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
+				static_cast<System::Int32>(static_cast<System::Byte>(1)));
 			this->m_MinimizeButton->Location = System::Drawing::Point(768, 0);
 			this->m_MinimizeButton->MinimumSize = System::Drawing::Size(40, 30);
 			this->m_MinimizeButton->Name = L"m_MinimizeButton";
@@ -109,7 +111,8 @@ namespace ControlsLibrary {
 			this->m_Title->Enabled = false;
 			this->m_Title->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->m_Title->ForeColor = System::Drawing::SystemColors::ActiveBorder;
+			this->m_Title->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
+				static_cast<System::Int32>(static_cast<System::Byte>(1)));
 			this->m_Title->Location = System::Drawing::Point(0, 0);
 			this->m_Title->MinimumSize = System::Drawing::Size(0, 30);
 			this->m_Title->Name = L"m_Title";
@@ -125,10 +128,13 @@ namespace ControlsLibrary {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSize = true;
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
-			this->BackColor = System::Drawing::Color::WhiteSmoke;
+			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(253)), static_cast<System::Int32>(static_cast<System::Byte>(215)),
+				static_cast<System::Int32>(static_cast<System::Byte>(75)));
 			this->Controls->Add(this->m_Title);
 			this->Controls->Add(this->m_MinimizeButton);
 			this->Controls->Add(this->m_CloseButton);
+			this->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
+				static_cast<System::Int32>(static_cast<System::Byte>(1)));
 			this->Margin = System::Windows::Forms::Padding(0);
 			this->MaximumSize = System::Drawing::Size(0, 30);
 			this->MinimumSize = System::Drawing::Size(848, 30);
