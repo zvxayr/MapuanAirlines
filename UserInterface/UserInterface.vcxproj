@@ -128,7 +128,6 @@
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="MainForm.cpp" />
-    <ClCompile Include="MainMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -141,17 +140,10 @@
     <ClInclude Include="MainForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="MainMenu.h">
-      <FileType>CppControl</FileType>
-      <DeploymentContent>false</DeploymentContent>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainMenu.resx">
-      <DependentUpon>MainMenu.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
