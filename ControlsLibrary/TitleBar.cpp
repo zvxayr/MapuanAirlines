@@ -3,6 +3,17 @@
 
 using namespace ControlsLibrary;
 
+TitleBar::TitleBar()
+{
+	InitializeComponent();
+}
+
+TitleBar::~TitleBar()
+{
+	if (components)
+		delete components;
+}
+
 System::Void TitleBar::TitleBar_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 	if (e->Button == System::Windows::Forms::MouseButtons::Left)
 	{

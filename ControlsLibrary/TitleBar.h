@@ -16,38 +16,14 @@ namespace ControlsLibrary {
 	public ref class TitleBar : public System::Windows::Forms::UserControl
 	{
 	public:
-		TitleBar(void)
-		{
-			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
-		}
+		TitleBar();
 
 	protected:
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		~TitleBar()
-		{
-			if (components)
-			{
-				delete components;
-			}
-		}
-
-
+		~TitleBar();
 
 	private: System::Windows::Forms::Label^ m_Title;
 	private: System::Windows::Forms::Button^ m_CloseButton;
-
 	private: System::Windows::Forms::Button^ m_MinimizeButton;
-
-
-
-
-	protected:
-
 
 	private:
 		/// <summary>
