@@ -1,5 +1,7 @@
 #pragma once
 #include "FlightDetailForm.h"
+#include "PassengerDetailForm.h"
+#include "AdditionalServicesForm.h"
 
 using namespace System;
 using namespace System::ComponentModel;
@@ -22,7 +24,6 @@ namespace UserInterface {
 	protected:
 		~BuyTicketsControl();
 	private: System::Windows::Forms::Panel^ m_FormContainer;
-	protected:
 
 	private:
 		/// <summary>
@@ -68,9 +69,14 @@ namespace UserInterface {
 	
 	private:
 		FlightDetailForm^ m_FlightDetailForm;
+		PassengerDetailForm^ m_PassengerDetailForm;
+		AdditionalServicesForm^ m_AdditionalServicesForm;
 
 	private:
 		void MountForm(System::Windows::Forms::UserControl^ form);
+		void FlightDetails_Entered();
+		void PassengerDetails_Entered();
+		void AdditionalServices_Selected();
 	
 	private: System::Void BuyTicketsControl_Load(System::Object^ sender, System::EventArgs^ e);
 	};

@@ -433,11 +433,13 @@ namespace UserInterface {
             this->m_Continue->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
                 static_cast<System::Int32>(static_cast<System::Byte>(1)));
             this->m_Continue->Location = System::Drawing::Point(673, 327);
+            this->m_Continue->Margin = System::Windows::Forms::Padding(0);
             this->m_Continue->Name = L"m_Continue";
             this->m_Continue->Size = System::Drawing::Size(144, 34);
             this->m_Continue->TabIndex = 8;
             this->m_Continue->Text = L"Continue →";
             this->m_Continue->UseVisualStyleBackColor = false;
+            this->m_Continue->Click += gcnew System::EventHandler(this, &FlightDetailForm::m_Continue_Click);
             // 
             // FlightDetailForm
             // 
@@ -479,5 +481,11 @@ namespace UserInterface {
 
         }
 #pragma endregion
-	};
+    
+    public:
+        System::Action^ OnContinue;
+
+    private: System::Void m_Continue_Click(System::Object^ sender, System::EventArgs^ e);
+};
 }
+
