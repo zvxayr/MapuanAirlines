@@ -71,8 +71,6 @@ namespace UserInterface {
 			this->m_TitleBar->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(253)), static_cast<System::Int32>(static_cast<System::Byte>(215)),
 				static_cast<System::Int32>(static_cast<System::Byte>(75)));
 			this->m_TitleBar->Dock = System::Windows::Forms::DockStyle::Top;
-			this->m_TitleBar->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
-				static_cast<System::Int32>(static_cast<System::Byte>(1)));
 			this->m_TitleBar->Location = System::Drawing::Point(0, 0);
 			this->m_TitleBar->Margin = System::Windows::Forms::Padding(0);
 			this->m_TitleBar->MaximumSize = System::Drawing::Size(0, 30);
@@ -89,6 +87,8 @@ namespace UserInterface {
 			this->Controls->Add(this->m_ControlContainer);
 			this->Controls->Add(this->m_NavigationBar);
 			this->Controls->Add(this->m_TitleBar);
+			this->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
+				static_cast<System::Int32>(static_cast<System::Byte>(1)));
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->MinimumSize = System::Drawing::Size(848, 510);
 			this->Name = L"MainForm";

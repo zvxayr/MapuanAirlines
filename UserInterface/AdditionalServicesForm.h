@@ -65,8 +65,6 @@ namespace UserInterface {
 			this->m_Continue->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->m_Continue->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->m_Continue->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
-				static_cast<System::Int32>(static_cast<System::Byte>(1)));
 			this->m_Continue->Location = System::Drawing::Point(673, 327);
 			this->m_Continue->Margin = System::Windows::Forms::Padding(0);
 			this->m_Continue->Name = L"m_Continue";
@@ -82,8 +80,6 @@ namespace UserInterface {
 			this->m_lbl_Header->Dock = System::Windows::Forms::DockStyle::Top;
 			this->m_lbl_Header->Font = (gcnew System::Drawing::Font(L"Century Gothic", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->m_lbl_Header->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
-				static_cast<System::Int32>(static_cast<System::Byte>(1)));
 			this->m_lbl_Header->Location = System::Drawing::Point(0, 0);
 			this->m_lbl_Header->Margin = System::Windows::Forms::Padding(0);
 			this->m_lbl_Header->Name = L"m_lbl_Header";
@@ -106,8 +102,6 @@ namespace UserInterface {
 			this->m_Insurance->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->m_Insurance->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->m_Insurance->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
-				static_cast<System::Int32>(static_cast<System::Byte>(1)));
 			this->m_Insurance->Location = System::Drawing::Point(124, 84);
 			this->m_Insurance->Name = L"m_Insurance";
 			this->m_Insurance->Size = System::Drawing::Size(196, 29);
@@ -130,8 +124,6 @@ namespace UserInterface {
 			this->m_Food->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->m_Food->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->m_Food->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
-				static_cast<System::Int32>(static_cast<System::Byte>(1)));
 			this->m_Food->Location = System::Drawing::Point(326, 84);
 			this->m_Food->Name = L"m_Food";
 			this->m_Food->Size = System::Drawing::Size(196, 29);
@@ -154,8 +146,6 @@ namespace UserInterface {
 			this->m_Seat->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->m_Seat->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->m_Seat->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
-				static_cast<System::Int32>(static_cast<System::Byte>(1)));
 			this->m_Seat->Location = System::Drawing::Point(528, 84);
 			this->m_Seat->Name = L"m_Seat";
 			this->m_Seat->Size = System::Drawing::Size(196, 29);
@@ -171,8 +161,6 @@ namespace UserInterface {
 			this->m_rtb_InsuranceDesciption->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->m_rtb_InsuranceDesciption->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->m_rtb_InsuranceDesciption->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)),
-				static_cast<System::Int32>(static_cast<System::Byte>(63)), static_cast<System::Int32>(static_cast<System::Byte>(1)));
 			this->m_rtb_InsuranceDesciption->Location = System::Drawing::Point(124, 125);
 			this->m_rtb_InsuranceDesciption->Margin = System::Windows::Forms::Padding(124, 0, 124, 0);
 			this->m_rtb_InsuranceDesciption->Name = L"m_rtb_InsuranceDesciption";

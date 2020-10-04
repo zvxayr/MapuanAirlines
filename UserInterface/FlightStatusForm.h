@@ -74,8 +74,6 @@ namespace UserInterface {
 			this->m_lbl_TicketSold->Dock = System::Windows::Forms::DockStyle::Top;
 			this->m_lbl_TicketSold->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->m_lbl_TicketSold->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
-				static_cast<System::Int32>(static_cast<System::Byte>(1)));
 			this->m_lbl_TicketSold->Location = System::Drawing::Point(0, 0);
 			this->m_lbl_TicketSold->Margin = System::Windows::Forms::Padding(0);
 			this->m_lbl_TicketSold->Name = L"m_lbl_TicketSold";
@@ -90,8 +88,6 @@ namespace UserInterface {
 			this->m_lbl_MoneyEarned->Dock = System::Windows::Forms::DockStyle::Top;
 			this->m_lbl_MoneyEarned->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->m_lbl_MoneyEarned->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)),
-				static_cast<System::Int32>(static_cast<System::Byte>(63)), static_cast<System::Int32>(static_cast<System::Byte>(1)));
 			this->m_lbl_MoneyEarned->Location = System::Drawing::Point(424, 0);
 			this->m_lbl_MoneyEarned->Margin = System::Windows::Forms::Padding(0);
 			this->m_lbl_MoneyEarned->Name = L"m_lbl_MoneyEarned";
@@ -102,6 +98,8 @@ namespace UserInterface {
 			// 
 			// m_TicketsSold
 			// 
+			this->m_TicketsSold->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
+				static_cast<System::Int32>(static_cast<System::Byte>(1)));
 			this->m_TicketsSold->FormattingEnabled = true;
 			this->m_TicketsSold->Location = System::Drawing::Point(50, 50);
 			this->m_TicketsSold->Margin = System::Windows::Forms::Padding(50, 10, 25, 30);
@@ -111,6 +109,8 @@ namespace UserInterface {
 			// 
 			// m_MoneyEarned
 			// 
+			this->m_MoneyEarned->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
+				static_cast<System::Int32>(static_cast<System::Byte>(1)));
 			this->m_MoneyEarned->FormattingEnabled = true;
 			this->m_MoneyEarned->Location = System::Drawing::Point(449, 50);
 			this->m_MoneyEarned->Margin = System::Windows::Forms::Padding(25, 10, 50, 30);

@@ -61,8 +61,6 @@ namespace ControlsLibrary {
 			this->m_BuyTicketsButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->m_BuyTicketsButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->m_BuyTicketsButton->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)),
-				static_cast<System::Int32>(static_cast<System::Byte>(63)), static_cast<System::Int32>(static_cast<System::Byte>(1)));
 			this->m_BuyTicketsButton->Location = System::Drawing::Point(16, 15);
 			this->m_BuyTicketsButton->Margin = System::Windows::Forms::Padding(16, 15, 8, 15);
 			this->m_BuyTicketsButton->MinimumSize = System::Drawing::Size(192, 70);
@@ -103,8 +101,6 @@ namespace ControlsLibrary {
 			this->m_PaymentHistoryButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->m_PaymentHistoryButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->m_PaymentHistoryButton->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)),
-				static_cast<System::Int32>(static_cast<System::Byte>(63)), static_cast<System::Int32>(static_cast<System::Byte>(1)));
 			this->m_PaymentHistoryButton->Location = System::Drawing::Point(224, 15);
 			this->m_PaymentHistoryButton->Margin = System::Windows::Forms::Padding(8, 15, 8, 15);
 			this->m_PaymentHistoryButton->MinimumSize = System::Drawing::Size(192, 70);
@@ -128,8 +124,6 @@ namespace ControlsLibrary {
 			this->m_FlightStatusButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->m_FlightStatusButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->m_FlightStatusButton->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)),
-				static_cast<System::Int32>(static_cast<System::Byte>(63)), static_cast<System::Int32>(static_cast<System::Byte>(1)));
 			this->m_FlightStatusButton->Location = System::Drawing::Point(432, 15);
 			this->m_FlightStatusButton->Margin = System::Windows::Forms::Padding(8, 15, 8, 15);
 			this->m_FlightStatusButton->MinimumSize = System::Drawing::Size(192, 70);
@@ -153,8 +147,6 @@ namespace ControlsLibrary {
 			this->m_ExitButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->m_ExitButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->m_ExitButton->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
-				static_cast<System::Int32>(static_cast<System::Byte>(1)));
 			this->m_ExitButton->Location = System::Drawing::Point(640, 15);
 			this->m_ExitButton->Margin = System::Windows::Forms::Padding(8, 15, 16, 15);
 			this->m_ExitButton->MinimumSize = System::Drawing::Size(192, 70);

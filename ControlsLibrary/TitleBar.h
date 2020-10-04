@@ -114,8 +114,6 @@ namespace ControlsLibrary {
 			this->Controls->Add(this->m_MinimizeButton);
 			this->Controls->Add(this->m_CloseButton);
 			this->Controls->Add(this->m_Title);
-			this->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
-				static_cast<System::Int32>(static_cast<System::Byte>(1)));
 			this->Margin = System::Windows::Forms::Padding(0);
 			this->MaximumSize = System::Drawing::Size(0, 30);
 			this->MinimumSize = System::Drawing::Size(848, 30);

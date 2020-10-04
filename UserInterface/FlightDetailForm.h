@@ -103,8 +103,6 @@ namespace UserInterface {
             m_OneWay->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             m_OneWay->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            m_OneWay->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
-                static_cast<System::Int32>(static_cast<System::Byte>(1)));
             m_OneWay->Location = System::Drawing::Point(162, 61);
             m_OneWay->Margin = System::Windows::Forms::Padding(0, 10, 0, 0);
             m_OneWay->Name = L"m_OneWay";
@@ -129,8 +127,6 @@ namespace UserInterface {
             m_RoundTrip->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             m_RoundTrip->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            m_RoundTrip->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
-                static_cast<System::Int32>(static_cast<System::Byte>(1)));
             m_RoundTrip->Location = System::Drawing::Point(436, 61);
             m_RoundTrip->Margin = System::Windows::Forms::Padding(0, 10, 0, 0);
             m_RoundTrip->Name = L"m_RoundTrip";
@@ -145,8 +141,6 @@ namespace UserInterface {
             this->m_lbl_Header->Dock = System::Windows::Forms::DockStyle::Top;
             this->m_lbl_Header->Font = (gcnew System::Drawing::Font(L"Century Gothic", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->m_lbl_Header->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
-                static_cast<System::Int32>(static_cast<System::Byte>(1)));
             this->m_lbl_Header->Location = System::Drawing::Point(0, 0);
             this->m_lbl_Header->Margin = System::Windows::Forms::Padding(0);
             this->m_lbl_Header->Name = L"m_lbl_Header";
@@ -159,8 +153,6 @@ namespace UserInterface {
             // 
             this->m_Source->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->m_Source->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
-                static_cast<System::Int32>(static_cast<System::Byte>(1)));
             this->m_Source->FormattingEnabled = true;
             this->m_Source->Location = System::Drawing::Point(162, 129);
             this->m_Source->Margin = System::Windows::Forms::Padding(162, 0, 12, 0);
@@ -174,8 +166,6 @@ namespace UserInterface {
             // 
             this->m_Destination->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->m_Destination->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
-                static_cast<System::Int32>(static_cast<System::Byte>(1)));
             this->m_Destination->FormattingEnabled = true;
             this->m_Destination->Location = System::Drawing::Point(436, 129);
             this->m_Destination->Margin = System::Windows::Forms::Padding(12, 0, 162, 0);
@@ -190,8 +180,6 @@ namespace UserInterface {
             this->m_lbl_Source->AutoSize = true;
             this->m_lbl_Source->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->m_lbl_Source->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
-                static_cast<System::Int32>(static_cast<System::Byte>(1)));
             this->m_lbl_Source->Location = System::Drawing::Point(158, 108);
             this->m_lbl_Source->Name = L"m_lbl_Source";
             this->m_lbl_Source->Size = System::Drawing::Size(95, 21);
@@ -203,8 +191,6 @@ namespace UserInterface {
             this->m_lbl_Destination->AutoSize = true;
             this->m_lbl_Destination->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->m_lbl_Destination->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)),
-                static_cast<System::Int32>(static_cast<System::Byte>(63)), static_cast<System::Int32>(static_cast<System::Byte>(1)));
             this->m_lbl_Destination->Location = System::Drawing::Point(432, 108);
             this->m_lbl_Destination->Name = L"m_lbl_Destination";
             this->m_lbl_Destination->Size = System::Drawing::Size(75, 21);
@@ -244,8 +230,6 @@ namespace UserInterface {
             this->m_lbl_DepartDate->AutoSize = true;
             this->m_lbl_DepartDate->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->m_lbl_DepartDate->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
-                static_cast<System::Int32>(static_cast<System::Byte>(1)));
             this->m_lbl_DepartDate->Location = System::Drawing::Point(158, 180);
             this->m_lbl_DepartDate->Name = L"m_lbl_DepartDate";
             this->m_lbl_DepartDate->Size = System::Drawing::Size(118, 21);
@@ -257,8 +241,6 @@ namespace UserInterface {
             this->m_lbl_ReturnDate->AutoSize = true;
             this->m_lbl_ReturnDate->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->m_lbl_ReturnDate->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
-                static_cast<System::Int32>(static_cast<System::Byte>(1)));
             this->m_lbl_ReturnDate->Location = System::Drawing::Point(432, 180);
             this->m_lbl_ReturnDate->Name = L"m_lbl_ReturnDate";
             this->m_lbl_ReturnDate->Size = System::Drawing::Size(114, 21);
@@ -269,8 +251,6 @@ namespace UserInterface {
             // 
             this->m_AdultCount->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->m_AdultCount->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
-                static_cast<System::Int32>(static_cast<System::Byte>(1)));
             this->m_AdultCount->Location = System::Drawing::Point(162, 282);
             this->m_AdultCount->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
             this->m_AdultCount->MaximumSize = System::Drawing::Size(78, 0);
@@ -285,8 +265,6 @@ namespace UserInterface {
             // 
             this->m_ChildCount->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->m_ChildCount->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
-                static_cast<System::Int32>(static_cast<System::Byte>(1)));
             this->m_ChildCount->Location = System::Drawing::Point(248, 282);
             this->m_ChildCount->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
             this->m_ChildCount->MaximumSize = System::Drawing::Size(78, 0);
@@ -299,8 +277,6 @@ namespace UserInterface {
             // 
             this->m_InfantCount->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->m_InfantCount->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
-                static_cast<System::Int32>(static_cast<System::Byte>(1)));
             this->m_InfantCount->Location = System::Drawing::Point(334, 282);
             this->m_InfantCount->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
             this->m_InfantCount->MaximumSize = System::Drawing::Size(78, 0);
@@ -313,8 +289,6 @@ namespace UserInterface {
             // 
             this->m_lbl_AdultRange->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->m_lbl_AdultRange->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
-                static_cast<System::Int32>(static_cast<System::Byte>(1)));
             this->m_lbl_AdultRange->Location = System::Drawing::Point(162, 266);
             this->m_lbl_AdultRange->Name = L"m_lbl_AdultRange";
             this->m_lbl_AdultRange->Size = System::Drawing::Size(78, 16);
@@ -326,8 +300,6 @@ namespace UserInterface {
             // 
             this->m_lbl_ChildRange->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->m_lbl_ChildRange->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
-                static_cast<System::Int32>(static_cast<System::Byte>(1)));
             this->m_lbl_ChildRange->Location = System::Drawing::Point(245, 266);
             this->m_lbl_ChildRange->Name = L"m_lbl_ChildRange";
             this->m_lbl_ChildRange->Size = System::Drawing::Size(78, 16);
@@ -339,8 +311,6 @@ namespace UserInterface {
             // 
             this->m_lbl_InfantRange->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->m_lbl_InfantRange->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)),
-                static_cast<System::Int32>(static_cast<System::Byte>(63)), static_cast<System::Int32>(static_cast<System::Byte>(1)));
             this->m_lbl_InfantRange->Location = System::Drawing::Point(334, 266);
             this->m_lbl_InfantRange->Name = L"m_lbl_InfantRange";
             this->m_lbl_InfantRange->Size = System::Drawing::Size(78, 16);
@@ -352,8 +322,6 @@ namespace UserInterface {
             // 
             this->m_lbl_Adult->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->m_lbl_Adult->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
-                static_cast<System::Int32>(static_cast<System::Byte>(1)));
             this->m_lbl_Adult->Location = System::Drawing::Point(162, 242);
             this->m_lbl_Adult->Name = L"m_lbl_Adult";
             this->m_lbl_Adult->Size = System::Drawing::Size(78, 24);
@@ -365,8 +333,6 @@ namespace UserInterface {
             // 
             this->m_lbl_Child->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->m_lbl_Child->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
-                static_cast<System::Int32>(static_cast<System::Byte>(1)));
             this->m_lbl_Child->Location = System::Drawing::Point(245, 242);
             this->m_lbl_Child->Name = L"m_lbl_Child";
             this->m_lbl_Child->Size = System::Drawing::Size(78, 24);
@@ -378,8 +344,6 @@ namespace UserInterface {
             // 
             this->m_lbl_Infant->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->m_lbl_Infant->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
-                static_cast<System::Int32>(static_cast<System::Byte>(1)));
             this->m_lbl_Infant->Location = System::Drawing::Point(334, 242);
             this->m_lbl_Infant->Name = L"m_lbl_Infant";
             this->m_lbl_Infant->Size = System::Drawing::Size(78, 24);
@@ -391,8 +355,6 @@ namespace UserInterface {
             // 
             this->m_FlightClass->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->m_FlightClass->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
-                static_cast<System::Int32>(static_cast<System::Byte>(1)));
             this->m_FlightClass->FormattingEnabled = true;
             this->m_FlightClass->Location = System::Drawing::Point(436, 274);
             this->m_FlightClass->Margin = System::Windows::Forms::Padding(12, 0, 162, 0);
@@ -407,8 +369,6 @@ namespace UserInterface {
             this->m_lbl_FlightClass->AutoSize = true;
             this->m_lbl_FlightClass->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->m_lbl_FlightClass->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)),
-                static_cast<System::Int32>(static_cast<System::Byte>(63)), static_cast<System::Int32>(static_cast<System::Byte>(1)));
             this->m_lbl_FlightClass->Location = System::Drawing::Point(432, 253);
             this->m_lbl_FlightClass->Name = L"m_lbl_FlightClass";
             this->m_lbl_FlightClass->Size = System::Drawing::Size(95, 21);
@@ -430,8 +390,6 @@ namespace UserInterface {
             this->m_Continue->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->m_Continue->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->m_Continue->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
-                static_cast<System::Int32>(static_cast<System::Byte>(1)));
             this->m_Continue->Location = System::Drawing::Point(673, 327);
             this->m_Continue->Margin = System::Windows::Forms::Padding(0);
             this->m_Continue->Name = L"m_Continue";

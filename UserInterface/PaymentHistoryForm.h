@@ -50,8 +50,6 @@ namespace UserInterface {
 			this->m_lbl_Header->Dock = System::Windows::Forms::DockStyle::Top;
 			this->m_lbl_Header->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->m_lbl_Header->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
-				static_cast<System::Int32>(static_cast<System::Byte>(1)));
 			this->m_lbl_Header->Location = System::Drawing::Point(0, 0);
 			this->m_lbl_Header->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->m_lbl_Header->Name = L"m_lbl_Header";
