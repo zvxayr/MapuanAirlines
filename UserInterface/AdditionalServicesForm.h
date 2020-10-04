@@ -180,6 +180,8 @@ namespace UserInterface {
 			this->Controls->Add(this->m_Insurance);
 			this->Controls->Add(this->m_lbl_Header);
 			this->Controls->Add(this->m_Continue);
+			this->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
+				static_cast<System::Int32>(static_cast<System::Byte>(1)));
 			this->Margin = System::Windows::Forms::Padding(0);
 			this->MaximumSize = System::Drawing::Size(848, 380);
 			this->MinimumSize = System::Drawing::Size(848, 380);

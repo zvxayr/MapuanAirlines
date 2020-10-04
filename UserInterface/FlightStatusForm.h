@@ -123,6 +123,8 @@ namespace UserInterface {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->Controls->Add(this->m_LayoutPanel);
+			this->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
+				static_cast<System::Int32>(static_cast<System::Byte>(1)));
 			this->MaximumSize = System::Drawing::Size(848, 380);
 			this->MinimumSize = System::Drawing::Size(848, 380);
 			this->Name = L"FlightStatusForm";

@@ -72,11 +72,14 @@ namespace UserInterface {
 			// 
 			// m_PassengerList
 			// 
+			this->m_PassengerList->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->m_PassengerList->FormattingEnabled = true;
+			this->m_PassengerList->ItemHeight = 16;
 			this->m_PassengerList->Location = System::Drawing::Point(100, 10);
 			this->m_PassengerList->Margin = System::Windows::Forms::Padding(100, 10, 100, 30);
 			this->m_PassengerList->Name = L"m_PassengerList";
-			this->m_PassengerList->Size = System::Drawing::Size(648, 290);
+			this->m_PassengerList->Size = System::Drawing::Size(648, 276);
 			this->m_PassengerList->TabIndex = 0;
 			// 
 			// PaymentHistoryForm
@@ -85,6 +88,8 @@ namespace UserInterface {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->Controls->Add(this->m_ListContainer);
 			this->Controls->Add(this->m_lbl_Header);
+			this->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
+				static_cast<System::Int32>(static_cast<System::Byte>(1)));
 			this->MaximumSize = System::Drawing::Size(848, 380);
 			this->MinimumSize = System::Drawing::Size(848, 380);
 			this->Name = L"PaymentHistoryForm";
