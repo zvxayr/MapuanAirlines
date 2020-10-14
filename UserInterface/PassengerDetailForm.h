@@ -163,7 +163,7 @@ namespace UserInterface {
 			this->m_lbl_Surname->AutoSize = true;
 			this->m_lbl_Surname->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->m_lbl_Surname->Location = System::Drawing::Point(87, 90);
+			this->m_lbl_Surname->Location = System::Drawing::Point(87, 88);
 			this->m_lbl_Surname->Name = L"m_lbl_Surname";
 			this->m_lbl_Surname->Size = System::Drawing::Size(79, 21);
 			this->m_lbl_Surname->TabIndex = 12;
@@ -173,7 +173,7 @@ namespace UserInterface {
 			// 
 			this->m_Surname->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->m_Surname->Location = System::Drawing::Point(91, 114);
+			this->m_Surname->Location = System::Drawing::Point(91, 112);
 			this->m_Surname->Name = L"m_Surname";
 			this->m_Surname->Size = System::Drawing::Size(218, 27);
 			this->m_Surname->TabIndex = 2;

@@ -128,6 +128,11 @@ namespace ControlsLibrary {
 
 		}
 #pragma endregion
+	public:
+		// callback handlers
+		// exit when handler returned true or the handler is not defined
+		System::Func<bool>^ OnExit;
+
 	private:
 		System::Drawing::Point lastPoint;
 

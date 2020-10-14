@@ -106,9 +106,10 @@ namespace UserInterface {
 
 	private:
 		void BuyTickets();
+		void CancelFlight();
 		void PaymentHistory();
 		void FlightStatus();
-		void Exit();
+		bool Exit();
 
 	private:
 		System::Void MainForm_Load(System::Object^ sender, System::EventArgs^ e);

@@ -1,5 +1,6 @@
 #include "MainForm.h"
 #include "BuyTicketsControl.h"
+#include "CancelFlightForm.h"
 #include "PaymentHistoryForm.h"
 #include "FlightStatusForm.h"
 
@@ -13,18 +14,19 @@ MainForm::MainForm()
 MainForm::~MainForm()
 {
 	if (components)
-	{
 		delete components;
-	}
 }
 
 System::Void MainForm::MainForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
 	// Attach navigation bar callbacks
 	m_NavigationBar->OnBuyTickets = gcnew System::Action(this, &MainForm::BuyTickets);
+	m_NavigationBar->OnCancelFlight = gcnew System::Action(this, &MainForm::CancelFlight);
 	m_NavigationBar->OnPaymentHistory = gcnew System::Action(this, &MainForm::PaymentHistory);
 	m_NavigationBar->OnFlightStatus = gcnew System::Action(this, &MainForm::FlightStatus);
-	m_NavigationBar->OnExit = gcnew System::Action(this, &MainForm::Exit);
+
+	// attach title bar callbacks
+	m_TitleBar->OnExit = gcnew System::Func<bool>(this, &MainForm::Exit);
 }
 
 void MainForm::LoadControl(System::Windows::Forms::UserControl^ control)
@@ -34,10 +36,14 @@ void MainForm::LoadControl(System::Windows::Forms::UserControl^ control)
 	m_ControlContainer->Controls->Add(control);
 }
 
-
 void MainForm::BuyTickets()
 {
 	LoadControl(gcnew BuyTicketsControl());
+}
+
+void MainForm::CancelFlight()
+{
+	LoadControl(gcnew CancelFlightForm());
 }
 
 void MainForm::PaymentHistory()
@@ -50,7 +56,7 @@ void MainForm::FlightStatus()
 	LoadControl(gcnew FlightStatusForm());
 }
 
-void MainForm::Exit()
+bool MainForm::Exit()
 {
 	System::Windows::Forms::DialogResult response = MessageBox::Show(
 		"Are you sure you want to exit?", "Exit?",
@@ -58,7 +64,11 @@ void MainForm::Exit()
 	);
 
 	if (response == System::Windows::Forms::DialogResult::Yes)
-		Application::Exit();
+	{
+		// clean up resources here
+		return true;
+	}
 
 	m_NavigationBar->ClearActiveButton();
+	return false;
 }

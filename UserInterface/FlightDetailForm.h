@@ -43,7 +43,6 @@ namespace UserInterface {
 	private: System::Windows::Forms::Label^ m_lbl_FlightClass;
 	private: System::Windows::Forms::Button^ m_Continue;
 
-
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -444,6 +443,9 @@ namespace UserInterface {
     
     public:
         System::Action^ OnContinue;
+
+    private:
+        bool IsFormDataInvalid();
 
     private: System::Void m_Continue_Click(System::Object^ sender, System::EventArgs^ e);
 };

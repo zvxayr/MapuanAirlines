@@ -133,6 +133,7 @@
     <ClCompile Include="AdditionalServicesForm.cpp" />
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="BuyTicketsControl.cpp" />
+    <ClCompile Include="CancelFlightForm.cpp" />
     <ClCompile Include="FlightDetailForm.cpp" />
     <ClCompile Include="FlightStatusForm.cpp" />
     <ClCompile Include="MainForm.cpp" />
@@ -151,6 +152,9 @@
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="BuyTicketsControl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="CancelFlightForm.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="FlightDetailForm.h">
@@ -175,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BuyTicketsControl.resx">
       <DependentUpon>BuyTicketsControl.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CancelFlightForm.resx">
+      <DependentUpon>CancelFlightForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FlightDetailForm.resx">
       <DependentUpon>FlightDetailForm.h</DependentUpon>
