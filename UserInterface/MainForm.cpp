@@ -65,7 +65,7 @@ bool MainForm::Exit()
 
 	if (response == System::Windows::Forms::DialogResult::Yes)
 	{
-		// clean up resources here
+		// TODO: clean up resources here
 		return true;
 	}
 

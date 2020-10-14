@@ -22,8 +22,6 @@ namespace UserInterface {
 		~FlightStatusForm();
 
 	private: System::Windows::Forms::TableLayoutPanel^ m_LayoutPanel;
-	private: System::Windows::Forms::Label^ m_lbl_TicketSold;
-	private: System::Windows::Forms::Label^ m_lbl_MoneyEarned;
 	private: System::Windows::Forms::ListBox^ m_TicketsSold;
 	private: System::Windows::Forms::ListBox^ m_MoneyEarned;
 
@@ -40,11 +38,13 @@ namespace UserInterface {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::Windows::Forms::Label^ m_lbl_TicketSold;
+			System::Windows::Forms::Label^ m_lbl_MoneyEarned;
 			this->m_LayoutPanel = (gcnew System::Windows::Forms::TableLayoutPanel());
-			this->m_lbl_TicketSold = (gcnew System::Windows::Forms::Label());
-			this->m_lbl_MoneyEarned = (gcnew System::Windows::Forms::Label());
 			this->m_TicketsSold = (gcnew System::Windows::Forms::ListBox());
 			this->m_MoneyEarned = (gcnew System::Windows::Forms::ListBox());
+			m_lbl_TicketSold = (gcnew System::Windows::Forms::Label());
+			m_lbl_MoneyEarned = (gcnew System::Windows::Forms::Label());
 			this->m_LayoutPanel->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -55,8 +55,8 @@ namespace UserInterface {
 				50)));
 			this->m_LayoutPanel->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				50)));
-			this->m_LayoutPanel->Controls->Add(this->m_lbl_TicketSold, 0, 0);
-			this->m_LayoutPanel->Controls->Add(this->m_lbl_MoneyEarned, 1, 0);
+			this->m_LayoutPanel->Controls->Add(m_lbl_TicketSold, 0, 0);
+			this->m_LayoutPanel->Controls->Add(m_lbl_MoneyEarned, 1, 0);
 			this->m_LayoutPanel->Controls->Add(this->m_TicketsSold, 0, 1);
 			this->m_LayoutPanel->Controls->Add(this->m_MoneyEarned, 1, 1);
 			this->m_LayoutPanel->Dock = System::Windows::Forms::DockStyle::Fill;
@@ -70,31 +70,31 @@ namespace UserInterface {
 			// 
 			// m_lbl_TicketSold
 			// 
-			this->m_lbl_TicketSold->Cursor = System::Windows::Forms::Cursors::Default;
-			this->m_lbl_TicketSold->Dock = System::Windows::Forms::DockStyle::Top;
-			this->m_lbl_TicketSold->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			m_lbl_TicketSold->Cursor = System::Windows::Forms::Cursors::Default;
+			m_lbl_TicketSold->Dock = System::Windows::Forms::DockStyle::Top;
+			m_lbl_TicketSold->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->m_lbl_TicketSold->Location = System::Drawing::Point(0, 0);
-			this->m_lbl_TicketSold->Margin = System::Windows::Forms::Padding(0);
-			this->m_lbl_TicketSold->Name = L"m_lbl_TicketSold";
-			this->m_lbl_TicketSold->Size = System::Drawing::Size(424, 40);
-			this->m_lbl_TicketSold->TabIndex = 3;
-			this->m_lbl_TicketSold->Text = L"TOTAL TICKETS SOLD";
-			this->m_lbl_TicketSold->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			m_lbl_TicketSold->Location = System::Drawing::Point(0, 0);
+			m_lbl_TicketSold->Margin = System::Windows::Forms::Padding(0);
+			m_lbl_TicketSold->Name = L"m_lbl_TicketSold";
+			m_lbl_TicketSold->Size = System::Drawing::Size(424, 40);
+			m_lbl_TicketSold->TabIndex = 3;
+			m_lbl_TicketSold->Text = L"TOTAL TICKETS SOLD";
+			m_lbl_TicketSold->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// m_lbl_MoneyEarned
 			// 
-			this->m_lbl_MoneyEarned->Cursor = System::Windows::Forms::Cursors::Default;
-			this->m_lbl_MoneyEarned->Dock = System::Windows::Forms::DockStyle::Top;
-			this->m_lbl_MoneyEarned->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			m_lbl_MoneyEarned->Cursor = System::Windows::Forms::Cursors::Default;
+			m_lbl_MoneyEarned->Dock = System::Windows::Forms::DockStyle::Top;
+			m_lbl_MoneyEarned->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->m_lbl_MoneyEarned->Location = System::Drawing::Point(424, 0);
-			this->m_lbl_MoneyEarned->Margin = System::Windows::Forms::Padding(0);
-			this->m_lbl_MoneyEarned->Name = L"m_lbl_MoneyEarned";
-			this->m_lbl_MoneyEarned->Size = System::Drawing::Size(424, 40);
-			this->m_lbl_MoneyEarned->TabIndex = 4;
-			this->m_lbl_MoneyEarned->Text = L"TOTAL MONEY EARNED";
-			this->m_lbl_MoneyEarned->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			m_lbl_MoneyEarned->Location = System::Drawing::Point(424, 0);
+			m_lbl_MoneyEarned->Margin = System::Windows::Forms::Padding(0);
+			m_lbl_MoneyEarned->Name = L"m_lbl_MoneyEarned";
+			m_lbl_MoneyEarned->Size = System::Drawing::Size(424, 40);
+			m_lbl_MoneyEarned->TabIndex = 4;
+			m_lbl_MoneyEarned->Text = L"TOTAL MONEY EARNED";
+			m_lbl_MoneyEarned->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// m_TicketsSold
 			// 

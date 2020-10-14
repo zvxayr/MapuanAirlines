@@ -22,11 +22,9 @@ namespace UserInterface {
 		~AdditionalServicesForm();
 
 	private: System::Windows::Forms::Button^ m_Continue;
-	private: System::Windows::Forms::Label^ m_lbl_Header;
 	private: System::Windows::Forms::CheckBox^ m_Insurance;
 	private: System::Windows::Forms::CheckBox^ m_Food;
 	private: System::Windows::Forms::CheckBox^ m_Seat;
-	private: System::Windows::Forms::RichTextBox^ m_rtb_InsuranceDesciption;
 
 	private:
 		/// <summary>
@@ -41,13 +39,15 @@ namespace UserInterface {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::Windows::Forms::Label^ m_lbl_Header;
+			System::Windows::Forms::RichTextBox^ m_rtb_InsuranceDesciption;
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(AdditionalServicesForm::typeid));
 			this->m_Continue = (gcnew System::Windows::Forms::Button());
-			this->m_lbl_Header = (gcnew System::Windows::Forms::Label());
 			this->m_Insurance = (gcnew System::Windows::Forms::CheckBox());
 			this->m_Food = (gcnew System::Windows::Forms::CheckBox());
 			this->m_Seat = (gcnew System::Windows::Forms::CheckBox());
-			this->m_rtb_InsuranceDesciption = (gcnew System::Windows::Forms::RichTextBox());
+			m_lbl_Header = (gcnew System::Windows::Forms::Label());
+			m_rtb_InsuranceDesciption = (gcnew System::Windows::Forms::RichTextBox());
 			this->SuspendLayout();
 			// 
 			// m_Continue
@@ -76,17 +76,17 @@ namespace UserInterface {
 			// 
 			// m_lbl_Header
 			// 
-			this->m_lbl_Header->Cursor = System::Windows::Forms::Cursors::Default;
-			this->m_lbl_Header->Dock = System::Windows::Forms::DockStyle::Top;
-			this->m_lbl_Header->Font = (gcnew System::Drawing::Font(L"Century Gothic", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			m_lbl_Header->Cursor = System::Windows::Forms::Cursors::Default;
+			m_lbl_Header->Dock = System::Windows::Forms::DockStyle::Top;
+			m_lbl_Header->Font = (gcnew System::Drawing::Font(L"Century Gothic", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->m_lbl_Header->Location = System::Drawing::Point(0, 0);
-			this->m_lbl_Header->Margin = System::Windows::Forms::Padding(0);
-			this->m_lbl_Header->Name = L"m_lbl_Header";
-			this->m_lbl_Header->Size = System::Drawing::Size(848, 60);
-			this->m_lbl_Header->TabIndex = 1;
-			this->m_lbl_Header->Text = L"ADDITIONAL SERVICES";
-			this->m_lbl_Header->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			m_lbl_Header->Location = System::Drawing::Point(0, 0);
+			m_lbl_Header->Margin = System::Windows::Forms::Padding(0);
+			m_lbl_Header->Name = L"m_lbl_Header";
+			m_lbl_Header->Size = System::Drawing::Size(848, 60);
+			m_lbl_Header->TabIndex = 1;
+			m_lbl_Header->Text = L"ADDITIONAL SERVICES";
+			m_lbl_Header->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// m_Insurance
 			// 
@@ -156,29 +156,29 @@ namespace UserInterface {
 			// 
 			// m_rtb_InsuranceDesciption
 			// 
-			this->m_rtb_InsuranceDesciption->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(253)),
+			m_rtb_InsuranceDesciption->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(253)),
 				static_cast<System::Int32>(static_cast<System::Byte>(215)), static_cast<System::Int32>(static_cast<System::Byte>(75)));
-			this->m_rtb_InsuranceDesciption->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->m_rtb_InsuranceDesciption->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->m_rtb_InsuranceDesciption->Location = System::Drawing::Point(124, 125);
-			this->m_rtb_InsuranceDesciption->Margin = System::Windows::Forms::Padding(124, 0, 124, 0);
-			this->m_rtb_InsuranceDesciption->Name = L"m_rtb_InsuranceDesciption";
-			this->m_rtb_InsuranceDesciption->ReadOnly = true;
-			this->m_rtb_InsuranceDesciption->ScrollBars = System::Windows::Forms::RichTextBoxScrollBars::None;
-			this->m_rtb_InsuranceDesciption->Size = System::Drawing::Size(196, 157);
-			this->m_rtb_InsuranceDesciption->TabIndex = 13;
-			this->m_rtb_InsuranceDesciption->Text = resources->GetString(L"m_rtb_InsuranceDesciption.Text");
+			m_rtb_InsuranceDesciption->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			m_rtb_InsuranceDesciption->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			m_rtb_InsuranceDesciption->Location = System::Drawing::Point(124, 125);
+			m_rtb_InsuranceDesciption->Margin = System::Windows::Forms::Padding(124, 0, 124, 0);
+			m_rtb_InsuranceDesciption->Name = L"m_rtb_InsuranceDesciption";
+			m_rtb_InsuranceDesciption->ReadOnly = true;
+			m_rtb_InsuranceDesciption->ScrollBars = System::Windows::Forms::RichTextBoxScrollBars::None;
+			m_rtb_InsuranceDesciption->Size = System::Drawing::Size(196, 157);
+			m_rtb_InsuranceDesciption->TabIndex = 13;
+			m_rtb_InsuranceDesciption->Text = resources->GetString(L"m_rtb_InsuranceDesciption.Text");
 			// 
 			// AdditionalServicesForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->Controls->Add(this->m_rtb_InsuranceDesciption);
+			this->Controls->Add(m_rtb_InsuranceDesciption);
 			this->Controls->Add(this->m_Seat);
 			this->Controls->Add(this->m_Food);
 			this->Controls->Add(this->m_Insurance);
-			this->Controls->Add(this->m_lbl_Header);
+			this->Controls->Add(m_lbl_Header);
 			this->Controls->Add(this->m_Continue);
 			this->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
 				static_cast<System::Int32>(static_cast<System::Byte>(1)));
