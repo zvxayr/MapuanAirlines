@@ -25,7 +25,8 @@ namespace ControlsLibrary {
 	private: System::Windows::Forms::Button^ m_BuyTicketsButton;
 	private: System::Windows::Forms::Button^ m_PaymentHistoryButton;
 	private: System::Windows::Forms::Button^ m_FlightStatusButton;
-	private: System::Windows::Forms::Button^ m_ExitButton;
+	private: System::Windows::Forms::Button^ m_CancelFlightButton;
+
 
 	private:
 		/// <summary>
@@ -44,7 +45,7 @@ namespace ControlsLibrary {
 			this->m_ButtonContainer = (gcnew System::Windows::Forms::FlowLayoutPanel());
 			this->m_PaymentHistoryButton = (gcnew System::Windows::Forms::Button());
 			this->m_FlightStatusButton = (gcnew System::Windows::Forms::Button());
-			this->m_ExitButton = (gcnew System::Windows::Forms::Button());
+			this->m_CancelFlightButton = (gcnew System::Windows::Forms::Button());
 			this->m_ButtonContainer->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -76,9 +77,9 @@ namespace ControlsLibrary {
 			this->m_ButtonContainer->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->m_ButtonContainer->BackColor = System::Drawing::Color::Gainsboro;
 			this->m_ButtonContainer->Controls->Add(this->m_BuyTicketsButton);
+			this->m_ButtonContainer->Controls->Add(this->m_CancelFlightButton);
 			this->m_ButtonContainer->Controls->Add(this->m_PaymentHistoryButton);
 			this->m_ButtonContainer->Controls->Add(this->m_FlightStatusButton);
-			this->m_ButtonContainer->Controls->Add(this->m_ExitButton);
 			this->m_ButtonContainer->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->m_ButtonContainer->Location = System::Drawing::Point(0, 0);
 			this->m_ButtonContainer->Margin = System::Windows::Forms::Padding(0);
@@ -101,7 +102,7 @@ namespace ControlsLibrary {
 			this->m_PaymentHistoryButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->m_PaymentHistoryButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->m_PaymentHistoryButton->Location = System::Drawing::Point(224, 15);
+			this->m_PaymentHistoryButton->Location = System::Drawing::Point(440, 15);
 			this->m_PaymentHistoryButton->Margin = System::Windows::Forms::Padding(8, 15, 8, 15);
 			this->m_PaymentHistoryButton->MinimumSize = System::Drawing::Size(192, 70);
 			this->m_PaymentHistoryButton->Name = L"m_PaymentHistoryButton";
@@ -124,7 +125,7 @@ namespace ControlsLibrary {
 			this->m_FlightStatusButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->m_FlightStatusButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->m_FlightStatusButton->Location = System::Drawing::Point(432, 15);
+			this->m_FlightStatusButton->Location = System::Drawing::Point(648, 15);
 			this->m_FlightStatusButton->Margin = System::Windows::Forms::Padding(8, 15, 8, 15);
 			this->m_FlightStatusButton->MinimumSize = System::Drawing::Size(192, 70);
 			this->m_FlightStatusButton->Name = L"m_FlightStatusButton";
@@ -134,28 +135,28 @@ namespace ControlsLibrary {
 			this->m_FlightStatusButton->UseVisualStyleBackColor = false;
 			this->m_FlightStatusButton->Click += gcnew System::EventHandler(this, &NavigationBar::m_FlightStatusButton_Click);
 			// 
-			// m_ExitButton
+			// m_CancelFlightButton
 			// 
-			this->m_ExitButton->BackColor = System::Drawing::Color::White;
-			this->m_ExitButton->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(253)),
+			this->m_CancelFlightButton->BackColor = System::Drawing::Color::White;
+			this->m_CancelFlightButton->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(253)),
 				static_cast<System::Int32>(static_cast<System::Byte>(215)), static_cast<System::Int32>(static_cast<System::Byte>(75)));
-			this->m_ExitButton->FlatAppearance->BorderSize = 4;
-			this->m_ExitButton->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(254)),
+			this->m_CancelFlightButton->FlatAppearance->BorderSize = 4;
+			this->m_CancelFlightButton->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(254)),
 				static_cast<System::Int32>(static_cast<System::Byte>(232)), static_cast<System::Int32>(static_cast<System::Byte>(154)));
-			this->m_ExitButton->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(254)),
+			this->m_CancelFlightButton->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(254)),
 				static_cast<System::Int32>(static_cast<System::Byte>(227)), static_cast<System::Int32>(static_cast<System::Byte>(129)));
-			this->m_ExitButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->m_ExitButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->m_CancelFlightButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->m_CancelFlightButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->m_ExitButton->Location = System::Drawing::Point(640, 15);
-			this->m_ExitButton->Margin = System::Windows::Forms::Padding(8, 15, 16, 15);
-			this->m_ExitButton->MinimumSize = System::Drawing::Size(192, 70);
-			this->m_ExitButton->Name = L"m_ExitButton";
-			this->m_ExitButton->Size = System::Drawing::Size(192, 70);
-			this->m_ExitButton->TabIndex = 3;
-			this->m_ExitButton->Text = L"Exit";
-			this->m_ExitButton->UseVisualStyleBackColor = false;
-			this->m_ExitButton->Click += gcnew System::EventHandler(this, &NavigationBar::m_ExitButton_Click);
+			this->m_CancelFlightButton->Location = System::Drawing::Point(224, 15);
+			this->m_CancelFlightButton->Margin = System::Windows::Forms::Padding(8, 15, 16, 15);
+			this->m_CancelFlightButton->MinimumSize = System::Drawing::Size(192, 70);
+			this->m_CancelFlightButton->Name = L"m_CancelFlightButton";
+			this->m_CancelFlightButton->Size = System::Drawing::Size(192, 70);
+			this->m_CancelFlightButton->TabIndex = 3;
+			this->m_CancelFlightButton->Text = L"Cancel Flight";
+			this->m_CancelFlightButton->UseVisualStyleBackColor = false;
+			this->m_CancelFlightButton->Click += gcnew System::EventHandler(this, &NavigationBar::m_CancelFlightButton_Click);
 			// 
 			// NavigationBar
 			// 
@@ -175,9 +176,9 @@ namespace ControlsLibrary {
 	public:
 		// callback handlers
 		System::Action^ OnBuyTickets;
+		System::Action^ OnCancelFlight;
 		System::Action^ OnPaymentHistory;
 		System::Action^ OnFlightStatus;
-		System::Action^ OnExit;
 	
 	private:
 		System::Windows::Forms::Button^ m_ActiveButton;
@@ -190,9 +191,9 @@ namespace ControlsLibrary {
 
 	private:
 		System::Void m_BuyTicketsButton_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void m_CancelFlightButton_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void m_PaymentHistoryButton_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void m_FlightStatusButton_Click(System::Object^ sender, System::EventArgs^ e);
-		System::Void m_ExitButton_Click(System::Object^ sender, System::EventArgs^ e);
 };
 
 }
