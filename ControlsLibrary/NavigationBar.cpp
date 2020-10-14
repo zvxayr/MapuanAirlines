@@ -37,12 +37,6 @@ System::Void NavigationBar::m_BuyTicketsButton_Click(System::Object^ sender, Sys
 	if (OnBuyTickets) OnBuyTickets();
 }
 
-System::Void NavigationBar::m_CancelFlightButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (m_CancelFlightButton == m_ActiveButton) return;
-	SetActiveButton(m_CancelFlightButton);
-	if (OnCancelFlight) OnCancelFlight();
-}
-
 System::Void NavigationBar::m_PaymentHistoryButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (m_PaymentHistoryButton == m_ActiveButton) return;
 	SetActiveButton(m_PaymentHistoryButton);
@@ -53,4 +47,10 @@ System::Void NavigationBar::m_FlightStatusButton_Click(System::Object^ sender, S
 	if (m_FlightStatusButton == m_ActiveButton) return;
 	SetActiveButton(m_FlightStatusButton);
 	if (OnFlightStatus) OnFlightStatus();
+}
+
+System::Void NavigationBar::m_ExitButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (m_ExitButton == m_ActiveButton) return;
+	SetActiveButton(m_ExitButton);
+	if (OnExit) OnExit();
 }
