@@ -1,0 +1,13 @@
+"Bangkok, Thailand",21828.40
+"Brunei, Bandar Seri Begawan",20560.50
+"Cambodia, Phnom Penh",25556.00
+"Indonesia, Jakarta",26087.60
+"Laos, Vientiane",12534.80
+"Malaysia, Kuala Lumpur",18785.40
+"Myanmar, Naypyidaw",17239.40
+"Philippines, Aklan",15345.25
+"Philippines, Cebu",14673.00
+"Philippines, Palawan",14537.50
+"Philippines, Siargao",2807.20
+"Singapore, Singapore",2980.75
+"Timor-Leste, Dili",3545.00

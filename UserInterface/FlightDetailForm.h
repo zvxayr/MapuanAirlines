@@ -87,54 +87,6 @@ namespace UserInterface {
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->m_InfantCount))->BeginInit();
             this->SuspendLayout();
             // 
-            // m_OneWay
-            // 
-            this->m_OneWay->Appearance = System::Windows::Forms::Appearance::Button;
-            this->m_OneWay->BackColor = System::Drawing::Color::Gainsboro;
-            this->m_OneWay->CheckAlign = System::Drawing::ContentAlignment::MiddleRight;
-            this->m_OneWay->Checked = true;
-            this->m_OneWay->FlatAppearance->BorderSize = 0;
-            this->m_OneWay->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(253)),
-                static_cast<System::Int32>(static_cast<System::Byte>(215)), static_cast<System::Int32>(static_cast<System::Byte>(75)));
-            this->m_OneWay->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(254)),
-                static_cast<System::Int32>(static_cast<System::Byte>(232)), static_cast<System::Int32>(static_cast<System::Byte>(154)));
-            this->m_OneWay->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(254)),
-                static_cast<System::Int32>(static_cast<System::Byte>(227)), static_cast<System::Int32>(static_cast<System::Byte>(129)));
-            this->m_OneWay->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->m_OneWay->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->m_OneWay->Location = System::Drawing::Point(162, 61);
-            this->m_OneWay->Margin = System::Windows::Forms::Padding(0, 10, 0, 0);
-            this->m_OneWay->Name = L"m_OneWay";
-            this->m_OneWay->Size = System::Drawing::Size(250, 29);
-            this->m_OneWay->TabIndex = 5;
-            this->m_OneWay->TabStop = true;
-            this->m_OneWay->Text = L"One-Way";
-            this->m_OneWay->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
-            this->m_OneWay->UseVisualStyleBackColor = false;
-            // 
-            // m_RoundTrip
-            // 
-            this->m_RoundTrip->Appearance = System::Windows::Forms::Appearance::Button;
-            this->m_RoundTrip->BackColor = System::Drawing::Color::Gainsboro;
-            this->m_RoundTrip->FlatAppearance->BorderSize = 0;
-            this->m_RoundTrip->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(253)),
-                static_cast<System::Int32>(static_cast<System::Byte>(215)), static_cast<System::Int32>(static_cast<System::Byte>(75)));
-            this->m_RoundTrip->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(254)),
-                static_cast<System::Int32>(static_cast<System::Byte>(232)), static_cast<System::Int32>(static_cast<System::Byte>(154)));
-            this->m_RoundTrip->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(254)),
-                static_cast<System::Int32>(static_cast<System::Byte>(227)), static_cast<System::Int32>(static_cast<System::Byte>(129)));
-            this->m_RoundTrip->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->m_RoundTrip->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->m_RoundTrip->Location = System::Drawing::Point(436, 61);
-            this->m_RoundTrip->Margin = System::Windows::Forms::Padding(0, 10, 0, 0);
-            this->m_RoundTrip->Name = L"m_RoundTrip";
-            this->m_RoundTrip->Size = System::Drawing::Size(250, 29);
-            this->m_RoundTrip->TabIndex = 5;
-            this->m_RoundTrip->Text = L"Round-Trip";
-            this->m_RoundTrip->UseVisualStyleBackColor = false;
-            // 
             // m_lbl_Header
             // 
             m_lbl_Header->Cursor = System::Windows::Forms::Cursors::Default;
@@ -148,32 +100,6 @@ namespace UserInterface {
             m_lbl_Header->TabIndex = 2;
             m_lbl_Header->Text = L"WHERE WOULD YOU LIKE TO GO\?";
             m_lbl_Header->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            // 
-            // m_Source
-            // 
-            this->m_Source->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->m_Source->FormattingEnabled = true;
-            this->m_Source->Location = System::Drawing::Point(162, 129);
-            this->m_Source->Margin = System::Windows::Forms::Padding(162, 0, 12, 0);
-            this->m_Source->MaximumSize = System::Drawing::Size(250, 0);
-            this->m_Source->MinimumSize = System::Drawing::Size(250, 0);
-            this->m_Source->Name = L"m_Source";
-            this->m_Source->Size = System::Drawing::Size(250, 29);
-            this->m_Source->TabIndex = 3;
-            // 
-            // m_Destination
-            // 
-            this->m_Destination->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->m_Destination->FormattingEnabled = true;
-            this->m_Destination->Location = System::Drawing::Point(436, 129);
-            this->m_Destination->Margin = System::Windows::Forms::Padding(12, 0, 162, 0);
-            this->m_Destination->MaximumSize = System::Drawing::Size(250, 0);
-            this->m_Destination->MinimumSize = System::Drawing::Size(250, 0);
-            this->m_Destination->Name = L"m_Destination";
-            this->m_Destination->Size = System::Drawing::Size(250, 29);
-            this->m_Destination->TabIndex = 3;
             // 
             // m_lbl_Source
             // 
@@ -197,34 +123,6 @@ namespace UserInterface {
             m_lbl_Destination->TabIndex = 4;
             m_lbl_Destination->Text = L"Flying To";
             // 
-            // m_DepartDate
-            // 
-            this->m_DepartDate->CalendarForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)),
-                static_cast<System::Int32>(static_cast<System::Byte>(63)), static_cast<System::Int32>(static_cast<System::Byte>(1)));
-            this->m_DepartDate->CalendarTitleBackColor = System::Drawing::SystemColors::ControlText;
-            this->m_DepartDate->CalendarTitleForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)),
-                static_cast<System::Int32>(static_cast<System::Byte>(63)), static_cast<System::Int32>(static_cast<System::Byte>(1)));
-            this->m_DepartDate->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->m_DepartDate->Location = System::Drawing::Point(162, 204);
-            this->m_DepartDate->Name = L"m_DepartDate";
-            this->m_DepartDate->Size = System::Drawing::Size(250, 21);
-            this->m_DepartDate->TabIndex = 6;
-            // 
-            // m_ReturnDate
-            // 
-            this->m_ReturnDate->CalendarForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)),
-                static_cast<System::Int32>(static_cast<System::Byte>(63)), static_cast<System::Int32>(static_cast<System::Byte>(1)));
-            this->m_ReturnDate->CalendarTitleBackColor = System::Drawing::SystemColors::ControlText;
-            this->m_ReturnDate->CalendarTitleForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)),
-                static_cast<System::Int32>(static_cast<System::Byte>(63)), static_cast<System::Int32>(static_cast<System::Byte>(1)));
-            this->m_ReturnDate->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->m_ReturnDate->Location = System::Drawing::Point(436, 204);
-            this->m_ReturnDate->Name = L"m_ReturnDate";
-            this->m_ReturnDate->Size = System::Drawing::Size(250, 21);
-            this->m_ReturnDate->TabIndex = 6;
-            // 
             // m_lbl_DepartDate
             // 
             m_lbl_DepartDate->AutoSize = true;
@@ -246,44 +144,6 @@ namespace UserInterface {
             m_lbl_ReturnDate->Size = System::Drawing::Size(114, 21);
             m_lbl_ReturnDate->TabIndex = 4;
             m_lbl_ReturnDate->Text = L"Returning On";
-            // 
-            // m_AdultCount
-            // 
-            this->m_AdultCount->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->m_AdultCount->Location = System::Drawing::Point(162, 282);
-            this->m_AdultCount->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-            this->m_AdultCount->MaximumSize = System::Drawing::Size(78, 0);
-            this->m_AdultCount->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
-            this->m_AdultCount->MinimumSize = System::Drawing::Size(78, 0);
-            this->m_AdultCount->Name = L"m_AdultCount";
-            this->m_AdultCount->Size = System::Drawing::Size(78, 21);
-            this->m_AdultCount->TabIndex = 7;
-            this->m_AdultCount->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
-            // 
-            // m_ChildCount
-            // 
-            this->m_ChildCount->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->m_ChildCount->Location = System::Drawing::Point(248, 282);
-            this->m_ChildCount->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-            this->m_ChildCount->MaximumSize = System::Drawing::Size(78, 0);
-            this->m_ChildCount->MinimumSize = System::Drawing::Size(78, 0);
-            this->m_ChildCount->Name = L"m_ChildCount";
-            this->m_ChildCount->Size = System::Drawing::Size(78, 21);
-            this->m_ChildCount->TabIndex = 7;
-            // 
-            // m_InfantCount
-            // 
-            this->m_InfantCount->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->m_InfantCount->Location = System::Drawing::Point(334, 282);
-            this->m_InfantCount->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-            this->m_InfantCount->MaximumSize = System::Drawing::Size(78, 0);
-            this->m_InfantCount->MinimumSize = System::Drawing::Size(78, 0);
-            this->m_InfantCount->Name = L"m_InfantCount";
-            this->m_InfantCount->Size = System::Drawing::Size(78, 21);
-            this->m_InfantCount->TabIndex = 7;
             // 
             // m_lbl_AdultRange
             // 
@@ -351,6 +211,157 @@ namespace UserInterface {
             m_lbl_Infant->Text = L"Infant";
             m_lbl_Infant->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
             // 
+            // m_lbl_FlightClass
+            // 
+            m_lbl_FlightClass->AutoSize = true;
+            m_lbl_FlightClass->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            m_lbl_FlightClass->Location = System::Drawing::Point(432, 253);
+            m_lbl_FlightClass->Name = L"m_lbl_FlightClass";
+            m_lbl_FlightClass->Size = System::Drawing::Size(95, 21);
+            m_lbl_FlightClass->TabIndex = 4;
+            m_lbl_FlightClass->Text = L"Flight Class";
+            // 
+            // m_OneWay
+            // 
+            this->m_OneWay->Appearance = System::Windows::Forms::Appearance::Button;
+            this->m_OneWay->BackColor = System::Drawing::Color::Gainsboro;
+            this->m_OneWay->CheckAlign = System::Drawing::ContentAlignment::MiddleRight;
+            this->m_OneWay->Checked = true;
+            this->m_OneWay->FlatAppearance->BorderSize = 0;
+            this->m_OneWay->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(253)),
+                static_cast<System::Int32>(static_cast<System::Byte>(215)), static_cast<System::Int32>(static_cast<System::Byte>(75)));
+            this->m_OneWay->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(254)),
+                static_cast<System::Int32>(static_cast<System::Byte>(232)), static_cast<System::Int32>(static_cast<System::Byte>(154)));
+            this->m_OneWay->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(254)),
+                static_cast<System::Int32>(static_cast<System::Byte>(227)), static_cast<System::Int32>(static_cast<System::Byte>(129)));
+            this->m_OneWay->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->m_OneWay->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->m_OneWay->Location = System::Drawing::Point(162, 61);
+            this->m_OneWay->Margin = System::Windows::Forms::Padding(0, 10, 0, 0);
+            this->m_OneWay->Name = L"m_OneWay";
+            this->m_OneWay->Size = System::Drawing::Size(250, 29);
+            this->m_OneWay->TabIndex = 5;
+            this->m_OneWay->TabStop = true;
+            this->m_OneWay->Text = L"One-Way";
+            this->m_OneWay->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+            this->m_OneWay->UseVisualStyleBackColor = false;
+            // 
+            // m_RoundTrip
+            // 
+            this->m_RoundTrip->Appearance = System::Windows::Forms::Appearance::Button;
+            this->m_RoundTrip->BackColor = System::Drawing::Color::Gainsboro;
+            this->m_RoundTrip->FlatAppearance->BorderSize = 0;
+            this->m_RoundTrip->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(253)),
+                static_cast<System::Int32>(static_cast<System::Byte>(215)), static_cast<System::Int32>(static_cast<System::Byte>(75)));
+            this->m_RoundTrip->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(254)),
+                static_cast<System::Int32>(static_cast<System::Byte>(232)), static_cast<System::Int32>(static_cast<System::Byte>(154)));
+            this->m_RoundTrip->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(254)),
+                static_cast<System::Int32>(static_cast<System::Byte>(227)), static_cast<System::Int32>(static_cast<System::Byte>(129)));
+            this->m_RoundTrip->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->m_RoundTrip->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->m_RoundTrip->Location = System::Drawing::Point(436, 61);
+            this->m_RoundTrip->Margin = System::Windows::Forms::Padding(0, 10, 0, 0);
+            this->m_RoundTrip->Name = L"m_RoundTrip";
+            this->m_RoundTrip->Size = System::Drawing::Size(250, 29);
+            this->m_RoundTrip->TabIndex = 5;
+            this->m_RoundTrip->Text = L"Round-Trip";
+            this->m_RoundTrip->UseVisualStyleBackColor = false;
+            // 
+            // m_Source
+            // 
+            this->m_Source->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->m_Source->FormattingEnabled = true;
+            this->m_Source->Location = System::Drawing::Point(162, 129);
+            this->m_Source->Margin = System::Windows::Forms::Padding(162, 0, 12, 0);
+            this->m_Source->MaximumSize = System::Drawing::Size(250, 0);
+            this->m_Source->MinimumSize = System::Drawing::Size(250, 0);
+            this->m_Source->Name = L"m_Source";
+            this->m_Source->Size = System::Drawing::Size(250, 29);
+            this->m_Source->TabIndex = 3;
+            // 
+            // m_Destination
+            // 
+            this->m_Destination->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->m_Destination->FormattingEnabled = true;
+            this->m_Destination->Location = System::Drawing::Point(436, 129);
+            this->m_Destination->Margin = System::Windows::Forms::Padding(12, 0, 162, 0);
+            this->m_Destination->MaximumSize = System::Drawing::Size(250, 0);
+            this->m_Destination->MinimumSize = System::Drawing::Size(250, 0);
+            this->m_Destination->Name = L"m_Destination";
+            this->m_Destination->Size = System::Drawing::Size(250, 29);
+            this->m_Destination->TabIndex = 3;
+            // 
+            // m_DepartDate
+            // 
+            this->m_DepartDate->CalendarForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)),
+                static_cast<System::Int32>(static_cast<System::Byte>(63)), static_cast<System::Int32>(static_cast<System::Byte>(1)));
+            this->m_DepartDate->CalendarTitleBackColor = System::Drawing::SystemColors::ControlText;
+            this->m_DepartDate->CalendarTitleForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)),
+                static_cast<System::Int32>(static_cast<System::Byte>(63)), static_cast<System::Int32>(static_cast<System::Byte>(1)));
+            this->m_DepartDate->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->m_DepartDate->Location = System::Drawing::Point(162, 204);
+            this->m_DepartDate->Name = L"m_DepartDate";
+            this->m_DepartDate->Size = System::Drawing::Size(250, 21);
+            this->m_DepartDate->TabIndex = 6;
+            // 
+            // m_ReturnDate
+            // 
+            this->m_ReturnDate->CalendarForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)),
+                static_cast<System::Int32>(static_cast<System::Byte>(63)), static_cast<System::Int32>(static_cast<System::Byte>(1)));
+            this->m_ReturnDate->CalendarTitleBackColor = System::Drawing::SystemColors::ControlText;
+            this->m_ReturnDate->CalendarTitleForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)),
+                static_cast<System::Int32>(static_cast<System::Byte>(63)), static_cast<System::Int32>(static_cast<System::Byte>(1)));
+            this->m_ReturnDate->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->m_ReturnDate->Location = System::Drawing::Point(436, 204);
+            this->m_ReturnDate->Name = L"m_ReturnDate";
+            this->m_ReturnDate->Size = System::Drawing::Size(250, 21);
+            this->m_ReturnDate->TabIndex = 6;
+            // 
+            // m_AdultCount
+            // 
+            this->m_AdultCount->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->m_AdultCount->Location = System::Drawing::Point(162, 282);
+            this->m_AdultCount->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+            this->m_AdultCount->MaximumSize = System::Drawing::Size(78, 0);
+            this->m_AdultCount->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
+            this->m_AdultCount->MinimumSize = System::Drawing::Size(78, 0);
+            this->m_AdultCount->Name = L"m_AdultCount";
+            this->m_AdultCount->Size = System::Drawing::Size(78, 21);
+            this->m_AdultCount->TabIndex = 7;
+            this->m_AdultCount->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
+            // 
+            // m_ChildCount
+            // 
+            this->m_ChildCount->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->m_ChildCount->Location = System::Drawing::Point(248, 282);
+            this->m_ChildCount->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+            this->m_ChildCount->MaximumSize = System::Drawing::Size(78, 0);
+            this->m_ChildCount->MinimumSize = System::Drawing::Size(78, 0);
+            this->m_ChildCount->Name = L"m_ChildCount";
+            this->m_ChildCount->Size = System::Drawing::Size(78, 21);
+            this->m_ChildCount->TabIndex = 7;
+            // 
+            // m_InfantCount
+            // 
+            this->m_InfantCount->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->m_InfantCount->Location = System::Drawing::Point(334, 282);
+            this->m_InfantCount->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+            this->m_InfantCount->MaximumSize = System::Drawing::Size(78, 0);
+            this->m_InfantCount->MinimumSize = System::Drawing::Size(78, 0);
+            this->m_InfantCount->Name = L"m_InfantCount";
+            this->m_InfantCount->Size = System::Drawing::Size(78, 21);
+            this->m_InfantCount->TabIndex = 7;
+            // 
             // m_FlightClass
             // 
             this->m_FlightClass->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -363,17 +374,6 @@ namespace UserInterface {
             this->m_FlightClass->Name = L"m_FlightClass";
             this->m_FlightClass->Size = System::Drawing::Size(250, 29);
             this->m_FlightClass->TabIndex = 3;
-            // 
-            // m_lbl_FlightClass
-            // 
-            m_lbl_FlightClass->AutoSize = true;
-            m_lbl_FlightClass->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            m_lbl_FlightClass->Location = System::Drawing::Point(432, 253);
-            m_lbl_FlightClass->Name = L"m_lbl_FlightClass";
-            m_lbl_FlightClass->Size = System::Drawing::Size(95, 21);
-            m_lbl_FlightClass->TabIndex = 4;
-            m_lbl_FlightClass->Text = L"Flight Class";
             // 
             // m_Continue
             // 
@@ -433,6 +433,7 @@ namespace UserInterface {
             this->MinimumSize = System::Drawing::Size(848, 380);
             this->Name = L"FlightDetailForm";
             this->Size = System::Drawing::Size(848, 380);
+            this->Load += gcnew System::EventHandler(this, &FlightDetailForm::FlightDetailForm_Load);
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->m_AdultCount))->EndInit();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->m_ChildCount))->EndInit();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->m_InfantCount))->EndInit();
@@ -449,6 +450,7 @@ namespace UserInterface {
         bool IsFormDataInvalid();
 
     private: System::Void m_Continue_Click(System::Object^ sender, System::EventArgs^ e);
+    private: System::Void FlightDetailForm_Load(System::Object^ sender, System::EventArgs^ e);
 };
 }
 
