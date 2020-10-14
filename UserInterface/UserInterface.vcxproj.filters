@@ -70,10 +70,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Classes.txt">
+    <Text Include="Destinations.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="Destinations.txt">
+    <Text Include="FlightClasses.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
