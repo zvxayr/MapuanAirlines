@@ -1,8 +1,4 @@
 #include "MainForm.h"
-#include "BuyTicketsControl.h"
-#include "CancelFlightForm.h"
-#include "PaymentHistoryForm.h"
-#include "FlightStatusForm.h"
 
 using namespace UserInterface;
 
@@ -19,6 +15,12 @@ MainForm::~MainForm()
 
 System::Void MainForm::MainForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
+	// Construct Forms
+	m_BuyTickets = gcnew BuyTicketsControl();
+	m_CancelFlight = gcnew CancelFlightForm();
+	m_PaymentHistory = gcnew PaymentHistoryForm();
+	m_FlightStatus = gcnew FlightStatusForm();
+
 	// Attach navigation bar callbacks
 	m_NavigationBar->OnBuyTickets = gcnew System::Action(this, &MainForm::BuyTickets);
 	m_NavigationBar->OnCancelFlight = gcnew System::Action(this, &MainForm::CancelFlight);
@@ -38,22 +40,22 @@ void MainForm::LoadControl(System::Windows::Forms::UserControl^ control)
 
 void MainForm::BuyTickets()
 {
-	LoadControl(gcnew BuyTicketsControl());
+	LoadControl(m_BuyTickets);
 }
 
 void MainForm::CancelFlight()
 {
-	LoadControl(gcnew CancelFlightForm());
+	LoadControl(m_CancelFlight);
 }
 
 void MainForm::PaymentHistory()
 {
-	LoadControl(gcnew PaymentHistoryForm());
+	LoadControl(m_PaymentHistory);
 }
 
 void MainForm::FlightStatus()
 {
-	LoadControl(gcnew FlightStatusForm());
+	LoadControl(m_FlightStatus);
 }
 
 bool MainForm::Exit()

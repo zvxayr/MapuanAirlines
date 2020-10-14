@@ -1,4 +1,8 @@
 #pragma once
+#include "BuyTicketsControl.h"
+#include "CancelFlightForm.h"
+#include "PaymentHistoryForm.h"
+#include "FlightStatusForm.h"
 
 namespace UserInterface {
 	using namespace System;
@@ -100,6 +104,12 @@ namespace UserInterface {
 
 		}
 #pragma endregion
+
+	private:
+		BuyTicketsControl^ m_BuyTickets;
+		CancelFlightForm^ m_CancelFlight;
+		PaymentHistoryForm^ m_PaymentHistory;
+		FlightStatusForm^ m_FlightStatus;
 
 	private:
 		void LoadControl(System::Windows::Forms::UserControl^ control);
