@@ -1,8 +1,9 @@
-#include "FileReader.h"
+#include "FileHandler.h"
+#include <iomanip>
 
 using namespace DataManager;
 
-void FileReader::Read(std::ifstream& file, std::string& value)
+void FileHandler::Read(std::ifstream& file, std::string& value)
 {
 	std::stringstream ss;
 	char chr = file.get();
@@ -33,3 +34,17 @@ void FileReader::Read(std::ifstream& file, std::string& value)
 	value = ss.str();
 }
 
+void FileHandler::Write(std::ofstream& file, const std::string& arg)
+{
+	file << "\"" << arg << "\"";
+}
+
+void FileHandler::Write(std::ofstream& file, const double& arg)
+{
+	file << std::fixed << std::setprecision(2) << arg;
+}
+
+void FileHandler::Write(std::ofstream& file, const float& arg)
+{
+	file << std::fixed << std::setprecision(2) << arg;
+}

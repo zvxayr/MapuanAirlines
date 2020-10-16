@@ -2,7 +2,7 @@
 #include <sstream>
 #include <fstream>
 
-namespace DataManager::FileReader {
+namespace DataManager::FileHandler {
 
 	/// <summary>
 	/// Reads the file until a comma or a new line is reached.
@@ -43,6 +43,26 @@ namespace DataManager::FileReader {
 	void ReadRow(std::ifstream& file, Args&... args)
 	{
 		(Read(file, args), ...);
+	}
+
+	template <typename T>
+	void Write(std::ofstream& file, const T& arg)
+	{
+		file << arg;
+	}
+
+	void Write(std::ofstream& file, const std::string& arg);
+	void Write(std::ofstream& file, const double& arg);
+	void Write(std::ofstream& file, const float& arg);
+
+	template <typename T, typename... Args>
+	void WriteRow(std::ofstream& file, T& arg, const Args&... args)
+	{
+		Write(file, arg);
+
+		((file << ',', Write(file, args)), ...);
+
+		file << std::endl;
 	}
 }
 

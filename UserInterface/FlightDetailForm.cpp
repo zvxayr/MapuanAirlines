@@ -1,5 +1,5 @@
 #include "FlightDetailForm.h"
-#include "FileReader.h"
+#include "FileHandler.h"
 #include "Destination.h"
 #include <fstream>
 
@@ -44,14 +44,12 @@ System::Void FlightDetailForm::m_Continue_Click(System::Object^ sender, System::
 System::Void FlightDetailForm::FlightDetailForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
 	using namespace DataManager;
-	using namespace DataManager::FileReader;
+	using namespace DataManager::FileHandler;
 
 	m_ReturnDate->Enabled = false;
 
 	for (const auto& dest : Destination::List())
-	{
 		m_Place->Items->Add(gcnew String(dest.Name.c_str()));
-	}
 
 	// TODO: This should be handled by the DataManager
 	{
@@ -61,7 +59,7 @@ System::Void FlightDetailForm::FlightDetailForm_Load(System::Object^ sender, Sys
 			std::string name;
 			double multiplier;
 
-			DataManager::FileReader::ReadRow(file, name, multiplier);
+			ReadRow(file, name, multiplier);
 
 			m_FlightClass->Items->Add(gcnew String(name.c_str()));
 		}

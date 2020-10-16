@@ -1,11 +1,10 @@
 #include "Destination.h"
-#include "FileReader.h"
-#include <string>
+#include "FileHandler.h"
 #include <vector>
-#include <fstream>
-#include <iostream>
 
 using namespace DataManager;
+
+bool didChange = false;
 
 Destination::Data::Data(std::string& name, double basePrice)
 	: Name(name)
@@ -27,13 +26,16 @@ void Destination::load(const std::string& filename)
 		std::string name;
 		double basePrice;
 
-		FileReader::ReadRow(file, name, basePrice);
-
+		FileHandler::ReadRow(file, name, basePrice);
 		List().emplace_back(name, basePrice);
 	}
 }
 
 void Destination::save(const std::string& filename)
 {
+	if (!didChange) return;
 
+	std::ofstream file(filename);
+	for (auto& dest : List())
+		FileHandler::WriteRow(file, dest.Name, dest.BasePrice);
 }
