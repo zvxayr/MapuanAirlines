@@ -46,29 +46,29 @@ System::Void FlightDetailForm::FlightDetailForm_Load(System::Object^ sender, Sys
 
 	m_ReturnDate->Enabled = false;
 
+	// TODO: This should be handled by the DataManager
 	{
 		std::ifstream file("Destinations.txt");
 		while (file.peek() != EOF)
 		{
 			std::string name;
-			DataManager::FileReader::Read(file, name);
-
 			double basePrice;
-			DataManager::FileReader::Read(file, basePrice);
+
+			DataManager::FileReader::ReadRow(file, name, basePrice);
 
 			m_Place->Items->Add(gcnew String(name.c_str()));
 		}
 	}
 
+	// TODO: This should be handled by the DataManager
 	{
 		std::ifstream file("FlightClasses.txt");
 		while (file.peek() != EOF)
 		{
 			std::string name;
-			DataManager::FileReader::Read(file, name);
-
 			double multiplier;
-			DataManager::FileReader::Read(file, multiplier);
+
+			DataManager::FileReader::ReadRow(file, name, multiplier);
 
 			m_FlightClass->Items->Add(gcnew String(name.c_str()));
 		}
