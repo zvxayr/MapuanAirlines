@@ -35,7 +35,7 @@ bool FlightDetailForm::ValidateFormData()
 System::Void FlightDetailForm::m_Continue_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	if (!ValidateFormData())
-		MessageBox::Show("Please fill out the form");
+		MessageBox::Show("Please fill out the form", "Warning", MessageBoxButtons::OK);
 
 	else if (OnContinue) OnContinue();
 }
@@ -48,7 +48,7 @@ System::Void FlightDetailForm::FlightDetailForm_Load(System::Object^ sender, Sys
 
 	{
 		std::ifstream file("Destinations.txt");
-		while (file.peek() > -1)
+		while (file.peek() != EOF)
 		{
 			std::string name;
 			DataManager::FileReader::Read(file, name);
@@ -62,7 +62,7 @@ System::Void FlightDetailForm::FlightDetailForm_Load(System::Object^ sender, Sys
 
 	{
 		std::ifstream file("FlightClasses.txt");
-		while (file.peek() > -1)
+		while (file.peek() != EOF)
 		{
 			std::string name;
 			DataManager::FileReader::Read(file, name);
@@ -77,22 +77,8 @@ System::Void FlightDetailForm::FlightDetailForm_Load(System::Object^ sender, Sys
 
 System::Void FlightDetailForm::m_RoundTrip_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
 {
-	bool isFlightRoundTrip = m_RoundTrip->Checked;
-
-	m_From->Enabled = !isFlightRoundTrip;
-	m_To->Enabled = !isFlightRoundTrip;
-	m_ReturnDate->Enabled = isFlightRoundTrip;
-
-	if (isFlightRoundTrip)
-	{
-		m_From->BackColor = m_From->FlatAppearance->CheckedBackColor;
-		m_To->BackColor = m_To->FlatAppearance->CheckedBackColor;
-	}
-	else
-	{
-		m_From->BackColor = System::Drawing::Color::Gainsboro;
-		m_To->BackColor = System::Drawing::Color::Gainsboro;
-	}
+	// You can only return on round-trips
+	m_ReturnDate->Enabled = m_RoundTrip->Checked;
 }
 
 System::Void FlightDetailForm::RemoveHighlight(System::Object^ sender, System::EventArgs^ e)
