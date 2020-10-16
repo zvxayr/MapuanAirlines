@@ -1,5 +1,6 @@
 #include "FlightDetailForm.h"
 #include "FileReader.h"
+#include "Destination.h"
 #include <fstream>
 
 using namespace UserInterface;
@@ -42,22 +43,14 @@ System::Void FlightDetailForm::m_Continue_Click(System::Object^ sender, System::
 
 System::Void FlightDetailForm::FlightDetailForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
+	using namespace DataManager;
 	using namespace DataManager::FileReader;
 
 	m_ReturnDate->Enabled = false;
 
-	// TODO: This should be handled by the DataManager
+	for (const auto& dest : Destination::List())
 	{
-		std::ifstream file("Destinations.txt");
-		while (file.peek() != EOF)
-		{
-			std::string name;
-			double basePrice;
-
-			DataManager::FileReader::ReadRow(file, name, basePrice);
-
-			m_Place->Items->Add(gcnew String(name.c_str()));
-		}
+		m_Place->Items->Add(gcnew String(dest.Name.c_str()));
 	}
 
 	// TODO: This should be handled by the DataManager

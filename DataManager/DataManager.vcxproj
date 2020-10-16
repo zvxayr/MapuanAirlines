@@ -143,9 +143,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DataManager.h" />
+    <ClInclude Include="Destination.h" />
     <ClInclude Include="FileReader.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DataManager.cpp" />
+    <ClCompile Include="Destination.cpp" />
     <ClCompile Include="FileReader.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
