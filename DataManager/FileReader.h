@@ -17,14 +17,11 @@ namespace DataManager::FileReader {
 		std::stringstream ss;
 		char chr = file.get();
 
-		// end when a comma, a new line, or end of file is reached
-		while (chr != ',' && chr != '\n' && chr > -1) {
+		while (chr != ',' && chr != '\n' && chr != EOF) {
 			ss << chr; // put character to string stream
 			chr = file.get();
 		}
 
-		// pass the read string to value
-		// functions just like std::cin
 		ss >> value;
 	}
 
@@ -51,22 +48,18 @@ namespace DataManager::FileReader {
 				chr = file.get();
 			}
 
-			// skip to the next delimitter
-			while (chr != ',' && chr != '\n' && chr > -1) {
+			while (chr != ',' && chr != '\n' && chr != EOF) {
 				chr = file.get();
 			}
 		}
 		else
 		{
-			// end when a comma, a new line, or end of file is reached
-			while (chr != ',' && chr != '\n' && chr > -1) {
+			while (chr != ',' && chr != '\n' && chr != EOF) {
 				ss << chr; // put character to string stream
 				chr = file.get();
 			}
 		}
 
-		// pass the read string to value
-		// ss >> value does not play well with strings with spaces
 		value = ss.str();
 	}
 	
