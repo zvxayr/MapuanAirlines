@@ -146,11 +146,13 @@
     <ClInclude Include="DataManager.h" />
     <ClInclude Include="Destination.h" />
     <ClInclude Include="FileHandler.h" />
+    <ClInclude Include="FlightClass.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DataManager.cpp" />
     <ClCompile Include="Destination.cpp" />
     <ClCompile Include="FileHandler.cpp" />
+    <ClCompile Include="FlightClass.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -4,7 +4,7 @@
 
 using namespace DataManager;
 
-bool didChange = false;
+static bool didChange = false;
 
 Destination::Data::Data(std::string& name, double basePrice)
 	: Name(name)

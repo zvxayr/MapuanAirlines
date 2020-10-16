@@ -1,6 +1,6 @@
 #include "FlightDetailForm.h"
-#include "FileHandler.h"
 #include "Destination.h"
+#include "FlightClass.h"
 #include <fstream>
 
 using namespace UserInterface;
@@ -44,26 +44,15 @@ System::Void FlightDetailForm::m_Continue_Click(System::Object^ sender, System::
 System::Void FlightDetailForm::FlightDetailForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
 	using namespace DataManager;
-	using namespace DataManager::FileHandler;
 
 	m_ReturnDate->Enabled = false;
 
 	for (const auto& dest : Destination::List())
 		m_Place->Items->Add(gcnew String(dest.Name.c_str()));
 
-	// TODO: This should be handled by the DataManager
-	{
-		std::ifstream file("FlightClasses.txt");
-		while (file.peek() != EOF)
-		{
-			std::string name;
-			double multiplier;
+	for (const auto& fclass : FlightClass::List())
+		m_FlightClass->Items->Add(gcnew String(fclass.Name.c_str()));
 
-			ReadRow(file, name, multiplier);
-
-			m_FlightClass->Items->Add(gcnew String(name.c_str()));
-		}
-	}
 }
 
 System::Void FlightDetailForm::m_RoundTrip_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
