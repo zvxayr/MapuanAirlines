@@ -64,12 +64,6 @@ bool MainForm::Exit()
 		MessageBoxButtons::YesNo, MessageBoxIcon::Question
 	);
 
-	if (response == System::Windows::Forms::DialogResult::Yes)
-	{
-		// TODO: clean up resources here
-		return true;
-	}
-
 	m_NavigationBar->ClearActiveButton();
-	return false;
+	return response == System::Windows::Forms::DialogResult::Yes;
 }
