@@ -24,9 +24,6 @@
     <ClInclude Include="TitleBar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="NavigationBar.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp">
@@ -36,9 +33,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TitleBar.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="NavigationBar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

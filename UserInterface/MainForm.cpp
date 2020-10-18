@@ -21,12 +21,6 @@ System::Void MainForm::MainForm_Load(System::Object^ sender, System::EventArgs^ 
 	m_PaymentHistory = gcnew PaymentHistoryForm();
 	m_FlightStatus = gcnew FlightStatusForm();
 
-	// Attach navigation bar callbacks
-	m_NavigationBar->OnBuyTickets = gcnew System::Action(this, &MainForm::BuyTickets);
-	m_NavigationBar->OnCancelFlight = gcnew System::Action(this, &MainForm::CancelFlight);
-	m_NavigationBar->OnPaymentHistory = gcnew System::Action(this, &MainForm::PaymentHistory);
-	m_NavigationBar->OnFlightStatus = gcnew System::Action(this, &MainForm::FlightStatus);
-
 	// attach title bar callbacks
 	m_TitleBar->OnExit = gcnew System::Func<bool>(this, &MainForm::Exit);
 }
@@ -37,23 +31,48 @@ void MainForm::LoadControl(System::Windows::Forms::UserControl^ control)
 	m_ControlContainer->Controls->Add(control);
 }
 
-void MainForm::BuyTickets()
+void MainForm::SetActiveButton(System::Windows::Forms::Button^ button) {
+	if (m_ActiveButton)
+		m_ActiveButton->BackColor = System::Drawing::Color::White;
+
+	button->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(253)),
+		static_cast<System::Int32>(static_cast<System::Byte>(215)), static_cast<System::Int32>(static_cast<System::Byte>(75)));
+
+	m_ActiveButton = button;
+}
+
+void MainForm::ClearActiveButton() {
+	if (m_ActiveButton)
+		m_ActiveButton->BackColor = System::Drawing::Color::White;
+
+	m_ActiveButton = nullptr;
+}
+
+System::Void MainForm::m_BuyTicketsButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
+	if (m_BuyTicketsButton == m_ActiveButton) return;
+	SetActiveButton(m_BuyTicketsButton);
 	LoadControl(m_BuyTickets);
 }
 
-void MainForm::CancelFlight()
+System::Void MainForm::m_CancelFlightButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
+	if (m_CancelFlightButton == m_ActiveButton) return;
+	SetActiveButton(m_CancelFlightButton);
 	LoadControl(m_CancelFlight);
 }
 
-void MainForm::PaymentHistory()
+System::Void MainForm::m_PaymentHistoryButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
+	if (m_PaymentHistoryButton == m_ActiveButton) return;
+	SetActiveButton(m_PaymentHistoryButton);
 	LoadControl(m_PaymentHistory);
 }
 
-void MainForm::FlightStatus()
+System::Void MainForm::m_FlightStatusButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
+	if (m_FlightStatusButton == m_ActiveButton) return;
+	SetActiveButton(m_FlightStatusButton);
 	LoadControl(m_FlightStatus);
 }
 
@@ -64,6 +83,9 @@ bool MainForm::Exit()
 		MessageBoxButtons::YesNo, MessageBoxIcon::Question
 	);
 
-	m_NavigationBar->ClearActiveButton();
-	return response == System::Windows::Forms::DialogResult::Yes;
+	if (response == System::Windows::Forms::DialogResult::Yes)
+		return true;
+
+	ClearActiveButton();
+	return false;
 }
