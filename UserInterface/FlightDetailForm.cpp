@@ -16,7 +16,7 @@ FlightDetailForm::~FlightDetailForm()
 		delete components;
 }
 
-void HighLight(System::Windows::Forms::Control^ control)
+void FlightDetailForm::HighLight(System::Windows::Forms::Control^ control)
 {
 	control->BackColor = System::Drawing::Color::OrangeRed;
 	control->ForeColor = System::Drawing::Color::Gainsboro;

@@ -513,6 +513,7 @@ namespace UserInterface {
         System::Action^ OnContinue;
 
     private:
+        void HighLight(System::Windows::Forms::Control^ control);
         bool ValidateFormData();
 
     private: System::Void m_Continue_Click(System::Object^ sender, System::EventArgs^ e);
