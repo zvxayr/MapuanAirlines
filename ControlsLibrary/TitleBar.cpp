@@ -31,6 +31,7 @@ System::Void TitleBar::TitleBar_MouseDown(System::Object^ sender, System::Window
 
 System::Void TitleBar::m_CloseButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
+	// exit when handler returned true or the handler is not defined
 	if (!OnExit || OnExit())
 		Application::Exit();
 }

@@ -33,7 +33,6 @@ System::Void MainForm::MainForm_Load(System::Object^ sender, System::EventArgs^ 
 
 void MainForm::LoadControl(System::Windows::Forms::UserControl^ control)
 {
-	// replace control in container
 	m_ControlContainer->Controls->Clear();
 	m_ControlContainer->Controls->Add(control);
 }

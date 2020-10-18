@@ -13,12 +13,12 @@ void FileHandler::Read(std::ifstream& file, std::string& value)
 		// ignore the quotation mark
 		chr = file.get();
 
-		// read until the closing quotations
 		while (chr != '"') {
-			ss << chr; // put character to string stream
+			ss << chr;
 			chr = file.get();
 		}
 
+		// skip to the next delimiter
 		while (chr != ',' && chr != '\n' && chr != EOF) {
 			chr = file.get();
 		}
@@ -26,7 +26,7 @@ void FileHandler::Read(std::ifstream& file, std::string& value)
 	else
 	{
 		while (chr != ',' && chr != '\n' && chr != EOF) {
-			ss << chr; // put character to string stream
+			ss << chr;
 			chr = file.get();
 		}
 	}
