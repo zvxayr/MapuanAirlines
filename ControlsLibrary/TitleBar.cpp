@@ -14,6 +14,11 @@ TitleBar::~TitleBar()
 		delete components;
 }
 
+System::Void TitleBar::TitleBar_Load(System::Object^ sender, System::EventArgs^ e)
+{
+	m_Title->Text = this->ParentForm->Text;
+}
+
 System::Void TitleBar::TitleBar_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e)
 {
 	if (e->Button == System::Windows::Forms::MouseButtons::Left)

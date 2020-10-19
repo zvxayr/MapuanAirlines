@@ -55,9 +55,9 @@ namespace ControlsLibrary {
 			this->m_Title->MinimumSize = System::Drawing::Size(0, 30);
 			this->m_Title->Name = L"m_Title";
 			this->m_Title->Padding = System::Windows::Forms::Padding(10, 0, 10, 0);
-			this->m_Title->Size = System::Drawing::Size(111, 30);
+			this->m_Title->Size = System::Drawing::Size(49, 30);
 			this->m_Title->TabIndex = 6;
-			this->m_Title->Text = L"Mapuan Airlines";
+			this->m_Title->Text = L"Title";
 			this->m_Title->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
 			// m_CloseButton
@@ -70,7 +70,7 @@ namespace ControlsLibrary {
 			this->m_CloseButton->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Red;
 			this->m_CloseButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->m_CloseButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F));
-			this->m_CloseButton->Location = System::Drawing::Point(808, 0);
+			this->m_CloseButton->Location = System::Drawing::Point(89, 0);
 			this->m_CloseButton->MinimumSize = System::Drawing::Size(40, 30);
 			this->m_CloseButton->Name = L"m_CloseButton";
 			this->m_CloseButton->Size = System::Drawing::Size(40, 30);
@@ -91,7 +91,7 @@ namespace ControlsLibrary {
 			this->m_MinimizeButton->FlatAppearance->MouseOverBackColor = System::Drawing::Color::DimGray;
 			this->m_MinimizeButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->m_MinimizeButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F));
-			this->m_MinimizeButton->Location = System::Drawing::Point(768, 0);
+			this->m_MinimizeButton->Location = System::Drawing::Point(49, 0);
 			this->m_MinimizeButton->Margin = System::Windows::Forms::Padding(0);
 			this->m_MinimizeButton->MinimumSize = System::Drawing::Size(40, 30);
 			this->m_MinimizeButton->Name = L"m_MinimizeButton";
@@ -118,9 +118,10 @@ namespace ControlsLibrary {
 				static_cast<System::Int32>(static_cast<System::Byte>(1)));
 			this->Margin = System::Windows::Forms::Padding(0);
 			this->MaximumSize = System::Drawing::Size(0, 30);
-			this->MinimumSize = System::Drawing::Size(848, 30);
+			this->MinimumSize = System::Drawing::Size(0, 30);
 			this->Name = L"TitleBar";
-			this->Size = System::Drawing::Size(848, 30);
+			this->Size = System::Drawing::Size(129, 30);
+			this->Load += gcnew System::EventHandler(this, &TitleBar::TitleBar_Load);
 			this->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &TitleBar::TitleBar_MouseDown);
 			this->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &TitleBar::TitleBar_MouseMove);
 			this->ResumeLayout(false);
@@ -141,5 +142,6 @@ namespace ControlsLibrary {
 	private: System::Void m_CloseButton_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void m_Button_MouseEnter(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void m_Button_MouseLeave(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void TitleBar_Load(System::Object^ sender, System::EventArgs^ e);
 };
 }
