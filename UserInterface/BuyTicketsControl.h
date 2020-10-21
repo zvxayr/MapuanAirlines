@@ -2,6 +2,7 @@
 #include "FlightDetailForm.h"
 #include "PassengerDetailForm.h"
 #include "AdditionalServicesForm.h"
+#include "SeatSelectionForm.h"
 
 using namespace System;
 using namespace System::ComponentModel;
@@ -71,13 +72,16 @@ namespace UserInterface {
 		FlightDetailForm^ m_FlightDetailForm;
 		PassengerDetailForm^ m_PassengerDetailForm;
 		AdditionalServicesForm^ m_AdditionalServicesForm;
+		SeatSelectionForm^ m_SeatSelectionForm;
 
 	private:
 		void MountForm(System::Windows::Forms::UserControl^ form);
 		void FlightDetails_Entered();
 		void PassengerDetails_Entered();
 		void AdditionalServices_Selected();
+		void Seats_Selected();
 	
-	private: System::Void BuyTicketsControl_Load(System::Object^ sender, System::EventArgs^ e);
+	private:
+		System::Void BuyTicketsControl_Load(System::Object^ sender, System::EventArgs^ e);
 	};
 }

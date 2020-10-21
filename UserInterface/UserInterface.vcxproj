@@ -143,6 +143,7 @@
     <ClCompile Include="MainForm.cpp" />
     <ClCompile Include="PassengerDetailForm.cpp" />
     <ClCompile Include="PaymentHistoryForm.cpp" />
+    <ClCompile Include="SeatControl.cpp" />
     <ClCompile Include="SeatSelectionForm.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -177,6 +178,9 @@
     <ClInclude Include="PaymentHistoryForm.h">
       <FileType>CppControl</FileType>
     </ClInclude>
+    <ClInclude Include="SeatControl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="SeatSelectionForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -205,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PaymentHistoryForm.resx">
       <DependentUpon>PaymentHistoryForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeatControl.resx">
+      <DependentUpon>SeatControl.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SeatSelectionForm.resx">
       <DependentUpon>SeatSelectionForm.h</DependentUpon>

@@ -1,4 +1,5 @@
 #include "BuyTicketsControl.h"
+#include "SeatSelectionForm.h"
 
 using namespace UserInterface;
 
@@ -31,7 +32,15 @@ void BuyTicketsControl::PassengerDetails_Entered()
 
 void BuyTicketsControl::AdditionalServices_Selected()
 {
+	ParentForm->Hide();
+	m_SeatSelectionForm->Show();
+}
+
+void BuyTicketsControl::Seats_Selected()
+{
+	m_SeatSelectionForm->Hide();
 	MountForm(m_FlightDetailForm);
+	ParentForm->Show();
 }
 
 System::Void BuyTicketsControl::BuyTicketsControl_Load(System::Object^ sender, System::EventArgs^ e)
@@ -40,11 +49,13 @@ System::Void BuyTicketsControl::BuyTicketsControl_Load(System::Object^ sender, S
 	m_FlightDetailForm = gcnew FlightDetailForm();
 	m_PassengerDetailForm = gcnew PassengerDetailForm();
 	m_AdditionalServicesForm = gcnew AdditionalServicesForm();
+	m_SeatSelectionForm = gcnew SeatSelectionForm();
 
 	// attach handlers
 	m_FlightDetailForm->OnContinue = gcnew System::Action(this, &BuyTicketsControl::FlightDetails_Entered);
 	m_PassengerDetailForm->OnContinue = gcnew System::Action(this, &BuyTicketsControl::PassengerDetails_Entered);
 	m_AdditionalServicesForm->OnContinue = gcnew System::Action(this, &BuyTicketsControl::AdditionalServices_Selected);
+	m_SeatSelectionForm->OnContinue = gcnew System::Action(this, &BuyTicketsControl::Seats_Selected);
 
 	// mount initial form
 	MountForm(m_FlightDetailForm);

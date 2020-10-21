@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 namespace UserInterface {
 
@@ -21,16 +21,10 @@ namespace UserInterface {
 		~SeatSelectionForm();
 
 	private: ControlsLibrary::TitleBar^ m_TitleBar;
-	private: System::Windows::Forms::Panel^ m_Container;
+    private: System::Windows::Forms::Panel^ panel1;
+    private: System::Windows::Forms::Panel^ m_Container;
     private: System::Windows::Forms::TableLayoutPanel^ m_SeatsTable;
-
-
-
-
-
-
-
-
+    private: System::Windows::Forms::Button^ m_Continue;
 
 
 
@@ -48,7 +42,6 @@ namespace UserInterface {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-            System::Windows::Forms::Panel^ m_BottomMargin;
             System::Windows::Forms::Label^ m_lbl_18;
             System::Windows::Forms::Label^ m_lbl_17;
             System::Windows::Forms::Label^ m_lbl_19;
@@ -75,10 +68,12 @@ namespace UserInterface {
             System::Windows::Forms::Label^ m_lbl_E;
             System::Windows::Forms::Label^ m_lbl_B;
             System::Windows::Forms::Label^ m_lbl_A;
+            System::Windows::Forms::Panel^ m_BottomMargin;
             this->m_TitleBar = (gcnew ControlsLibrary::TitleBar());
+            this->panel1 = (gcnew System::Windows::Forms::Panel());
             this->m_Container = (gcnew System::Windows::Forms::Panel());
             this->m_SeatsTable = (gcnew System::Windows::Forms::TableLayoutPanel());
-            m_BottomMargin = (gcnew System::Windows::Forms::Panel());
+            this->m_Continue = (gcnew System::Windows::Forms::Button());
             m_lbl_18 = (gcnew System::Windows::Forms::Label());
             m_lbl_17 = (gcnew System::Windows::Forms::Label());
             m_lbl_19 = (gcnew System::Windows::Forms::Label());
@@ -105,17 +100,11 @@ namespace UserInterface {
             m_lbl_E = (gcnew System::Windows::Forms::Label());
             m_lbl_B = (gcnew System::Windows::Forms::Label());
             m_lbl_A = (gcnew System::Windows::Forms::Label());
+            m_BottomMargin = (gcnew System::Windows::Forms::Panel());
+            this->panel1->SuspendLayout();
             this->m_Container->SuspendLayout();
             this->m_SeatsTable->SuspendLayout();
             this->SuspendLayout();
-            // 
-            // m_BottomMargin
-            // 
-            m_BottomMargin->Dock = System::Windows::Forms::DockStyle::Bottom;
-            m_BottomMargin->Location = System::Drawing::Point(34, 1050);
-            m_BottomMargin->Name = L"m_BottomMargin";
-            m_BottomMargin->Size = System::Drawing::Size(395, 34);
-            m_BottomMargin->TabIndex = 2;
             // 
             // m_TitleBar
             // 
@@ -134,12 +123,20 @@ namespace UserInterface {
             this->m_TitleBar->Size = System::Drawing::Size(480, 30);
             this->m_TitleBar->TabIndex = 0;
             // 
+            // panel1
+            // 
+            this->panel1->Controls->Add(this->m_Continue);
+            this->panel1->Dock = System::Windows::Forms::DockStyle::Bottom;
+            this->panel1->Location = System::Drawing::Point(0, 580);
+            this->panel1->Name = L"panel1";
+            this->panel1->Size = System::Drawing::Size(480, 60);
+            this->panel1->TabIndex = 6;
+            // 
             // m_Container
             // 
             this->m_Container->AutoScroll = true;
             this->m_Container->AutoScrollMinSize = System::Drawing::Size(12, 0);
             this->m_Container->AutoSize = true;
-            this->m_Container->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
             this->m_Container->Controls->Add(this->m_SeatsTable);
             this->m_Container->Controls->Add(m_BottomMargin);
             this->m_Container->Dock = System::Windows::Forms::DockStyle::Fill;
@@ -147,8 +144,8 @@ namespace UserInterface {
             this->m_Container->Margin = System::Windows::Forms::Padding(0);
             this->m_Container->Name = L"m_Container";
             this->m_Container->Padding = System::Windows::Forms::Padding(34);
-            this->m_Container->Size = System::Drawing::Size(480, 610);
-            this->m_Container->TabIndex = 1;
+            this->m_Container->Size = System::Drawing::Size(480, 550);
+            this->m_Container->TabIndex = 7;
             // 
             // m_SeatsTable
             // 
@@ -581,6 +578,38 @@ namespace UserInterface {
             m_lbl_A->Text = L"A";
             m_lbl_A->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
             // 
+            // m_BottomMargin
+            // 
+            m_BottomMargin->Dock = System::Windows::Forms::DockStyle::Bottom;
+            m_BottomMargin->Location = System::Drawing::Point(34, 1050);
+            m_BottomMargin->Name = L"m_BottomMargin";
+            m_BottomMargin->Size = System::Drawing::Size(395, 34);
+            m_BottomMargin->TabIndex = 2;
+            // 
+            // m_Continue
+            // 
+            this->m_Continue->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
+            this->m_Continue->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(253)), static_cast<System::Int32>(static_cast<System::Byte>(215)),
+                static_cast<System::Int32>(static_cast<System::Byte>(75)));
+            this->m_Continue->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(253)),
+                static_cast<System::Int32>(static_cast<System::Byte>(215)), static_cast<System::Int32>(static_cast<System::Byte>(75)));
+            this->m_Continue->FlatAppearance->BorderSize = 2;
+            this->m_Continue->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(254)),
+                static_cast<System::Int32>(static_cast<System::Byte>(232)), static_cast<System::Int32>(static_cast<System::Byte>(154)));
+            this->m_Continue->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(254)),
+                static_cast<System::Int32>(static_cast<System::Byte>(227)), static_cast<System::Int32>(static_cast<System::Byte>(129)));
+            this->m_Continue->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->m_Continue->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->m_Continue->Location = System::Drawing::Point(168, 13);
+            this->m_Continue->Margin = System::Windows::Forms::Padding(168, 13, 168, 13);
+            this->m_Continue->Name = L"m_Continue";
+            this->m_Continue->Size = System::Drawing::Size(144, 34);
+            this->m_Continue->TabIndex = 9;
+            this->m_Continue->Text = L"Continue →";
+            this->m_Continue->UseVisualStyleBackColor = false;
+            this->m_Continue->Click += gcnew System::EventHandler(this, &SeatSelectionForm::m_Continue_Click);
+            // 
             // SeatSelectionForm
             // 
             this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -588,6 +617,7 @@ namespace UserInterface {
             this->BackColor = System::Drawing::SystemColors::Control;
             this->ClientSize = System::Drawing::Size(480, 640);
             this->Controls->Add(this->m_Container);
+            this->Controls->Add(this->panel1);
             this->Controls->Add(this->m_TitleBar);
             this->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
                 static_cast<System::Int32>(static_cast<System::Byte>(1)));
@@ -595,6 +625,8 @@ namespace UserInterface {
             this->Name = L"SeatSelectionForm";
             this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
             this->Text = L"Seat Selection";
+            this->Load += gcnew System::EventHandler(this, &SeatSelectionForm::SeatSelectionForm_Load);
+            this->panel1->ResumeLayout(false);
             this->m_Container->ResumeLayout(false);
             this->m_Container->PerformLayout();
             this->m_SeatsTable->ResumeLayout(false);
@@ -604,5 +636,11 @@ namespace UserInterface {
 
         }
 #pragma endregion
-	};
+    public:
+        System::Action^ OnContinue;
+
+    private:
+        System::Void SeatSelectionForm_Load(System::Object^ sender, System::EventArgs^ e);
+        System::Void m_Continue_Click(System::Object^ sender, System::EventArgs^ e);
+};
 }
