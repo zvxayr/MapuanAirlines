@@ -56,7 +56,7 @@ namespace DataManager::FileHandler {
 	void Write(std::ofstream& file, const float& arg);
 
 	template <typename T, typename... Args>
-	void WriteRow(std::ofstream& file, T& arg, const Args&... args)
+	void WriteRow(std::ofstream& file, const T& arg, const Args&... args)
 	{
 		Write(file, arg);
 

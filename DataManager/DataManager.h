@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 
 namespace DataManager {
 
@@ -12,4 +13,6 @@ namespace DataManager {
 	/// </summary>
 	void save();
 
+	System::String^ ConvertString(const std::string& str);
+	std::string ConvertString(System::String^ str);
 }

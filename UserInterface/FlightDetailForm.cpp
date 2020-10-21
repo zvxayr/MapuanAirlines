@@ -1,6 +1,7 @@
 #include "FlightDetailForm.h"
 #include "Destination.h"
 #include "FlightClass.h"
+#include "DataManager.h"
 
 using namespace UserInterface;
 
@@ -59,10 +60,10 @@ System::Void FlightDetailForm::FlightDetailForm_Load(System::Object^ sender, Sys
 	m_ReturnDate->Enabled = false;
 
 	for (const auto& dest : Destination::List())
-		m_Place->Items->Add(gcnew String(dest.Name.c_str()));
+		m_Place->Items->Add(ConvertString(dest.Name));
 
 	for (const auto& fclass : FlightClass::List())
-		m_FlightClass->Items->Add(gcnew String(fclass.Name.c_str()));
+		m_FlightClass->Items->Add(ConvertString(fclass.Name));
 
 }
 
