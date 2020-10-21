@@ -1,6 +1,9 @@
 #include "BuyTicketsControl.h"
+#include "DataManager.h"
+#include "FlightClass.h"
 
 using namespace UserInterface;
+using namespace DataManager;
 
 BuyTicketsControl::BuyTicketsControl()
 {

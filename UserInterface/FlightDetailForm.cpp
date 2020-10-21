@@ -1,6 +1,9 @@
 #include "FlightDetailForm.h"
 #include "Destination.h"
 #include "FlightClass.h"
+#include "FileHandler.h"
+#include <fstream>
+#include <string>
 
 using namespace UserInterface;
 
@@ -37,7 +40,7 @@ System::Void FlightDetailForm::m_Continue_Click(System::Object^ sender, System::
 	if (!ValidateFormData())
 		MessageBox::Show("Please fill out the form", "Warning", MessageBoxButtons::OK);
 
-	else if (OnContinue) OnContinue();
+	else if (OnContinue)OnContinue();
 }
 
 System::Void FlightDetailForm::FlightDetailForm_Load(System::Object^ sender, System::EventArgs^ e)
