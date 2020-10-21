@@ -32,15 +32,18 @@ void BuyTicketsControl::PassengerDetails_Entered()
 
 void BuyTicketsControl::AdditionalServices_Selected()
 {
-	ParentForm->Hide();
 	m_SeatSelectionForm->Show();
+	ParentForm->Hide();
 }
 
 void BuyTicketsControl::Seats_Selected()
 {
 	m_SeatSelectionForm->Hide();
-	MountForm(m_FlightDetailForm);
 	ParentForm->Show();
+
+	MessageBox::Show("Tickets Successfully Created", "Ok", MessageBoxButtons::OK);
+
+	MountForm(m_FlightDetailForm);
 }
 
 System::Void BuyTicketsControl::BuyTicketsControl_Load(System::Object^ sender, System::EventArgs^ e)
