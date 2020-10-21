@@ -1,9 +1,6 @@
 #include "FlightDetailForm.h"
 #include "Destination.h"
 #include "FlightClass.h"
-#include "FileHandler.h"
-#include <fstream>
-#include <string>
 
 using namespace UserInterface;
 
@@ -35,12 +32,17 @@ bool FlightDetailForm::ValidateFormData()
 	return m_FlightClass->SelectedIndex > -1 && m_Place->SelectedIndex > -1;
 }
 
+FlightDetailForm::Data^ FlightDetailForm::getData()
+{
+	return gcnew Data;
+}
+
 System::Void FlightDetailForm::m_Continue_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	if (!ValidateFormData())
 		MessageBox::Show("Please fill out the form", "Warning", MessageBoxButtons::OK);
 
-	else if (OnContinue)OnContinue();
+	else if (OnContinue) OnContinue(getData());
 }
 
 System::Void FlightDetailForm::FlightDetailForm_Load(System::Object^ sender, System::EventArgs^ e)

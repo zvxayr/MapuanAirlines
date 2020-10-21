@@ -22,7 +22,7 @@ void BuyTicketsControl::MountForm(System::Windows::Forms::UserControl^ form)
 	m_FormContainer->Controls->Add(form);
 }
 
-void BuyTicketsControl::FlightDetails_Entered()
+void BuyTicketsControl::FlightDetails_Entered(FlightDetailForm::Data^ flightDetails)
 {
 	MountForm(m_PassengerDetailForm);
 }
@@ -56,7 +56,7 @@ System::Void BuyTicketsControl::BuyTicketsControl_Load(System::Object^ sender, S
 	m_SeatSelectionForm = gcnew SeatSelectionForm();
 
 	// attach handlers
-	m_FlightDetailForm->OnContinue = gcnew System::Action(this, &BuyTicketsControl::FlightDetails_Entered);
+	m_FlightDetailForm->OnContinue = gcnew System::Action<FlightDetailForm::Data^>(this, &BuyTicketsControl::FlightDetails_Entered);
 	m_PassengerDetailForm->OnContinue = gcnew System::Action(this, &BuyTicketsControl::PassengerDetails_Entered);
 	m_AdditionalServicesForm->OnContinue = gcnew System::Action(this, &BuyTicketsControl::AdditionalServices_Selected);
 	m_SeatSelectionForm->OnContinue = gcnew System::Action(this, &BuyTicketsControl::Seats_Selected);
