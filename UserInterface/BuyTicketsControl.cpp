@@ -65,15 +65,15 @@ void BuyTicketsControl::AdditionalServices_Selected(AdditionalServicesForm::Data
 	file >> TotalBill >> TotalPassengers;
 
 	//TODO:
-	if (additionalServices->Insurance == true)
+	if (additionalServices->Insurance)
 	{
 		TotalBill = TotalBill;
 	}
-	if (additionalServices->Food == true)
+	if (additionalServices->Food)
 	{
 
 	}
-	if (additionalServices->Seats == true)
+	if (additionalServices->Seats)
 	{
 
 	}
