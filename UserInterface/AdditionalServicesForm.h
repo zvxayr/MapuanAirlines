@@ -193,7 +193,16 @@ namespace UserInterface {
 #pragma endregion
 
 	public:
-		System::Action^ OnContinue;
+		ref class Data
+		{
+
+		};
+
+	private:
+		Data^ getData();
+
+	public:
+		System::Action<Data^>^ OnContinue;
 
 	private: System::Void m_Continue_Click(System::Object^ sender, System::EventArgs^ e);
 };
