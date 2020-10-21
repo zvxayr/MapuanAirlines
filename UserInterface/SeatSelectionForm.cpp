@@ -1,5 +1,4 @@
 #include "SeatSelectionForm.h"
-#include "SeatControl.h"
 
 using namespace UserInterface;
 

@@ -1,7 +1,6 @@
 #include "FlightDetailForm.h"
 #include "Destination.h"
 #include "FlightClass.h"
-#include <fstream>
 
 using namespace UserInterface;
 
