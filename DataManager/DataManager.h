@@ -13,6 +13,4 @@ namespace DataManager {
 	/// </summary>
 	void save();
 
-	System::String^ ConvertString(const std::string& str);
-	std::string ConvertString(System::String^ str);
 }

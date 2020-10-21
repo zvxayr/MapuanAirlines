@@ -60,10 +60,10 @@ System::Void FlightDetailForm::FlightDetailForm_Load(System::Object^ sender, Sys
 	m_ReturnDate->Enabled = false;
 
 	for (const auto& dest : Destination::List())
-		m_Place->Items->Add(ConvertString(dest.Name));
+		m_Place->Items->Add(gcnew String(dest.Name.c_str()));
 
 	for (const auto& fclass : FlightClass::List())
-		m_FlightClass->Items->Add(ConvertString(fclass.Name));
+		m_FlightClass->Items->Add(gcnew String(fclass.Name.c_str()));
 
 }
 
