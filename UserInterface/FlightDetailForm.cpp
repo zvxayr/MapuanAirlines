@@ -1,6 +1,7 @@
 #include "FlightDetailForm.h"
 #include "Destination.h"
 #include "FlightClass.h"
+#include "DataManager.h"
 
 using namespace UserInterface;
 
@@ -37,7 +38,7 @@ FlightDetailForm::Data^ FlightDetailForm::getData()
 	Data^ data = gcnew Data;
 	data->IsOneWay = m_OneWay->Checked;
 	data->Destination = m_Place->SelectedIndex;
-	data->AdultCount = int::Parse(m_AdultCount->Value.ToString());
+	data->AdultCount = int::Parse(m_AdultCount->Text);
 	data->ChildCount = int::Parse(m_ChildCount->Text);;
 	data->InfantCount = int::Parse(m_InfantCount->Text);;
 	data->FlightClass = m_FlightClass->SelectedIndex;
@@ -59,10 +60,10 @@ System::Void FlightDetailForm::FlightDetailForm_Load(System::Object^ sender, Sys
 	m_ReturnDate->Enabled = false;
 
 	for (const auto& dest : Destination::List())
-		m_Place->Items->Add(gcnew String(dest.Name.c_str()));
+		m_Place->Items->Add(ConvertString(dest.Name));
 
 	for (const auto& fclass : FlightClass::List())
-		m_FlightClass->Items->Add(gcnew String(fclass.Name.c_str()));
+		m_FlightClass->Items->Add(ConvertString(fclass.Name));
 
 }
 
