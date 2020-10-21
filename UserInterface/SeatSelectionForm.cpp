@@ -23,7 +23,12 @@ System::Void SeatSelectionForm::SeatSelectionForm_Load(System::Object^ sender, S
     }
 }
 
+SeatSelectionForm::Data^ SeatSelectionForm::getData()
+{
+    return gcnew Data;
+}
+
 System::Void SeatSelectionForm::m_Continue_Click(System::Object^ sender, System::EventArgs^ e)
 {
-    if (OnContinue) OnContinue();
+    if (OnContinue) OnContinue(getData());
 }

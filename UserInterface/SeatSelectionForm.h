@@ -27,9 +27,6 @@ namespace UserInterface {
     private: System::Windows::Forms::TableLayoutPanel^ m_SeatsTable;
     private: System::Windows::Forms::Button^ m_Continue;
 
-
-
-
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -641,8 +638,18 @@ namespace UserInterface {
 
         }
 #pragma endregion
+
     public:
-        System::Action^ OnContinue;
+        ref class Data
+        {
+
+        };
+
+    private:
+        Data^ getData();
+
+    public:
+        System::Action<SeatSelectionForm::Data^>^ OnContinue;
 
     private:
         System::Void SeatSelectionForm_Load(System::Object^ sender, System::EventArgs^ e);

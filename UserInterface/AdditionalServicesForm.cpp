@@ -24,5 +24,5 @@ AdditionalServicesForm::Data^ AdditionalServicesForm::getData()
 
 System::Void AdditionalServicesForm::m_Continue_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	if (OnContinue) OnContinue();
+	if (OnContinue) OnContinue(getData());
 }

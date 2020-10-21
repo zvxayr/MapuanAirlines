@@ -2,7 +2,6 @@
 #include "DataManager.h"
 #include "FlightClass.h"
 #include "Destination.h"
-#include "AdditionalServicesForm.h"
 #include <fstream>
 #include <iostream>
 
@@ -52,29 +51,19 @@ void BuyTicketsControl::FlightDetails_Entered(FlightDetailForm::Data^ flightDeta
 	MountForm(m_PassengerDetailForm);
 }
 
-void BuyTicketsControl::PassengerDetails_Entered()
+void BuyTicketsControl::PassengerDetails_Entered(PassengerDetailForm::Data^ passengerDetails)
 {
 	MountForm(m_AdditionalServicesForm);
 }
 
-void BuyTicketsControl::AdditionalServices_Selected(AdditionalServicesForm::Data^ AdditionalServices)
+void BuyTicketsControl::AdditionalServices_Selected(AdditionalServicesForm::Data^ additionalServices)
 {
-	double TotalBill;
-	int TotalPassengers;
-	fstream file("Total.txt", ios::in);
-	file >> TotalBill >> TotalPassengers;
-
-	if (AdditionalServices->Insurance == true)
-	{
-		TotalBill = TotalBill + 5000;
-	}
+	if()
 	m_SeatSelectionForm->Show();
-
-
 	ParentForm->Hide();
 }
 
-void BuyTicketsControl::Seats_Selected()
+void BuyTicketsControl::Seats_Selected(SeatSelectionForm::Data^ selectedSeats)
 {
 	MessageBox::Show("Tickets Successfully Created", "Ok", MessageBoxButtons::OK);
 	m_SeatSelectionForm->Hide();
@@ -93,9 +82,9 @@ System::Void BuyTicketsControl::BuyTicketsControl_Load(System::Object^ sender, S
 
 	// attach handlers
 	m_FlightDetailForm->OnContinue = gcnew System::Action<FlightDetailForm::Data^>(this, &BuyTicketsControl::FlightDetails_Entered);
-	m_PassengerDetailForm->OnContinue = gcnew System::Action(this, &BuyTicketsControl::PassengerDetails_Entered);
+	m_PassengerDetailForm->OnContinue = gcnew System::Action<PassengerDetailForm::Data^>(this, &BuyTicketsControl::PassengerDetails_Entered);
 	m_AdditionalServicesForm->OnContinue = gcnew System::Action<AdditionalServicesForm::Data^>(this, &BuyTicketsControl::AdditionalServices_Selected);
-	m_SeatSelectionForm->OnContinue = gcnew System::Action(this, &BuyTicketsControl::Seats_Selected);
+	m_SeatSelectionForm->OnContinue = gcnew System::Action<SeatSelectionForm::Data^>(this, &BuyTicketsControl::Seats_Selected);
 
 	// mount initial form
 	MountForm(m_FlightDetailForm);

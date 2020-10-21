@@ -205,7 +205,7 @@ namespace UserInterface {
 		Data^ getData();
 
 	public:
-		System::Action^ OnContinue;
+		System::Action<Data^>^ OnContinue;
 
 	private: System::Void m_Continue_Click(System::Object^ sender, System::EventArgs^ e);
 };
