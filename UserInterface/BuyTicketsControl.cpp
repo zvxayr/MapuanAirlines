@@ -38,11 +38,10 @@ void BuyTicketsControl::AdditionalServices_Selected()
 
 void BuyTicketsControl::Seats_Selected()
 {
-	m_SeatSelectionForm->Hide();
-	ParentForm->Show();
-
 	MessageBox::Show("Tickets Successfully Created", "Ok", MessageBoxButtons::OK);
+	m_SeatSelectionForm->Hide();
 
+	ParentForm->Show();
 	MountForm(m_FlightDetailForm);
 }
 
