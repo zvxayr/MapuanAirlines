@@ -512,7 +512,13 @@ namespace UserInterface {
     public:
         ref class Data
         {
-
+        public:
+            bool IsOneWay;
+            int Destination;
+            int AdultCount;
+            int ChildCount;
+            int InfantCount;
+            int FlightClass;
         };
 
     private:

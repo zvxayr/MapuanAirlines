@@ -193,6 +193,18 @@ namespace UserInterface {
 #pragma endregion
 
 	public:
+		ref class Data
+		{
+		public:
+			bool Insurance;
+			bool Food;
+			bool Seats;
+		};
+
+	private:
+		Data^ getData();
+
+	public:
 		System::Action^ OnContinue;
 
 	private: System::Void m_Continue_Click(System::Object^ sender, System::EventArgs^ e);

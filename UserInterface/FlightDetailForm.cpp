@@ -34,7 +34,14 @@ bool FlightDetailForm::ValidateFormData()
 
 FlightDetailForm::Data^ FlightDetailForm::getData()
 {
-	return gcnew Data;
+	Data^ data = gcnew Data;
+	data->IsOneWay = m_OneWay->Checked;
+	data->Destination = m_Place->SelectedIndex;
+	data->AdultCount = int::Parse(m_AdultCount->Value.ToString());
+	data->ChildCount = int::Parse(m_ChildCount->Text);;
+	data->InfantCount = int::Parse(m_InfantCount->Text);;
+	data->FlightClass = m_FlightClass->SelectedIndex;
+	return data;
 }
 
 System::Void FlightDetailForm::m_Continue_Click(System::Object^ sender, System::EventArgs^ e)

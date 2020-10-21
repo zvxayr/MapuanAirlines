@@ -1,7 +1,11 @@
 #include "BuyTicketsControl.h"
 #include "DataManager.h"
 #include "FlightClass.h"
+#include "Destination.h"
+#include <fstream>
+#include <iostream>
 
+using namespace std;
 using namespace UserInterface;
 using namespace DataManager;
 
@@ -24,6 +28,26 @@ void BuyTicketsControl::MountForm(System::Windows::Forms::UserControl^ form)
 
 void BuyTicketsControl::FlightDetails_Entered(FlightDetailForm::Data^ flightDetails)
 {
+	double TotalBill = 0;
+	int TotalPassengers = 0;
+	auto& fclass = FlightClass::List()[flightDetails->FlightClass];
+	double Class = fclass.Multiplier;
+
+	auto& destination = Destination::List()[flightDetails->Destination];
+	double Place = destination.BasePrice;
+
+	TotalBill = Place * Class * ((flightDetails->AdultCount) + (flightDetails->ChildCount * 0.5) + (flightDetails->InfantCount * 0.1));
+
+	TotalPassengers = flightDetails->AdultCount + flightDetails->ChildCount + flightDetails->InfantCount;
+
+	if (flightDetails->IsOneWay == false)
+	{
+		TotalBill = TotalBill * 2;
+	}
+
+	fstream get("Total.txt", ios::out);
+	get << TotalBill << ", " << TotalPassengers;
+	
 	MountForm(m_PassengerDetailForm);
 }
 
@@ -34,6 +58,7 @@ void BuyTicketsControl::PassengerDetails_Entered()
 
 void BuyTicketsControl::AdditionalServices_Selected()
 {
+	if()
 	m_SeatSelectionForm->Show();
 	ParentForm->Hide();
 }
