@@ -510,7 +510,16 @@ namespace UserInterface {
 #pragma endregion
     
     public:
-        System::Action^ OnContinue;
+        ref class Data
+        {
+
+        };
+
+    private:
+        Data^ getData();
+
+    public:
+        System::Action<Data^>^ OnContinue;
 
     private:
         void HighLight(System::Windows::Forms::Control^ control);
