@@ -15,7 +15,11 @@ AdditionalServicesForm::~AdditionalServicesForm()
 
 AdditionalServicesForm::Data^ AdditionalServicesForm::getData()
 {
-	return gcnew Data;
+	Data^ data = gcnew Data;
+	data->Insurance = m_Insurance->Checked;
+	data->Food = m_Food->Checked;
+	data->Seats = m_Seat->Checked;
+	return data;
 }
 
 System::Void AdditionalServicesForm::m_Continue_Click(System::Object^ sender, System::EventArgs^ e)

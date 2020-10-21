@@ -195,7 +195,10 @@ namespace UserInterface {
 	public:
 		ref class Data
 		{
-
+		public:
+			bool Insurance;
+			bool Food;
+			bool Seats;
 		};
 
 	private:

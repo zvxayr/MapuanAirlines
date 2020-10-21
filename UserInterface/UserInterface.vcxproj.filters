@@ -88,5 +88,11 @@
     <Text Include="FlightClasses.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="TotalMoney.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Total.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
