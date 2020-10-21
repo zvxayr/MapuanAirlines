@@ -19,9 +19,7 @@ System::Void SeatSelectionForm::SeatSelectionForm_Load(System::Object^ sender, S
     for (int i = 0; i < 120; i++)
     {
         SeatControl^ seat = gcnew SeatControl;
-        seat->AutoSize = true;
         seat->Dock = System::Windows::Forms::DockStyle::Fill;
-        seat->Margin = System::Windows::Forms::Padding(5);
         m_SeatsTable->Controls->Add(seat, (i % 6) + (i % 6) / 3, 1 + i / 6);
     }
 }
