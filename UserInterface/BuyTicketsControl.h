@@ -78,7 +78,7 @@ namespace UserInterface {
 		void MountForm(System::Windows::Forms::UserControl^ form);
 		void FlightDetails_Entered(FlightDetailForm::Data^);
 		void PassengerDetails_Entered();
-		void AdditionalServices_Selected();
+		void AdditionalServices_Selected(AdditionalServicesForm::Data^);
 		void Seats_Selected();
 	
 	private:

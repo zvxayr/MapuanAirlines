@@ -2,6 +2,7 @@
 #include "DataManager.h"
 #include "FlightClass.h"
 #include "Destination.h"
+#include "AdditionalServicesForm.h"
 #include <fstream>
 #include <iostream>
 
@@ -56,10 +57,20 @@ void BuyTicketsControl::PassengerDetails_Entered()
 	MountForm(m_AdditionalServicesForm);
 }
 
-void BuyTicketsControl::AdditionalServices_Selected()
+void BuyTicketsControl::AdditionalServices_Selected(AdditionalServicesForm::Data^ AdditionalServices)
 {
-	if()
+	double TotalBill;
+	int TotalPassengers;
+	fstream file("Total.txt", ios::in);
+	file >> TotalBill >> TotalPassengers;
+
+	if (AdditionalServices->Insurance == true)
+	{
+		TotalBill = TotalBill + 5000;
+	}
 	m_SeatSelectionForm->Show();
+
+
 	ParentForm->Hide();
 }
 
@@ -83,7 +94,7 @@ System::Void BuyTicketsControl::BuyTicketsControl_Load(System::Object^ sender, S
 	// attach handlers
 	m_FlightDetailForm->OnContinue = gcnew System::Action<FlightDetailForm::Data^>(this, &BuyTicketsControl::FlightDetails_Entered);
 	m_PassengerDetailForm->OnContinue = gcnew System::Action(this, &BuyTicketsControl::PassengerDetails_Entered);
-	m_AdditionalServicesForm->OnContinue = gcnew System::Action(this, &BuyTicketsControl::AdditionalServices_Selected);
+	m_AdditionalServicesForm->OnContinue = gcnew System::Action<AdditionalServicesForm::Data^>(this, &BuyTicketsControl::AdditionalServices_Selected);
 	m_SeatSelectionForm->OnContinue = gcnew System::Action(this, &BuyTicketsControl::Seats_Selected);
 
 	// mount initial form
