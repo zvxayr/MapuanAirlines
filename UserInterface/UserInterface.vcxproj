@@ -232,8 +232,10 @@
     <Text Include="Destinations.txt">
       <DeploymentContent>true</DeploymentContent>
     </Text>
+    <Text Include="History.txt" />
     <Text Include="Total.txt" />
     <Text Include="TotalMoney.txt" />
+    <Text Include="TotalTickets.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

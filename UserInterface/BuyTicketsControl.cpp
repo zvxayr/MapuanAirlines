@@ -46,7 +46,7 @@ void BuyTicketsControl::FlightDetails_Entered(FlightDetailForm::Data^ flightDeta
 	}
 
 	fstream get("Total.txt", ios::out);
-	get << TotalBill << ", " << TotalPassengers;
+	get << TotalBill << " " << TotalPassengers;
 	
 	MountForm(m_PassengerDetailForm);
 }
@@ -58,14 +58,46 @@ void BuyTicketsControl::PassengerDetails_Entered(PassengerDetailForm::Data^ pass
 
 void BuyTicketsControl::AdditionalServices_Selected(AdditionalServicesForm::Data^ additionalServices)
 {
-	if()
+	double TotalBill;
+	int TotalPassengers;
+
+	fstream file("Total.txt", ios::in);
+	file >> TotalBill >> TotalPassengers;
+
+	//TODO:
+	if (additionalServices->Insurance == true)
+	{
+		TotalBill = TotalBill;
+	}
+	if (additionalServices->Food == true)
+	{
+
+	}
+	if (additionalServices->Seats == true)
+	{
+
+	}
+
+	MessageBox::Show(TotalPassengers.ToString());
+
+	fstream get("Total.txt", ios::out);
+	get << TotalBill << " " << TotalPassengers;
+
+	
+
 	m_SeatSelectionForm->Show();
 	ParentForm->Hide();
 }
 
 void BuyTicketsControl::Seats_Selected(SeatSelectionForm::Data^ selectedSeats)
 {
-	MessageBox::Show("Tickets Successfully Created", "Ok", MessageBoxButtons::OK);
+	double TotalBill;
+	int TotalPassengers;
+
+	fstream file("Total.txt", ios::in);
+	file >> TotalBill >> TotalPassengers;
+
+	MessageBox::Show("Tickets Successfully Created" + "\n\r" + "Total bill: " + TotalBill.ToString() + "\n\r" + "Total number of passengers: " + TotalPassengers.ToString() , "Ok", MessageBoxButtons::OK);
 	m_SeatSelectionForm->Hide();
 
 	ParentForm->Show();
