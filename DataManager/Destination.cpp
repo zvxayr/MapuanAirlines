@@ -39,3 +39,9 @@ void Destination::save(const std::string& filename)
 	for (auto& dest : List())
 		FileHandler::WriteRow(file, dest.Name, dest.BasePrice);
 }
+
+void Destination::Data::operator=(const Destination::Data& other)
+{
+	this->Name = other.Name;
+	this->BasePrice = other.BasePrice;
+}

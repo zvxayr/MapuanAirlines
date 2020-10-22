@@ -39,3 +39,10 @@ void FlightClass::save(const std::string& filename)
 	for (auto& fclass : List())
 		FileHandler::WriteRow(file, fclass.Name, fclass.Multiplier);
 }
+
+
+void FlightClass::Data::operator=(const FlightClass::Data& other)
+{
+	this->Name = other.Name;
+	this->Multiplier = other.Multiplier;
+}

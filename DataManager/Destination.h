@@ -8,6 +8,9 @@ namespace DataManager::Destination {
 	{
 	public:
 		Data(std::string& name, double basePrice);
+		Data() = default;
+
+		void operator=(const Destination::Data& a);
 
 	public:
 		std::string Name;

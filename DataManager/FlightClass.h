@@ -8,6 +8,9 @@ namespace DataManager::FlightClass {
 	{
 	public:
 		Data(std::string& name, double basePrice);
+		Data() = default;
+
+		void operator=(const FlightClass::Data& a);
 
 	public:
 		std::string Name;
