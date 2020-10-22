@@ -1,4 +1,7 @@
 ﻿#pragma once
+#include "FlightClass.h"
+#include "Destination.h"
+#include "Interop.h"
 
 using namespace System;
 using namespace System::ComponentModel;
@@ -9,6 +12,20 @@ using namespace System::Drawing;
 
 
 namespace UserInterface {
+
+    class FlightDetailFormData
+    {
+    public:
+        FlightDetailFormData() {};
+
+    public:
+        bool IsOneWay;
+        DataManager::Destination::Data Destination;
+        int AdultCount;
+        int ChildCount;
+        int InfantCount;
+        DataManager::FlightClass::Data FlightClass;
+    };
 
 	/// <summary>
 	/// Summary for FlightDetailForm
@@ -510,16 +527,7 @@ namespace UserInterface {
 #pragma endregion
     
     public:
-        ref class Data
-        {
-        public:
-            bool IsOneWay;
-            int Destination;
-            int AdultCount;
-            int ChildCount;
-            int InfantCount;
-            int FlightClass;
-        };
+        using Data = Interop::Managed<FlightDetailFormData>;
 
     private:
         Data^ getData();

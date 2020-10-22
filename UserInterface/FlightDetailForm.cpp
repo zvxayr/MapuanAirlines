@@ -1,8 +1,5 @@
 #include "FlightDetailForm.h"
-#include "Destination.h"
-#include "FlightClass.h"
 #include "DataManager.h"
-#include "Interop.h"
 
 using namespace UserInterface;
 
@@ -34,17 +31,18 @@ bool FlightDetailForm::ValidateFormData()
 	return m_FlightClass->SelectedIndex > -1 && m_Place->SelectedIndex > -1;
 }
 
-struct A { int x; int y; };
-
 FlightDetailForm::Data^ FlightDetailForm::getData()
 {
+	using namespace DataManager;
+
 	Data^ data = gcnew Data;
 	data->IsOneWay = m_OneWay->Checked;
-	data->Destination = m_Place->SelectedIndex;
+	data->Destination = Destination::List()[m_Place->SelectedIndex];
 	data->AdultCount = int::Parse(m_AdultCount->Text);
 	data->ChildCount = int::Parse(m_ChildCount->Text);;
 	data->InfantCount = int::Parse(m_InfantCount->Text);;
-	data->FlightClass = m_FlightClass->SelectedIndex;
+	data->FlightClass = FlightClass::List()[m_FlightClass->SelectedIndex];
+
 	return data;
 }
 
