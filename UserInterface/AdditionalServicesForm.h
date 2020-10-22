@@ -10,6 +10,8 @@ using namespace System::Drawing;
 
 namespace UserInterface {
 
+	ref class AdditionalServicesForm;
+
 	class AdditionalServicesFormData
 	{
 	public:

@@ -11,6 +11,8 @@ using namespace System::Drawing;
 
 namespace UserInterface {
 
+    ref class PassengerDetailForm;
+
     class PassengerDetailFormData
     {
     };

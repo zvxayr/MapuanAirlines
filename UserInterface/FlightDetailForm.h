@@ -13,11 +13,14 @@ using namespace System::Drawing;
 
 namespace UserInterface {
 
+    ref class FlightDetailForm;
+
     class FlightDetailFormData
     {
     public:
         bool IsOneWay;
-        DataManager::Destination::Data Destination;
+        bool IsFlyingToPlace;
+        DataManager::Destination::Data Place;
         int AdultCount;
         int ChildCount;
         int InfantCount;

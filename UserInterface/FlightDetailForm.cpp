@@ -37,7 +37,8 @@ FlightDetailForm::Data^ FlightDetailForm::getData()
 
 	Data^ data = gcnew Data;
 	data->IsOneWay = m_OneWay->Checked;
-	data->Destination = Destination::List()[m_Place->SelectedIndex];
+	data->IsFlyingToPlace = m_To->Checked;
+	data->Place = Destination::List()[m_Place->SelectedIndex];
 	data->AdultCount = int::Parse(m_AdultCount->Text);
 	data->ChildCount = int::Parse(m_ChildCount->Text);;
 	data->InfantCount = int::Parse(m_InfantCount->Text);;

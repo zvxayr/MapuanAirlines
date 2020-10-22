@@ -11,6 +11,8 @@ namespace UserInterface {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
+    ref class SeatSelectionForm;
+
     class SeatSelectionFormData
     {
     };

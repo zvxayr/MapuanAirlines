@@ -33,7 +33,7 @@ void BuyTicketsControl::FlightDetails_Entered(FlightDetailForm::Data^ flightDeta
 	auto& fclass = flightDetails->FlightClass;
 	double Class = fclass.Multiplier;
 
-	auto& destination = flightDetails->Destination;
+	auto& destination = flightDetails->Place;
 	double Place = destination.BasePrice;
 
 	TotalBill = Place * Class * ((flightDetails->AdultCount) + (flightDetails->ChildCount * 0.5) + (flightDetails->InfantCount * 0.1));
