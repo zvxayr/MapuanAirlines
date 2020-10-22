@@ -27,11 +27,6 @@ namespace Interop
 			return m_Impl;
 		}
 
-		T& operator*()
-		{
-			return *m_Impl;
-		}
-
 	private:
 		T* m_Impl;
 	};
