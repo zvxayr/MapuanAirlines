@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include "Interop.h"
 
 using namespace System;
 using namespace System::ComponentModel;
@@ -9,6 +10,10 @@ using namespace System::Drawing;
 
 
 namespace UserInterface {
+
+    class PassengerDetailFormData
+    {
+    };
 
 	/// <summary>
 	/// Summary for PassengerDetailForm
@@ -331,10 +336,7 @@ namespace UserInterface {
 #pragma endregion
 
     public:
-        ref class Data
-        {
-
-        };
+        using Data = Interop::Managed<PassengerDetailFormData>;
 
     private:
         Data^ getData();

@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include "Interop.h"
 
 using namespace System;
 using namespace System::ComponentModel;
@@ -7,8 +8,15 @@ using namespace System::Windows::Forms;
 using namespace System::Data;
 using namespace System::Drawing;
 
-
 namespace UserInterface {
+
+	class AdditionalServicesFormData
+	{
+	public:
+		bool Insurance;
+		bool Food;
+		bool Seats;
+	};
 
 	/// <summary>
 	/// Summary for AdditionalServicesForm
@@ -193,13 +201,7 @@ namespace UserInterface {
 #pragma endregion
 
 	public:
-		ref class Data
-		{
-		public:
-			bool Insurance;
-			bool Food;
-			bool Seats;
-		};
+		using Data = Interop::Managed<AdditionalServicesFormData>;
 
 	private:
 		Data^ getData();

@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include "SeatControl.h"
+#include "Interop.h"
 
 namespace UserInterface {
 
@@ -9,6 +10,10 @@ namespace UserInterface {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+
+    class SeatSelectionFormData
+    {
+    };
 
 	/// <summary>
 	/// Summary for SeatSelection
@@ -640,10 +645,7 @@ namespace UserInterface {
 #pragma endregion
 
     public:
-        ref class Data
-        {
-
-        };
+        using Data = Interop::Managed<SeatSelectionFormData>;
 
     private:
         Data^ getData();
