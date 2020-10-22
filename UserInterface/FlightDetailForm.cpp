@@ -2,6 +2,7 @@
 #include "Destination.h"
 #include "FlightClass.h"
 #include "DataManager.h"
+#include "Interop.h"
 
 using namespace UserInterface;
 
@@ -33,6 +34,8 @@ bool FlightDetailForm::ValidateFormData()
 	return m_FlightClass->SelectedIndex > -1 && m_Place->SelectedIndex > -1;
 }
 
+struct A { int x; int y; };
+
 FlightDetailForm::Data^ FlightDetailForm::getData()
 {
 	Data^ data = gcnew Data;
@@ -60,10 +63,10 @@ System::Void FlightDetailForm::FlightDetailForm_Load(System::Object^ sender, Sys
 	m_ReturnDate->Enabled = false;
 
 	for (const auto& dest : Destination::List())
-		m_Place->Items->Add(gcnew String(dest.Name.c_str()));
+		m_Place->Items->Add(Interop::ConvertString(dest.Name));
 
 	for (const auto& fclass : FlightClass::List())
-		m_FlightClass->Items->Add(gcnew String(fclass.Name.c_str()));
+		m_FlightClass->Items->Add(Interop::ConvertString(fclass.Name));
 
 }
 

@@ -140,6 +140,7 @@
     <ClCompile Include="CancelFlightForm.cpp" />
     <ClCompile Include="FlightDetailForm.cpp" />
     <ClCompile Include="FlightStatusForm.cpp" />
+    <ClCompile Include="Interop.cpp" />
     <ClCompile Include="MainForm.cpp" />
     <ClCompile Include="PassengerDetailForm.cpp" />
     <ClCompile Include="PaymentHistoryForm.cpp" />
@@ -169,6 +170,7 @@
     <ClInclude Include="FlightStatusForm.h">
       <FileType>CppControl</FileType>
     </ClInclude>
+    <ClInclude Include="Interop.h" />
     <ClInclude Include="MainForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
