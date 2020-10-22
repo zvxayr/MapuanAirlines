@@ -53,6 +53,11 @@ void BuyTicketsControl::FlightDetails_Entered(FlightDetailForm::Data^ flightDeta
 
 void BuyTicketsControl::PassengerDetails_Entered(PassengerDetailForm::Data^ passengerDetails)
 {
+	fstream file("History.txt", ios::app);
+	file << passengerDetails->Name << endl
+		<< passengerDetails->Sex << endl << passengerDetails->BirthDate << endl <<
+		passengerDetails->ContactNum << endl << passengerDetails->Address << endl;
+
 	MountForm(m_AdditionalServicesForm);
 }
 
@@ -78,8 +83,6 @@ void BuyTicketsControl::AdditionalServices_Selected(AdditionalServicesForm::Data
 
 	}
 
-	MessageBox::Show(TotalPassengers.ToString());
-
 	fstream get("Total.txt", ios::out);
 	get << TotalBill << " " << TotalPassengers;
 
@@ -90,12 +93,27 @@ void BuyTicketsControl::AdditionalServices_Selected(AdditionalServicesForm::Data
 void BuyTicketsControl::Seats_Selected(SeatSelectionForm::Data^ selectedSeats)
 {
 	double TotalBill;
+	double TotalMoney;
 	int TotalPassengers;
+	int TotalTickets;
 
 	fstream file("Total.txt", ios::in);
 	file >> TotalBill >> TotalPassengers;
 
 	MessageBox::Show("Tickets Successfully Created" + "\n\r" + "Total bill: " + TotalBill.ToString() + "\n\r" + "Total number of passengers: " + TotalPassengers.ToString(), "Ok", MessageBoxButtons::OK);
+	fstream get("TotalMoney.txt", ios::in);
+	get >> TotalMoney;
+
+	fstream get2("TotalTickets.txt", ios::in);
+	get2 >> TotalTickets;
+
+	fstream file2("TotalMoney.txt", ios::out);
+	file2 << TotalMoney + TotalBill;
+
+	fstream file3("TotalTickets.txt", ios::out);
+	file3 << TotalTickets + TotalPassengers;
+	
+	
 	m_SeatSelectionForm->Hide();
 
 	ParentForm->Show();
