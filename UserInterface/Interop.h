@@ -8,7 +8,7 @@ namespace Interop
 	System::String^ ConvertString(const std::string&);
 
 	template <typename T>
-	ref class Managed
+	public ref class Managed
 	{
 	public:
 		template <typename... Args>
