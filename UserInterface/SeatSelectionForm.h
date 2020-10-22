@@ -29,10 +29,9 @@ namespace UserInterface {
 		~SeatSelectionForm();
 
 	private: ControlsLibrary::TitleBar^ m_TitleBar;
-    private: System::Windows::Forms::Panel^ panel1;
-    private: System::Windows::Forms::Panel^ m_Container;
     private: System::Windows::Forms::TableLayoutPanel^ m_SeatsTable;
     private: System::Windows::Forms::Button^ m_Continue;
+
 
 	private:
 		/// <summary>
@@ -74,10 +73,10 @@ namespace UserInterface {
             System::Windows::Forms::Label^ m_lbl_B;
             System::Windows::Forms::Label^ m_lbl_A;
             System::Windows::Forms::Panel^ m_BottomMargin;
-            this->m_TitleBar = (gcnew ControlsLibrary::TitleBar());
-            this->panel1 = (gcnew System::Windows::Forms::Panel());
+            System::Windows::Forms::Panel^ m_ButtonContainer;
+            System::Windows::Forms::Panel^ m_Container;
             this->m_Continue = (gcnew System::Windows::Forms::Button());
-            this->m_Container = (gcnew System::Windows::Forms::Panel());
+            this->m_TitleBar = (gcnew ControlsLibrary::TitleBar());
             this->m_SeatsTable = (gcnew System::Windows::Forms::TableLayoutPanel());
             m_lbl_18 = (gcnew System::Windows::Forms::Label());
             m_lbl_17 = (gcnew System::Windows::Forms::Label());
@@ -106,413 +105,309 @@ namespace UserInterface {
             m_lbl_B = (gcnew System::Windows::Forms::Label());
             m_lbl_A = (gcnew System::Windows::Forms::Label());
             m_BottomMargin = (gcnew System::Windows::Forms::Panel());
-            this->panel1->SuspendLayout();
-            this->m_Container->SuspendLayout();
+            m_ButtonContainer = (gcnew System::Windows::Forms::Panel());
+            m_Container = (gcnew System::Windows::Forms::Panel());
+            m_ButtonContainer->SuspendLayout();
+            m_Container->SuspendLayout();
             this->m_SeatsTable->SuspendLayout();
             this->SuspendLayout();
-            // 
-            // m_lbl_18
-            // 
             m_lbl_18->AutoSize = true;
             m_lbl_18->Dock = System::Windows::Forms::DockStyle::Fill;
             m_lbl_18->Font = (gcnew System::Drawing::Font(L"Segoe UI", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            m_lbl_18->Location = System::Drawing::Point(232, 1122);
-            m_lbl_18->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
+            m_lbl_18->Location = System::Drawing::Point(173, 905);
+            m_lbl_18->Margin = System::Windows::Forms::Padding(5);
             m_lbl_18->Name = L"m_lbl_18";
-            m_lbl_18->Size = System::Drawing::Size(61, 50);
+            m_lbl_18->Size = System::Drawing::Size(46, 40);
             m_lbl_18->TabIndex = 25;
             m_lbl_18->Text = L"18";
             m_lbl_18->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            // 
-            // m_lbl_17
-            // 
             m_lbl_17->AutoSize = true;
             m_lbl_17->Dock = System::Windows::Forms::DockStyle::Fill;
             m_lbl_17->Font = (gcnew System::Drawing::Font(L"Segoe UI", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            m_lbl_17->Location = System::Drawing::Point(232, 1060);
-            m_lbl_17->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
+            m_lbl_17->Location = System::Drawing::Point(173, 855);
+            m_lbl_17->Margin = System::Windows::Forms::Padding(5);
             m_lbl_17->Name = L"m_lbl_17";
-            m_lbl_17->Size = System::Drawing::Size(61, 50);
+            m_lbl_17->Size = System::Drawing::Size(46, 40);
             m_lbl_17->TabIndex = 24;
             m_lbl_17->Text = L"17";
             m_lbl_17->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            // 
-            // m_lbl_19
-            // 
             m_lbl_19->AutoSize = true;
             m_lbl_19->Dock = System::Windows::Forms::DockStyle::Fill;
             m_lbl_19->Font = (gcnew System::Drawing::Font(L"Segoe UI", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            m_lbl_19->Location = System::Drawing::Point(232, 1184);
-            m_lbl_19->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
+            m_lbl_19->Location = System::Drawing::Point(173, 955);
+            m_lbl_19->Margin = System::Windows::Forms::Padding(5);
             m_lbl_19->Name = L"m_lbl_19";
-            m_lbl_19->Size = System::Drawing::Size(61, 50);
+            m_lbl_19->Size = System::Drawing::Size(46, 40);
             m_lbl_19->TabIndex = 23;
             m_lbl_19->Text = L"19";
             m_lbl_19->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            // 
-            // m_lbl_20
-            // 
             m_lbl_20->AutoSize = true;
             m_lbl_20->Dock = System::Windows::Forms::DockStyle::Fill;
             m_lbl_20->Font = (gcnew System::Drawing::Font(L"Segoe UI", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            m_lbl_20->Location = System::Drawing::Point(232, 1246);
-            m_lbl_20->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
+            m_lbl_20->Location = System::Drawing::Point(173, 1005);
+            m_lbl_20->Margin = System::Windows::Forms::Padding(5);
             m_lbl_20->Name = L"m_lbl_20";
-            m_lbl_20->Size = System::Drawing::Size(61, 50);
+            m_lbl_20->Size = System::Drawing::Size(46, 40);
             m_lbl_20->TabIndex = 22;
             m_lbl_20->Text = L"20";
             m_lbl_20->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            // 
-            // m_lbl_13
-            // 
             m_lbl_13->AutoSize = true;
             m_lbl_13->Dock = System::Windows::Forms::DockStyle::Fill;
             m_lbl_13->Font = (gcnew System::Drawing::Font(L"Segoe UI", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            m_lbl_13->Location = System::Drawing::Point(232, 812);
-            m_lbl_13->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
+            m_lbl_13->Location = System::Drawing::Point(173, 655);
+            m_lbl_13->Margin = System::Windows::Forms::Padding(5);
             m_lbl_13->Name = L"m_lbl_13";
-            m_lbl_13->Size = System::Drawing::Size(61, 50);
+            m_lbl_13->Size = System::Drawing::Size(46, 40);
             m_lbl_13->TabIndex = 21;
             m_lbl_13->Text = L"13";
             m_lbl_13->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            // 
-            // m_lbl_11
-            // 
             m_lbl_11->AutoSize = true;
             m_lbl_11->Dock = System::Windows::Forms::DockStyle::Fill;
             m_lbl_11->Font = (gcnew System::Drawing::Font(L"Segoe UI", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            m_lbl_11->Location = System::Drawing::Point(232, 688);
-            m_lbl_11->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
+            m_lbl_11->Location = System::Drawing::Point(173, 555);
+            m_lbl_11->Margin = System::Windows::Forms::Padding(5);
             m_lbl_11->Name = L"m_lbl_11";
-            m_lbl_11->Size = System::Drawing::Size(61, 50);
+            m_lbl_11->Size = System::Drawing::Size(46, 40);
             m_lbl_11->TabIndex = 20;
             m_lbl_11->Text = L"11";
             m_lbl_11->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            // 
-            // m_lbl_12
-            // 
             m_lbl_12->AutoSize = true;
             m_lbl_12->Dock = System::Windows::Forms::DockStyle::Fill;
             m_lbl_12->Font = (gcnew System::Drawing::Font(L"Segoe UI", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            m_lbl_12->Location = System::Drawing::Point(232, 750);
-            m_lbl_12->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
+            m_lbl_12->Location = System::Drawing::Point(173, 605);
+            m_lbl_12->Margin = System::Windows::Forms::Padding(5);
             m_lbl_12->Name = L"m_lbl_12";
-            m_lbl_12->Size = System::Drawing::Size(61, 50);
+            m_lbl_12->Size = System::Drawing::Size(46, 40);
             m_lbl_12->TabIndex = 19;
             m_lbl_12->Text = L"12";
             m_lbl_12->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            // 
-            // m_lbl_10
-            // 
             m_lbl_10->AutoSize = true;
             m_lbl_10->Dock = System::Windows::Forms::DockStyle::Fill;
             m_lbl_10->Font = (gcnew System::Drawing::Font(L"Segoe UI", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            m_lbl_10->Location = System::Drawing::Point(232, 626);
-            m_lbl_10->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
+            m_lbl_10->Location = System::Drawing::Point(173, 505);
+            m_lbl_10->Margin = System::Windows::Forms::Padding(5);
             m_lbl_10->Name = L"m_lbl_10";
-            m_lbl_10->Size = System::Drawing::Size(61, 50);
+            m_lbl_10->Size = System::Drawing::Size(46, 40);
             m_lbl_10->TabIndex = 18;
             m_lbl_10->Text = L"10";
             m_lbl_10->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            // 
-            // m_lbl_14
-            // 
             m_lbl_14->AutoSize = true;
             m_lbl_14->Dock = System::Windows::Forms::DockStyle::Fill;
             m_lbl_14->Font = (gcnew System::Drawing::Font(L"Segoe UI", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            m_lbl_14->Location = System::Drawing::Point(232, 874);
-            m_lbl_14->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
+            m_lbl_14->Location = System::Drawing::Point(173, 705);
+            m_lbl_14->Margin = System::Windows::Forms::Padding(5);
             m_lbl_14->Name = L"m_lbl_14";
-            m_lbl_14->Size = System::Drawing::Size(61, 50);
+            m_lbl_14->Size = System::Drawing::Size(46, 40);
             m_lbl_14->TabIndex = 17;
             m_lbl_14->Text = L"14";
             m_lbl_14->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            // 
-            // m_lbl_09
-            // 
             m_lbl_09->AutoSize = true;
             m_lbl_09->Dock = System::Windows::Forms::DockStyle::Fill;
-            m_lbl_09->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            m_lbl_09->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20.25, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            m_lbl_09->Location = System::Drawing::Point(232, 564);
-            m_lbl_09->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
+            m_lbl_09->Location = System::Drawing::Point(173, 455);
+            m_lbl_09->Margin = System::Windows::Forms::Padding(5);
             m_lbl_09->Name = L"m_lbl_09";
-            m_lbl_09->Size = System::Drawing::Size(61, 50);
+            m_lbl_09->Size = System::Drawing::Size(46, 40);
             m_lbl_09->TabIndex = 16;
             m_lbl_09->Text = L"9";
             m_lbl_09->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            // 
-            // m_lbl_15
-            // 
             m_lbl_15->AutoSize = true;
             m_lbl_15->Dock = System::Windows::Forms::DockStyle::Fill;
             m_lbl_15->Font = (gcnew System::Drawing::Font(L"Segoe UI", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            m_lbl_15->Location = System::Drawing::Point(232, 936);
-            m_lbl_15->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
+            m_lbl_15->Location = System::Drawing::Point(173, 755);
+            m_lbl_15->Margin = System::Windows::Forms::Padding(5);
             m_lbl_15->Name = L"m_lbl_15";
-            m_lbl_15->Size = System::Drawing::Size(61, 50);
+            m_lbl_15->Size = System::Drawing::Size(46, 40);
             m_lbl_15->TabIndex = 15;
             m_lbl_15->Text = L"15";
             m_lbl_15->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            // 
-            // m_lbl_16
-            // 
             m_lbl_16->AutoSize = true;
             m_lbl_16->Dock = System::Windows::Forms::DockStyle::Fill;
             m_lbl_16->Font = (gcnew System::Drawing::Font(L"Segoe UI", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            m_lbl_16->Location = System::Drawing::Point(232, 998);
-            m_lbl_16->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
+            m_lbl_16->Location = System::Drawing::Point(173, 805);
+            m_lbl_16->Margin = System::Windows::Forms::Padding(5);
             m_lbl_16->Name = L"m_lbl_16";
-            m_lbl_16->Size = System::Drawing::Size(61, 50);
+            m_lbl_16->Size = System::Drawing::Size(46, 40);
             m_lbl_16->TabIndex = 14;
             m_lbl_16->Text = L"16";
             m_lbl_16->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            // 
-            // m_lbl_01
-            // 
             m_lbl_01->AutoSize = true;
             m_lbl_01->Dock = System::Windows::Forms::DockStyle::Fill;
-            m_lbl_01->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            m_lbl_01->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20.25, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            m_lbl_01->Location = System::Drawing::Point(232, 68);
-            m_lbl_01->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
+            m_lbl_01->Location = System::Drawing::Point(173, 55);
+            m_lbl_01->Margin = System::Windows::Forms::Padding(5);
             m_lbl_01->Name = L"m_lbl_01";
-            m_lbl_01->Size = System::Drawing::Size(61, 50);
+            m_lbl_01->Size = System::Drawing::Size(46, 40);
             m_lbl_01->TabIndex = 13;
             m_lbl_01->Text = L"1";
             m_lbl_01->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            // 
-            // m_lbl_03
-            // 
             m_lbl_03->AutoSize = true;
             m_lbl_03->Dock = System::Windows::Forms::DockStyle::Fill;
-            m_lbl_03->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            m_lbl_03->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20.25, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            m_lbl_03->Location = System::Drawing::Point(232, 192);
-            m_lbl_03->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
+            m_lbl_03->Location = System::Drawing::Point(173, 155);
+            m_lbl_03->Margin = System::Windows::Forms::Padding(5);
             m_lbl_03->Name = L"m_lbl_03";
-            m_lbl_03->Size = System::Drawing::Size(61, 50);
+            m_lbl_03->Size = System::Drawing::Size(46, 40);
             m_lbl_03->TabIndex = 12;
             m_lbl_03->Text = L"3";
             m_lbl_03->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            // 
-            // m_lbl_04
-            // 
             m_lbl_04->AutoSize = true;
             m_lbl_04->Dock = System::Windows::Forms::DockStyle::Fill;
-            m_lbl_04->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            m_lbl_04->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20.25, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            m_lbl_04->Location = System::Drawing::Point(232, 254);
-            m_lbl_04->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
+            m_lbl_04->Location = System::Drawing::Point(173, 205);
+            m_lbl_04->Margin = System::Windows::Forms::Padding(5);
             m_lbl_04->Name = L"m_lbl_04";
-            m_lbl_04->Size = System::Drawing::Size(61, 50);
+            m_lbl_04->Size = System::Drawing::Size(46, 40);
             m_lbl_04->TabIndex = 11;
             m_lbl_04->Text = L"4";
             m_lbl_04->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            // 
-            // m_lbl_06
-            // 
             m_lbl_06->AutoSize = true;
             m_lbl_06->Dock = System::Windows::Forms::DockStyle::Fill;
-            m_lbl_06->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            m_lbl_06->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20.25, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            m_lbl_06->Location = System::Drawing::Point(232, 378);
-            m_lbl_06->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
+            m_lbl_06->Location = System::Drawing::Point(173, 305);
+            m_lbl_06->Margin = System::Windows::Forms::Padding(5);
             m_lbl_06->Name = L"m_lbl_06";
-            m_lbl_06->Size = System::Drawing::Size(61, 50);
+            m_lbl_06->Size = System::Drawing::Size(46, 40);
             m_lbl_06->TabIndex = 10;
             m_lbl_06->Text = L"6";
             m_lbl_06->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            // 
-            // m_lbl_08
-            // 
             m_lbl_08->AutoSize = true;
             m_lbl_08->Dock = System::Windows::Forms::DockStyle::Fill;
-            m_lbl_08->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            m_lbl_08->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20.25, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            m_lbl_08->Location = System::Drawing::Point(232, 502);
-            m_lbl_08->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
+            m_lbl_08->Location = System::Drawing::Point(173, 405);
+            m_lbl_08->Margin = System::Windows::Forms::Padding(5);
             m_lbl_08->Name = L"m_lbl_08";
-            m_lbl_08->Size = System::Drawing::Size(61, 50);
+            m_lbl_08->Size = System::Drawing::Size(46, 40);
             m_lbl_08->TabIndex = 9;
             m_lbl_08->Text = L"8";
             m_lbl_08->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            // 
-            // m_lbl_05
-            // 
             m_lbl_05->AutoSize = true;
             m_lbl_05->Dock = System::Windows::Forms::DockStyle::Fill;
-            m_lbl_05->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            m_lbl_05->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20.25, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            m_lbl_05->Location = System::Drawing::Point(232, 316);
-            m_lbl_05->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
+            m_lbl_05->Location = System::Drawing::Point(173, 255);
+            m_lbl_05->Margin = System::Windows::Forms::Padding(5);
             m_lbl_05->Name = L"m_lbl_05";
-            m_lbl_05->Size = System::Drawing::Size(61, 50);
+            m_lbl_05->Size = System::Drawing::Size(46, 40);
             m_lbl_05->TabIndex = 8;
             m_lbl_05->Text = L"5";
             m_lbl_05->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            // 
-            // m_lbl_07
-            // 
             m_lbl_07->AutoSize = true;
             m_lbl_07->Dock = System::Windows::Forms::DockStyle::Fill;
-            m_lbl_07->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            m_lbl_07->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20.25, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            m_lbl_07->Location = System::Drawing::Point(232, 440);
-            m_lbl_07->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
+            m_lbl_07->Location = System::Drawing::Point(173, 355);
+            m_lbl_07->Margin = System::Windows::Forms::Padding(5);
             m_lbl_07->Name = L"m_lbl_07";
-            m_lbl_07->Size = System::Drawing::Size(61, 50);
+            m_lbl_07->Size = System::Drawing::Size(46, 40);
             m_lbl_07->TabIndex = 7;
             m_lbl_07->Text = L"7";
             m_lbl_07->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            // 
-            // m_lbl_02
-            // 
             m_lbl_02->AutoSize = true;
             m_lbl_02->Dock = System::Windows::Forms::DockStyle::Fill;
-            m_lbl_02->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            m_lbl_02->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20.25, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            m_lbl_02->Location = System::Drawing::Point(232, 130);
-            m_lbl_02->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
+            m_lbl_02->Location = System::Drawing::Point(173, 105);
+            m_lbl_02->Margin = System::Windows::Forms::Padding(5);
             m_lbl_02->Name = L"m_lbl_02";
-            m_lbl_02->Size = System::Drawing::Size(61, 50);
+            m_lbl_02->Size = System::Drawing::Size(46, 40);
             m_lbl_02->TabIndex = 6;
             m_lbl_02->Text = L"2";
             m_lbl_02->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            // 
-            // m_lbl_C
-            // 
             m_lbl_C->AutoSize = true;
             m_lbl_C->Dock = System::Windows::Forms::DockStyle::Fill;
-            m_lbl_C->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            m_lbl_C->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20.25, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            m_lbl_C->Location = System::Drawing::Point(157, 6);
-            m_lbl_C->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
+            m_lbl_C->Location = System::Drawing::Point(117, 5);
+            m_lbl_C->Margin = System::Windows::Forms::Padding(5);
             m_lbl_C->Name = L"m_lbl_C";
-            m_lbl_C->Size = System::Drawing::Size(61, 50);
+            m_lbl_C->Size = System::Drawing::Size(46, 40);
             m_lbl_C->TabIndex = 5;
             m_lbl_C->Text = L"C";
             m_lbl_C->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            // 
-            // m_lbl_D
-            // 
             m_lbl_D->AutoSize = true;
             m_lbl_D->Dock = System::Windows::Forms::DockStyle::Fill;
-            m_lbl_D->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            m_lbl_D->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20.25, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            m_lbl_D->Location = System::Drawing::Point(307, 6);
-            m_lbl_D->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
+            m_lbl_D->Location = System::Drawing::Point(229, 5);
+            m_lbl_D->Margin = System::Windows::Forms::Padding(5);
             m_lbl_D->Name = L"m_lbl_D";
-            m_lbl_D->Size = System::Drawing::Size(61, 50);
+            m_lbl_D->Size = System::Drawing::Size(46, 40);
             m_lbl_D->TabIndex = 4;
             m_lbl_D->Text = L"D";
             m_lbl_D->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            // 
-            // m_lbl_F
-            // 
             m_lbl_F->AutoSize = true;
             m_lbl_F->Dock = System::Windows::Forms::DockStyle::Fill;
-            m_lbl_F->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            m_lbl_F->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20.25, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            m_lbl_F->Location = System::Drawing::Point(457, 6);
-            m_lbl_F->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
+            m_lbl_F->Location = System::Drawing::Point(341, 5);
+            m_lbl_F->Margin = System::Windows::Forms::Padding(5);
             m_lbl_F->Name = L"m_lbl_F";
-            m_lbl_F->Size = System::Drawing::Size(65, 50);
+            m_lbl_F->Size = System::Drawing::Size(49, 40);
             m_lbl_F->TabIndex = 3;
             m_lbl_F->Text = L"F";
             m_lbl_F->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            // 
-            // m_lbl_E
-            // 
             m_lbl_E->AutoSize = true;
             m_lbl_E->Dock = System::Windows::Forms::DockStyle::Fill;
-            m_lbl_E->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            m_lbl_E->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20.25, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            m_lbl_E->Location = System::Drawing::Point(382, 6);
-            m_lbl_E->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
+            m_lbl_E->Location = System::Drawing::Point(285, 5);
+            m_lbl_E->Margin = System::Windows::Forms::Padding(5);
             m_lbl_E->Name = L"m_lbl_E";
-            m_lbl_E->Size = System::Drawing::Size(61, 50);
+            m_lbl_E->Size = System::Drawing::Size(46, 40);
             m_lbl_E->TabIndex = 2;
             m_lbl_E->Text = L"E";
             m_lbl_E->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            // 
-            // m_lbl_B
-            // 
             m_lbl_B->AutoSize = true;
             m_lbl_B->Dock = System::Windows::Forms::DockStyle::Fill;
-            m_lbl_B->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            m_lbl_B->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20.25, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            m_lbl_B->Location = System::Drawing::Point(82, 6);
-            m_lbl_B->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
+            m_lbl_B->Location = System::Drawing::Point(61, 5);
+            m_lbl_B->Margin = System::Windows::Forms::Padding(5);
             m_lbl_B->Name = L"m_lbl_B";
-            m_lbl_B->Size = System::Drawing::Size(61, 50);
+            m_lbl_B->Size = System::Drawing::Size(46, 40);
             m_lbl_B->TabIndex = 1;
             m_lbl_B->Text = L"B";
             m_lbl_B->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            // 
-            // m_lbl_A
-            // 
             m_lbl_A->AutoSize = true;
             m_lbl_A->Dock = System::Windows::Forms::DockStyle::Fill;
-            m_lbl_A->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            m_lbl_A->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20.25, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            m_lbl_A->Location = System::Drawing::Point(7, 6);
-            m_lbl_A->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
+            m_lbl_A->Location = System::Drawing::Point(5, 5);
+            m_lbl_A->Margin = System::Windows::Forms::Padding(5);
             m_lbl_A->Name = L"m_lbl_A";
-            m_lbl_A->Size = System::Drawing::Size(61, 50);
+            m_lbl_A->Size = System::Drawing::Size(46, 40);
             m_lbl_A->TabIndex = 0;
             m_lbl_A->Text = L"A";
             m_lbl_A->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            // 
-            // m_BottomMargin
-            // 
             m_BottomMargin->Dock = System::Windows::Forms::DockStyle::Bottom;
-            m_BottomMargin->Location = System::Drawing::Point(45, 1302);
-            m_BottomMargin->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+            m_BottomMargin->Location = System::Drawing::Point(34, 1050);
             m_BottomMargin->Name = L"m_BottomMargin";
-            m_BottomMargin->Size = System::Drawing::Size(529, 42);
+            m_BottomMargin->Size = System::Drawing::Size(395, 34);
             m_BottomMargin->TabIndex = 2;
-            // 
-            // m_TitleBar
-            // 
-            this->m_TitleBar->AutoSize = true;
-            this->m_TitleBar->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
-            this->m_TitleBar->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(253)), static_cast<System::Int32>(static_cast<System::Byte>(215)),
-                static_cast<System::Int32>(static_cast<System::Byte>(75)));
-            this->m_TitleBar->Dock = System::Windows::Forms::DockStyle::Top;
-            this->m_TitleBar->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
-                static_cast<System::Int32>(static_cast<System::Byte>(1)));
-            this->m_TitleBar->Location = System::Drawing::Point(0, 0);
-            this->m_TitleBar->Margin = System::Windows::Forms::Padding(0);
-            this->m_TitleBar->MaximumSize = System::Drawing::Size(0, 37);
-            this->m_TitleBar->MinimumSize = System::Drawing::Size(0, 37);
-            this->m_TitleBar->Name = L"m_TitleBar";
-            this->m_TitleBar->Size = System::Drawing::Size(640, 37);
-            this->m_TitleBar->TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this->panel1->Controls->Add(this->m_Continue);
-            this->panel1->Dock = System::Windows::Forms::DockStyle::Bottom;
-            this->panel1->Location = System::Drawing::Point(0, 714);
-            this->panel1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
-            this->panel1->Name = L"panel1";
-            this->panel1->Size = System::Drawing::Size(640, 74);
-            this->panel1->TabIndex = 6;
-            // 
-            // m_Continue
-            // 
+            m_ButtonContainer->Controls->Add(this->m_Continue);
+            m_ButtonContainer->Dock = System::Windows::Forms::DockStyle::Bottom;
+            m_ButtonContainer->Location = System::Drawing::Point(0, 580);
+            m_ButtonContainer->Name = L"m_ButtonContainer";
+            m_ButtonContainer->Size = System::Drawing::Size(480, 60);
+            m_ButtonContainer->TabIndex = 6;
             this->m_Continue->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
             this->m_Continue->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(253)), static_cast<System::Int32>(static_cast<System::Byte>(215)),
                 static_cast<System::Int32>(static_cast<System::Byte>(75)));
@@ -524,34 +419,42 @@ namespace UserInterface {
             this->m_Continue->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(254)),
                 static_cast<System::Int32>(static_cast<System::Byte>(227)), static_cast<System::Int32>(static_cast<System::Byte>(129)));
             this->m_Continue->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->m_Continue->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->m_Continue->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->m_Continue->Location = System::Drawing::Point(224, 16);
-            this->m_Continue->Margin = System::Windows::Forms::Padding(224, 16, 224, 16);
+            this->m_Continue->Location = System::Drawing::Point(168, 13);
+            this->m_Continue->Margin = System::Windows::Forms::Padding(168, 13, 168, 13);
             this->m_Continue->Name = L"m_Continue";
-            this->m_Continue->Size = System::Drawing::Size(192, 42);
+            this->m_Continue->Size = System::Drawing::Size(144, 34);
             this->m_Continue->TabIndex = 9;
             this->m_Continue->Text = L"Continue →";
             this->m_Continue->UseVisualStyleBackColor = false;
             this->m_Continue->Click += gcnew System::EventHandler(this, &SeatSelectionForm::m_Continue_Click);
-            // 
-            // m_Container
-            // 
-            this->m_Container->AutoScroll = true;
-            this->m_Container->AutoScrollMinSize = System::Drawing::Size(12, 0);
-            this->m_Container->AutoSize = true;
-            this->m_Container->Controls->Add(this->m_SeatsTable);
-            this->m_Container->Controls->Add(m_BottomMargin);
-            this->m_Container->Dock = System::Windows::Forms::DockStyle::Fill;
-            this->m_Container->Location = System::Drawing::Point(0, 37);
-            this->m_Container->Margin = System::Windows::Forms::Padding(0);
-            this->m_Container->Name = L"m_Container";
-            this->m_Container->Padding = System::Windows::Forms::Padding(45, 42, 45, 42);
-            this->m_Container->Size = System::Drawing::Size(640, 677);
-            this->m_Container->TabIndex = 7;
-            // 
-            // m_SeatsTable
-            // 
+            this->m_TitleBar->AutoSize = true;
+            this->m_TitleBar->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
+            this->m_TitleBar->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(253)), static_cast<System::Int32>(static_cast<System::Byte>(215)),
+                static_cast<System::Int32>(static_cast<System::Byte>(75)));
+            this->m_TitleBar->Dock = System::Windows::Forms::DockStyle::Top;
+            this->m_TitleBar->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
+                static_cast<System::Int32>(static_cast<System::Byte>(1)));
+            this->m_TitleBar->Location = System::Drawing::Point(0, 0);
+            this->m_TitleBar->Margin = System::Windows::Forms::Padding(0);
+            this->m_TitleBar->MaximumSize = System::Drawing::Size(0, 30);
+            this->m_TitleBar->MinimumSize = System::Drawing::Size(0, 30);
+            this->m_TitleBar->Name = L"m_TitleBar";
+            this->m_TitleBar->Size = System::Drawing::Size(480, 30);
+            this->m_TitleBar->TabIndex = 0;
+            m_Container->AutoScroll = true;
+            m_Container->AutoScrollMinSize = System::Drawing::Size(12, 0);
+            m_Container->AutoSize = true;
+            m_Container->Controls->Add(this->m_SeatsTable);
+            m_Container->Controls->Add(m_BottomMargin);
+            m_Container->Dock = System::Windows::Forms::DockStyle::Fill;
+            m_Container->Location = System::Drawing::Point(0, 30);
+            m_Container->Margin = System::Windows::Forms::Padding(0);
+            m_Container->Name = L"m_Container";
+            m_Container->Padding = System::Windows::Forms::Padding(34);
+            m_Container->Size = System::Drawing::Size(480, 550);
+            m_Container->TabIndex = 7;
             this->m_SeatsTable->AutoSize = true;
             this->m_SeatsTable->ColumnCount = 7;
             this->m_SeatsTable->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 14.28571F)));
@@ -562,7 +465,7 @@ namespace UserInterface {
             this->m_SeatsTable->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 14.28571F)));
             this->m_SeatsTable->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 14.28571F)));
             this->m_SeatsTable->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-                27)));
+                20)));
             this->m_SeatsTable->Controls->Add(m_lbl_18, 3, 18);
             this->m_SeatsTable->Controls->Add(m_lbl_17, 3, 17);
             this->m_SeatsTable->Controls->Add(m_lbl_19, 3, 19);
@@ -590,54 +493,49 @@ namespace UserInterface {
             this->m_SeatsTable->Controls->Add(m_lbl_B, 1, 0);
             this->m_SeatsTable->Controls->Add(m_lbl_A, 0, 0);
             this->m_SeatsTable->Dock = System::Windows::Forms::DockStyle::Top;
-            this->m_SeatsTable->Location = System::Drawing::Point(45, 42);
-            this->m_SeatsTable->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+            this->m_SeatsTable->Location = System::Drawing::Point(34, 34);
             this->m_SeatsTable->Name = L"m_SeatsTable";
             this->m_SeatsTable->RowCount = 21;
-            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 62)));
-            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 62)));
-            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 62)));
-            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 62)));
-            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 62)));
-            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 62)));
-            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 62)));
-            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 62)));
-            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 62)));
-            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 62)));
-            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 62)));
-            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 62)));
-            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 62)));
-            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 62)));
-            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 62)));
-            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 62)));
-            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 62)));
-            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 62)));
-            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 62)));
-            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 62)));
-            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 62)));
-            this->m_SeatsTable->Size = System::Drawing::Size(529, 1302);
+            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
+            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
+            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
+            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
+            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
+            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
+            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
+            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
+            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
+            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
+            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
+            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
+            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
+            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
+            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
+            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
+            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
+            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
+            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
+            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
+            this->m_SeatsTable->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
+            this->m_SeatsTable->Size = System::Drawing::Size(395, 1050);
             this->m_SeatsTable->TabIndex = 3;
-            // 
-            // SeatSelectionForm
-            // 
-            this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+            this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
             this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
             this->BackColor = System::Drawing::SystemColors::Control;
-            this->ClientSize = System::Drawing::Size(640, 788);
-            this->Controls->Add(this->m_Container);
-            this->Controls->Add(this->panel1);
+            this->ClientSize = System::Drawing::Size(480, 640);
+            this->Controls->Add(m_Container);
+            this->Controls->Add(m_ButtonContainer);
             this->Controls->Add(this->m_TitleBar);
             this->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
                 static_cast<System::Int32>(static_cast<System::Byte>(1)));
             this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-            this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
             this->Name = L"SeatSelectionForm";
             this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
             this->Text = L"Seat Selection";
             this->Load += gcnew System::EventHandler(this, &SeatSelectionForm::SeatSelectionForm_Load);
-            this->panel1->ResumeLayout(false);
-            this->m_Container->ResumeLayout(false);
-            this->m_Container->PerformLayout();
+            m_ButtonContainer->ResumeLayout(false);
+            m_Container->ResumeLayout(false);
+            m_Container->PerformLayout();
             this->m_SeatsTable->ResumeLayout(false);
             this->m_SeatsTable->PerformLayout();
             this->ResumeLayout(false);
