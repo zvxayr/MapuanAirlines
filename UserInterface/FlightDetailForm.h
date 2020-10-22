@@ -16,9 +16,6 @@ namespace UserInterface {
     class FlightDetailFormData
     {
     public:
-        FlightDetailFormData() {};
-
-    public:
         bool IsOneWay;
         DataManager::Destination::Data Destination;
         int AdultCount;
@@ -529,7 +526,7 @@ namespace UserInterface {
     public:
         using Data = Interop::Managed<FlightDetailFormData>;
 
-    private:
+    internal:
         Data^ getData();
 
     public:
