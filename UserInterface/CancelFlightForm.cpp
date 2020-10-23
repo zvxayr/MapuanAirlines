@@ -18,7 +18,21 @@ CancelFlightForm::~CancelFlightForm()
 		delete components;
 }
 
-System::Void BuyTicketsControl::BuyTicketsControl_Load(System::Object^ sender, System::EventArgs^ e)
+System::Void CancelFlightForm::m_Search_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	
+	//replace with the search function for array based list
+	bool Found = true;
+	if (Found == true)
+	{
+		DialogResult Result = MessageBox::Show("Flight Reservation Found", "Are you sure you want to Cancel?", MessageBoxButtons::YesNo);
+		if (Result == DialogResult::Yes)
+		{
+			//Use Delete Function in array based list
+		}
+		MessageBox::Show("Notification", "Flight Successfully Cancelled", MessageBoxButtons::OK);
+	}
+	else
+	{
+		MessageBox::Show("Flight Reservation Not Found", "Please try again", MessageBoxButtons::OK);
+	}
 }

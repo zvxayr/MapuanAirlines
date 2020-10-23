@@ -24,6 +24,7 @@ namespace UserInterface {
 	protected:
 
 	private: System::Windows::Forms::Button^ m_Search;
+	private: System::Windows::Forms::Label^ label1;
 	protected:
 
 
@@ -43,6 +44,7 @@ namespace UserInterface {
 			System::Windows::Forms::Label^ m_lbl_Header;
 			this->m_SearchBox = (gcnew System::Windows::Forms::TextBox());
 			this->m_Search = (gcnew System::Windows::Forms::Button());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			m_lbl_Header = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
@@ -62,25 +64,38 @@ namespace UserInterface {
 			// 
 			// m_SearchBox
 			// 
-			this->m_SearchBox->Location = System::Drawing::Point(266, 207);
+			this->m_SearchBox->Location = System::Drawing::Point(247, 193);
 			this->m_SearchBox->Name = L"m_SearchBox";
 			this->m_SearchBox->Size = System::Drawing::Size(619, 22);
 			this->m_SearchBox->TabIndex = 4;
 			// 
 			// m_Search
 			// 
-			this->m_Search->BackColor = System::Drawing::Color::Gainsboro;
-			this->m_Search->Location = System::Drawing::Point(521, 268);
+			this->m_Search->BackColor = System::Drawing::Color::Orange;
+			this->m_Search->Location = System::Drawing::Point(505, 270);
 			this->m_Search->Name = L"m_Search";
 			this->m_Search->Size = System::Drawing::Size(111, 47);
 			this->m_Search->TabIndex = 5;
 			this->m_Search->Text = L"Search\r\n";
 			this->m_Search->UseVisualStyleBackColor = false;
+			this->m_Search->Click += gcnew System::EventHandler(this, &CancelFlightForm::m_Search_Click);
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(241, 138);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(626, 32);
+			this->label1->TabIndex = 6;
+			this->label1->Text = L"Enter the full name of the person who reserved the flight";
 			// 
 			// CancelFlightForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->m_Search);
 			this->Controls->Add(this->m_SearchBox);
 			this->Controls->Add(m_lbl_Header);
@@ -97,6 +112,8 @@ namespace UserInterface {
 		}
 #pragma endregion
 	private:
-		System::Void CancelFlightForm_Load(System::Object^ sender, System::EventArgs^ e);
+
+	private:
+		System::Void m_Search_Click(System::Object^ sender, System::EventArgs^ e);
 	};
 }

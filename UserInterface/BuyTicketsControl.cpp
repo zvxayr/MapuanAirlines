@@ -131,11 +131,18 @@ void BuyTicketsControl::BuyTickets()
 	// ----------------------------------------------------
 
 	//TODO:
-	if (additionalServices->Insurance);
-	if (additionalServices->Food);
+	if (additionalServices->Insurance)
+	{
+		TotalBill += 1500;
+	}
+	if (additionalServices->Food)
+	{
+		TotalBill += 250;
+	}
 
 	if (additionalServices->Seats)
 	{
+		TotalBill += 300;
 		ofstream fout("Total.txt", ios::out);
 		FileHandler::WriteRow(fout, TotalBill, TotalPassengers);
 	}

@@ -122,7 +122,8 @@ public:
     //Deallocate the memory occupied by the array.
 
 protected:
-    elemType* list; //array to hold the list elements
+    elemType* Name;
+    bool* Seats//array to hold the list elements
     int length;     //variable to store the length of the list
     int maxSize;    //variable to store the maximum 
                     //size of the list
@@ -157,7 +158,7 @@ template <class elemType>
 void arrayListType<elemType>::print() const
 {
     for (int i = 0; i < this->length; i++)
-        cout << list[i] << " ";
+        cout << Name[i] << Seats[i] << " ";
     cout << endl;
 }
 
@@ -173,7 +174,7 @@ bool arrayListType<elemType>::isItemAtEqual(int location,
         return false;
     }
     else
-        return (list[location] == item);
+        return (Name[location] == item);
 }
 
 template <class elemType>
@@ -185,9 +186,10 @@ void arrayListType<elemType>::removeAt(int location)
     else
     {
         for (int i = location; i < this->length - 1; i++)
-            list[i] = list[i + 1];
-
-        this->length--;
+        {
+            Name[i] = "";
+            Seats[i] = false;
+        }
     }
 } //end removeAt
 
@@ -199,7 +201,7 @@ void arrayListType<elemType>::retrieveAt(int location,
         cout << "The location of the item to be retrieved is "
         << "out of range" << endl;
     else
-        retItem = list[location];
+        retItem = Name[location];
 } //end retrieveAt
 
 template <class elemType>
@@ -221,7 +223,7 @@ arrayListType<elemType>::arrayListType(int size)
     else
         this->maxSize = size;
 
-    this->length = 0;
+    this->length = this->maxSize;
 
     list = new elemType[this->maxSize];
 }
