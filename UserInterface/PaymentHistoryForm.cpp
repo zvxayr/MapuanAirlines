@@ -20,6 +20,7 @@ PaymentHistoryForm::~PaymentHistoryForm()
 
 System::Void PaymentHistoryForm::RefreshForm()
 {
+	m_PassengerList->Items->Clear();
 	for (const auto& [Id, SurName, GivenName, MiddleName, Sex, BirthDate, ContactNumber, Address] : Passenger::List())
 	{
 		m_PassengerList->Items->Add(Id);
