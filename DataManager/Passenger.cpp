@@ -6,13 +6,22 @@ using namespace DataManager;
 
 static bool didChange = false;
 
-Passenger::Data::Data(std::string& name, std::string Sex, std::string BirthDate, std::string ContactNumber, std::string Address, std::string Place)
-	: Name(name)
-	, Sex(Sex)
-	, BirthDate(BirthDate)
-	, ContactNumber(ContactNumber)
-	, Address(Address)
-	, Place(Place)
+Passenger::Data::Data(
+	std::string surName,
+	std::string givenName,
+	std::string middleName,
+	std::string sex,
+	std::string birthDate,
+	std::string contactNumber,
+	std::string address
+)
+	: SurName(surName)
+	, GivenName(givenName)
+	, MiddleName(middleName)
+	, Sex(sex)
+	, BirthDate(birthDate)
+	, ContactNumber(contactNumber)
+	, Address(address)
 {
 }
 
@@ -22,20 +31,38 @@ std::vector<Passenger::Data>& Passenger::List()
 	return list;
 }
 
+void Passenger::Data::operator=(const Passenger::Data& other)
+{
+	this->SurName = other.SurName;
+	this->GivenName = other.GivenName;
+	this->MiddleName = other.MiddleName;
+	this->Sex = other.Sex;
+	this->BirthDate = other.BirthDate;
+	this->ContactNumber = other.ContactNumber;
+	this->Address = other.Address;
+}
+
 void Passenger::load(const std::string& filename)
 {
 	std::ifstream file(filename);
+	if (!file.is_open()) return;
+
+	int count;
+	FileHandler::ReadRow(file, count);
+	List().reserve(count + 100); // arbitrary expected number of new passengers
+
 	while (file.peek() != EOF)
 	{
-		std::string name;
-		std::string Sex;
-		std::string BirthDate;
-		std::string ContactNumber;
-		std::string Address;
-		std::string Place;
+		std::string surName;
+		std::string givenName;
+		std::string middleName;
+		std::string sex;
+		std::string birthDate;
+		std::string contactNumber;
+		std::string address;
 
-		FileHandler::ReadRow(file, name, Sex, BirthDate, ContactNumber, Address, Place);
-		List().emplace_back(name, Sex, BirthDate, ContactNumber, Address, Place);
+		FileHandler::ReadRow(file, surName, givenName, middleName, sex, birthDate, contactNumber, address);
+		List().emplace_back(surName, givenName, middleName, sex, birthDate, contactNumber, address);
 	}
 }
 
@@ -44,17 +71,21 @@ void Passenger::save(const std::string& filename)
 	if (!didChange) return;
 
 	std::ofstream file(filename);
-	for (auto& fclass : List())
-		FileHandler::WriteRow(file, fclass.Name, fclass.Sex, fclass.BirthDate, fclass.ContactNumber, fclass.Address, fclass.Place);
+	FileHandler::WriteRow(file, List().size());
+	for (const auto& [SurName, GivenName, MiddleName, Sex, BirthDate, ContactNumber, Address] : List())
+		FileHandler::WriteRow(file, SurName, GivenName, MiddleName, Sex, BirthDate, ContactNumber, Address);
 }
 
-
-void Passenger::Data::operator=(const Passenger::Data& other)
+void Passenger::create(
+	std::string surName,
+	std::string givenName,
+	std::string middleName,
+	std::string sex,
+	std::string birthDate,
+	std::string contactNumber,
+	std::string address)
 {
-	this->Name = other.Name;
-	this->Sex = other.Sex;
-	this->BirthDate = other.BirthDate;
-	this->ContactNumber = other.ContactNumber;
-	this->Address = other.Address;
-	this->Place = other.Place;
+	didChange = true;
+
+	List().emplace_back(surName, givenName, middleName, sex, birthDate, contactNumber, address);
 }
