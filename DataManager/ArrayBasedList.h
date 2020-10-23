@@ -225,13 +225,15 @@ arrayListType<elemType>::arrayListType(int size)
 
     this->length = this->maxSize;
 
-    list = new elemType[this->maxSize];
+    Name = new elemType[this->maxSize];
+    Seats = new bool[this->maxSize];
 }
 
 template <class elemType>
 arrayListType<elemType>::~arrayListType()
 {
-    delete[] list;
+    delete[] Name;
+    delete[] Seats;
 }
 
 template <class elemType>
@@ -240,10 +242,14 @@ arrayListType<elemType>::arrayListType(const arrayListType<elemType>& otherList)
     this->maxSize = otherList.maxSize;
     this->length = otherList.length;
 
-    list = new int[this->maxSize]; 	//create the array
+    Name = new int[this->maxSize]; 	//create the array
+    Seats = new int[this->maxSize];
 
     for (int j = 0; j < this->length; j++)  //copy otherList
-        list[j] = otherList.list[j];
+    {
+        Name[j] = otherList.Name[j];
+        Seats[j] = otherList.Seats[j];
+    }
 }//end copy constructor
 
 
@@ -253,14 +259,19 @@ const arrayListType<elemType>& arrayListType<elemType>::operator=
 {
     if (this != &otherList)    //avoid self-assignment
     {
-        delete[] list;
+        delete[] Name;
+        delete[] Seats;
         this->maxSize = otherList.maxSize;
         this->length = otherList.length;
 
-        list = new elemType[this->maxSize];
+        Name = new elemType[this->maxSize];
+        Seats = new elemType[this->maxSize];
 
         for (int i = 0; i < this->length; i++)
-            list[i] = otherList.list[i];
+        {
+            Name[i] = otherList.Name[i];
+            Seats[i] = otherList.Seats[i];
+        }
     }
     return *this;
 }
