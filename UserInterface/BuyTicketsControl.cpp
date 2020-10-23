@@ -7,6 +7,7 @@
 #include "AdditionalServicesForm.h"
 #include <fstream>
 #include <iostream>
+#include <ctime>
 
 using namespace std;
 using namespace UserInterface;
@@ -31,6 +32,7 @@ void BuyTicketsControl::MountForm(System::Windows::Forms::UserControl^ form)
 
 void BuyTicketsControl::FlightDetails_Entered(FlightDetailForm::Data^ flightDetails)
 {
+	m_Data = gcnew Data;
 	m_Data->FlightDetails->IsOneWay = flightDetails->IsOneWay;
 	m_Data->FlightDetails->IsFlyingToPlace = flightDetails->IsFlyingToPlace;
 	m_Data->FlightDetails->Place = flightDetails->Place;
@@ -59,7 +61,7 @@ void BuyTicketsControl::FlightDetails_Entered(FlightDetailForm::Data^ flightDeta
 	MountForm(m_PassengerDetailForm);
 }
 
-void BuyTicketsControl::PassengerDetails_Entered(PassengerDetailForm::Data^ passengerDetails, FlightDetailForm::Data^ flightDetails)
+void BuyTicketsControl::PassengerDetails_Entered(PassengerDetailForm::Data^ passengerDetails)
 {
 	m_Data->PassengerDetails->Name = passengerDetails->Name;
 	m_Data->PassengerDetails->Sex = passengerDetails->Sex;
@@ -67,15 +69,22 @@ void BuyTicketsControl::PassengerDetails_Entered(PassengerDetailForm::Data^ pass
 	m_Data->PassengerDetails->ContactNum = passengerDetails->ContactNum;
 	m_Data->PassengerDetails->Address = passengerDetails->Address;
 
-	ofstream file("History.txt", ios::app);
+	time_t now = time(0);
+	tm* ltm = localtime(&now);
+
+	// print various components of tm structure.
+	int year = 1900 + ltm->tm_year;
+	int month = 1 + ltm->tm_mon;
+	int day = ltm->tm_mday;
+
+	ofstream file( to_string(year) + "-" + to_string(month) + "-" + to_string(day) + ".txt", ios::app);
 	FileHandler::WriteRow(file,
 		passengerDetails->Name,
 		passengerDetails->Sex,
 		passengerDetails->BirthDate,
 		passengerDetails->ContactNum,
 		passengerDetails->Address,
-		flightDetails->Place
-	);
+		m_Data->FlightDetails->Place.Name);
 
 	MountForm(m_AdditionalServicesForm);
 }
@@ -131,7 +140,6 @@ void BuyTicketsControl::AdditionalServices_Selected(AdditionalServicesForm::Data
 		fstream file3("TotalTickets.txt", ios::out);
 		file3 << TotalTickets + TotalPassengers;
 
-		
 
 		ParentForm->Show();
 		MountForm(m_FlightDetailForm);

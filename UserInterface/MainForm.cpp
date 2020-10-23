@@ -93,6 +93,7 @@ bool MainForm::Exit()
 
 void MainForm::Buy(BuyTicketsControl::Data^ data)
 {
+	m_PaymentHistory->Refresh();
 	System::Windows::Forms::DialogResult response = MessageBox::Show(
 		"Success!"
 	);
