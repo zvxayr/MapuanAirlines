@@ -21,8 +21,9 @@ System::Void MainForm::MainForm_Load(System::Object^ sender, System::EventArgs^ 
 	m_PaymentHistory = gcnew PaymentHistoryForm();
 	m_FlightStatus = gcnew FlightStatusForm();
 
-	// attach title bar callbacks
+	// attach callbacks
 	m_TitleBar->OnExit = gcnew System::Func<bool>(this, &MainForm::Exit);
+	m_BuyTickets->OnBuy += gcnew System::Action<BuyTicketsControl::Data^>(this, &MainForm::Buy);
 }
 
 void MainForm::LoadControl(System::Windows::Forms::UserControl^ control)
@@ -88,4 +89,11 @@ bool MainForm::Exit()
 
 	ClearActiveButton();
 	return false;
+}
+
+void MainForm::Buy(BuyTicketsControl::Data^ data)
+{
+	System::Windows::Forms::DialogResult response = MessageBox::Show(
+		"Success!"
+	);
 }
