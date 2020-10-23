@@ -25,22 +25,29 @@ System::Void CancelFlightForm::m_Search_Click(System::Object^ sender, System::Ev
 	using namespace DataManager;
 	using namespace Passenger;
 
-	int i = 0;
+	bool found = false;
 
-	while(Passenger->)
-	Passenger::List()[i];
-	bool Found = true;
-	if (Found == true)
+	for (int i = 0; i < Passenger::List().size() && found == false; i++)
 	{
-		DialogResult Result = MessageBox::Show("Flight Reservation Found", "Are you sure you want to Cancel?", MessageBoxButtons::YesNo);
-		if (Result == DialogResult::Yes)
+		auto& passenger = Passenger::List()[i];
+		string name = passenger.SurName + ", " + passenger.GivenName + " " +  passenger.MiddleName;
+		if (name == Interop::ConvertString(m_SearchBox->Text))
 		{
-			//Use Delete Function in array based list
+			found = true;
 		}
-		MessageBox::Show("Notification", "Flight Successfully Cancelled", MessageBoxButtons::OK);
-	}
-	else
-	{
-		MessageBox::Show("Flight Reservation Not Found", "Please try again", MessageBoxButtons::OK);
+		if (found == true)
+		{
+			DialogResult Result = MessageBox::Show("Flight Reservation Found", "Are you sure you want to Cancel?" + Interop::ConvertString(to_string(i)), MessageBoxButtons::YesNo);
+			if (Result == DialogResult::Yes)
+			{
+				Passenger::Erase(i);
+				//Use Delete Function in array based list
+			}
+			MessageBox::Show("Notification", "Flight Successfully Cancelled", MessageBoxButtons::OK);
+		}
+		else
+		{
+			MessageBox::Show("Flight Reservation Not Found", "Please try again", MessageBoxButtons::OK);
+		}
 	}
 }

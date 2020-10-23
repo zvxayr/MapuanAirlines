@@ -46,8 +46,8 @@ System::Void PaymentHistoryForm::RefreshForm()
 
 				while (file.peek() != EOF)
 				{
-					std::string Name, Sex, BirthDate, ContactNum, Address, Place;
-					FileHandler::ReadRow(file, Name, Sex, BirthDate, ContactNum, Address, Place);
+					std::string Name, Sex, BirthDate, ContactNum, Address, ContactNumber, Place;
+					FileHandler::ReadRow(file, Name, Sex, BirthDate, ContactNum, Address, ContactNumber, Place);
 
 					m_PassengerList->Items->Add(Interop::ConvertString(Name));
 					m_PassengerList->Items->Add(Interop::ConvertString(Sex));
@@ -55,6 +55,7 @@ System::Void PaymentHistoryForm::RefreshForm()
 					m_PassengerList->Items->Add(Interop::ConvertString(ContactNum));
 					m_PassengerList->Items->Add(Interop::ConvertString(Address));
 					m_PassengerList->Items->Add(Interop::ConvertString(Place));
+					m_PassengerList->Items->Add(Interop::ConvertString(ContactNumber));
 					m_PassengerList->Items->Add("\n\r");
 				}
 				d++;

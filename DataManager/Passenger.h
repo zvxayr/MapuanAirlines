@@ -29,6 +29,7 @@ namespace DataManager::Passenger {
 	};
 
 	std::vector<Passenger::Data>& List();
+	void Erase(int loc);
 	void load(const std::string& filename);
 	void save(const std::string& filename);
 	void create(

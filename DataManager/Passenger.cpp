@@ -25,6 +25,19 @@ Passenger::Data::Data(
 {
 }
 
+void Passenger::Erase(int loc)
+{
+	static std::vector<Passenger::Data> list;
+	if (list.begin() == list.end())
+	{
+		list.pop_back();
+	}
+	else 
+	{
+		list.erase(list.begin() + loc);
+	}
+}
+
 std::vector<Passenger::Data>& Passenger::List()
 {
 	static std::vector<Passenger::Data> list;
