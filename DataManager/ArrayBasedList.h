@@ -123,7 +123,7 @@ public:
 
 protected:
     elemType* Name;
-    bool* Seats//array to hold the list elements
+    bool* Seats;//array to hold the list elements
     int length;     //variable to store the length of the list
     int maxSize;    //variable to store the maximum 
                     //size of the list

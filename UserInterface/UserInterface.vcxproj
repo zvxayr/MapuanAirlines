@@ -238,7 +238,6 @@
     <Text Include="Destinations.txt">
       <DeploymentContent>true</DeploymentContent>
     </Text>
-    <Text Include="Total.txt" />
     <Text Include="TotalMoney.txt" />
     <Text Include="TotalTickets.txt" />
   </ItemGroup>
