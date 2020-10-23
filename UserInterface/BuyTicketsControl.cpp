@@ -59,7 +59,7 @@ void BuyTicketsControl::FlightDetails_Entered(FlightDetailForm::Data^ flightDeta
 	MountForm(m_PassengerDetailForm);
 }
 
-void BuyTicketsControl::PassengerDetails_Entered(PassengerDetailForm::Data^ passengerDetails, FlightDetailForm::Data^ flightDetails)
+void BuyTicketsControl::PassengerDetails_Entered(PassengerDetailForm::Data^ passengerDetails)
 {
 	m_Data->PassengerDetails->Name = passengerDetails->Name;
 	m_Data->PassengerDetails->Sex = passengerDetails->Sex;
@@ -74,7 +74,7 @@ void BuyTicketsControl::PassengerDetails_Entered(PassengerDetailForm::Data^ pass
 		passengerDetails->BirthDate,
 		passengerDetails->ContactNum,
 		passengerDetails->Address,
-		flightDetails->Place
+		m_Data->FlightDetails->Place.Name
 	);
 
 	MountForm(m_AdditionalServicesForm);
