@@ -111,9 +111,6 @@ void BuyTicketsControl::BuyTickets()
 	if (!flightDetails->IsOneWay)
 		TotalBill = TotalBill * 2;
 
-	ofstream file("Total.txt", ios::out);
-	FileHandler::WriteRow(file, TotalBill, TotalPassengers);
-
 	// ----------------------------------------------------
 
 	{
@@ -153,8 +150,6 @@ void BuyTicketsControl::BuyTickets()
 	if (additionalServices->Seats)
 	{
 		TotalBill += 300;
-		ofstream fout("Total.txt", ios::out);
-		FileHandler::WriteRow(fout, TotalBill, TotalPassengers);
 	}
 	
 	// ----------------------------------------------------
