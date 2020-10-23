@@ -103,8 +103,5 @@
     <Text Include="TotalTickets.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="History.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
   </ItemGroup>
 </Project>
