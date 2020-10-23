@@ -11,8 +11,20 @@ using namespace System::Windows::Forms;
 using namespace System::Data;
 using namespace System::Drawing;
 
-
 namespace UserInterface {
+
+	ref class BuyTicketsControl;
+
+	public ref class BuyTicketsControlData
+	{
+	public:
+		// TODO: Use proper members instead of these
+		FlightDetailForm::Data FlightDetails;
+		PassengerDetailForm::Data PassengerDetails;
+		AdditionalServicesForm::Data AdditionalServices;
+		SeatSelectionForm::Data SelectedSeats;
+	};
+
 
 	/// <summary>
 	/// Summary for BuyTicketsControl
@@ -67,7 +79,17 @@ namespace UserInterface {
 
 		}
 #pragma endregion
-	
+
+	public:
+		using Data = BuyTicketsControlData;
+
+	private:
+		Data^ m_Data;
+		void BuyTickets(Data^);
+
+	public:
+		System::Action<Data^>^ OnBuy;
+
 	private:
 		FlightDetailForm^ m_FlightDetailForm;
 		PassengerDetailForm^ m_PassengerDetailForm;

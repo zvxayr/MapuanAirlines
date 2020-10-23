@@ -236,6 +236,7 @@ namespace UserInterface {
 
 	private:
 		bool Exit();
+		void Buy(BuyTicketsControl::Data^);
 
 	private:
 		System::Void MainForm_Load(System::Object^ sender, System::EventArgs^ e);

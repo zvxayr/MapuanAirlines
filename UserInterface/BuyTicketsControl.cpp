@@ -31,6 +31,14 @@ void BuyTicketsControl::MountForm(System::Windows::Forms::UserControl^ form)
 
 void BuyTicketsControl::FlightDetails_Entered(FlightDetailForm::Data^ flightDetails)
 {
+	m_Data->FlightDetails->IsOneWay = flightDetails->IsOneWay;
+	m_Data->FlightDetails->IsFlyingToPlace = flightDetails->IsFlyingToPlace;
+	m_Data->FlightDetails->Place = flightDetails->Place;
+	m_Data->FlightDetails->AdultCount = flightDetails->AdultCount;
+	m_Data->FlightDetails->ChildCount = flightDetails->ChildCount;
+	m_Data->FlightDetails->InfantCount = flightDetails->InfantCount;
+	m_Data->FlightDetails->FlightClass = flightDetails->FlightClass;
+
 	auto& fclass = flightDetails->FlightClass;
 	auto& destination = flightDetails->Place;
 
@@ -53,7 +61,13 @@ void BuyTicketsControl::FlightDetails_Entered(FlightDetailForm::Data^ flightDeta
 
 void BuyTicketsControl::PassengerDetails_Entered(PassengerDetailForm::Data^ passengerDetails, FlightDetailForm::Data^ flightDetails)
 {
-	ofstream file(flightDetails->Date + ".txt", ios::app);
+	m_Data->PassengerDetails->Name = passengerDetails->Name;
+	m_Data->PassengerDetails->Sex = passengerDetails->Sex;
+	m_Data->PassengerDetails->BirthDate = passengerDetails->BirthDate;
+	m_Data->PassengerDetails->ContactNum = passengerDetails->ContactNum;
+	m_Data->PassengerDetails->Address = passengerDetails->Address;
+
+	ofstream file("History.txt", ios::app);
 	FileHandler::WriteRow(file,
 		passengerDetails->Name,
 		passengerDetails->Sex,
@@ -154,6 +168,13 @@ void BuyTicketsControl::Seats_Selected(SeatSelectionForm::Data^ selectedSeats)
 
 	ParentForm->Show();
 	MountForm(m_FlightDetailForm);
+
+	if (OnBuy) OnBuy(m_Data);
+}
+
+void BuyTicketsControl::BuyTickets(Data^ data)
+{
+
 }
 
 System::Void BuyTicketsControl::BuyTicketsControl_Load(System::Object^ sender, System::EventArgs^ e)
@@ -169,6 +190,8 @@ System::Void BuyTicketsControl::BuyTicketsControl_Load(System::Object^ sender, S
 	m_PassengerDetailForm->OnContinue = gcnew System::Action<PassengerDetailForm::Data^>(this, &BuyTicketsControl::PassengerDetails_Entered);
 	m_AdditionalServicesForm->OnContinue = gcnew System::Action<AdditionalServicesForm::Data^>(this, &BuyTicketsControl::AdditionalServices_Selected);
 	m_SeatSelectionForm->OnContinue = gcnew System::Action<SeatSelectionForm::Data^>(this, &BuyTicketsControl::Seats_Selected);
+
+	OnBuy = gcnew System::Action<Data^>(this, &BuyTicketsControl::BuyTickets);
 
 	// mount initial form
 	MountForm(m_FlightDetailForm);
