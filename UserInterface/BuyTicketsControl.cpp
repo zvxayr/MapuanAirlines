@@ -113,27 +113,14 @@ void BuyTicketsControl::BuyTickets()
 
 	// ----------------------------------------------------
 
-	{
-		ofstream file(flightDetails->DepartDate + ".txt", ios::app);
-		FileHandler::WriteRow(file,
-			passengerDetails->passenger.SurName,
-			passengerDetails->passenger.GivenName,
-			passengerDetails->passenger.MiddleName,
-			passengerDetails->passenger.Sex,
-			passengerDetails->passenger.BirthDate,
-			passengerDetails->passenger.ContactNumber,
-			passengerDetails->passenger.Address
-		);
-
-		Passenger::create(
-			passengerDetails->passenger.SurName,
-			passengerDetails->passenger.GivenName,
-			passengerDetails->passenger.MiddleName,
-			passengerDetails->passenger.Sex,
-			passengerDetails->passenger.BirthDate,
-			passengerDetails->passenger.ContactNumber,
-			passengerDetails->passenger.Address);
-	}
+	Passenger::create(
+		passengerDetails->passenger.SurName,
+		passengerDetails->passenger.GivenName,
+		passengerDetails->passenger.MiddleName,
+		passengerDetails->passenger.Sex,
+		passengerDetails->passenger.BirthDate,
+		passengerDetails->passenger.ContactNumber,
+		passengerDetails->passenger.Address);
 
 	// ----------------------------------------------------
 
