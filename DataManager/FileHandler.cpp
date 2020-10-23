@@ -19,9 +19,8 @@ void FileHandler::Read(std::ifstream& file, std::string& value)
 		}
 
 		// skip to the next delimiter
-		while (chr != ',' && chr != '\n' && chr != EOF) {
+		while (chr != ',' && chr != '\n' && chr != EOF)
 			chr = file.get();
-		}
 	}
 	else
 	{
