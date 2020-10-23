@@ -2,6 +2,7 @@
 #include "DataManager.h"
 #include "FlightClass.h"
 #include "Destination.h"
+#include "PaymentHistoryForm.h"
 #include <fstream>
 #include <iostream>
 
@@ -113,7 +114,7 @@ void BuyTicketsControl::Seats_Selected(SeatSelectionForm::Data^ selectedSeats)
 	fstream file3("TotalTickets.txt", ios::out);
 	file3 << TotalTickets + TotalPassengers;
 	
-	
+	PaymentHistoryForm::RefreshForm();
 	m_SeatSelectionForm->Hide();
 
 	ParentForm->Show();

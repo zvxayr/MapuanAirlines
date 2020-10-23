@@ -9,7 +9,17 @@ using namespace UserInterface;
 PaymentHistoryForm::PaymentHistoryForm()
 {
 	InitializeComponent();
+	RefreshForm();
+}
 
+PaymentHistoryForm::~PaymentHistoryForm()
+{
+	if (components)
+		delete components;
+}
+
+System::Void PaymentHistoryForm::RefreshForm()
+{
 	fstream file("History.txt", ios::in);
 	string Name;
 	string Sex;
@@ -31,10 +41,4 @@ PaymentHistoryForm::PaymentHistoryForm()
 		m_PassengerList->Items->Add(Interop::ConvertString(Address));
 		m_PassengerList->Items->Add("\n\r");
 	}
-}
-
-PaymentHistoryForm::~PaymentHistoryForm()
-{
-	if (components)
-		delete components;
 }
