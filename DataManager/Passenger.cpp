@@ -27,15 +27,7 @@ Passenger::Data::Data(
 
 void Passenger::Erase(int loc)
 {
-	static std::vector<Passenger::Data> list;
-	if (list.begin() == list.end())
-	{
-		list.pop_back();
-	}
-	else 
-	{
-		list.erase(list.begin() + loc);
-	}
+	List().erase(List().begin() + loc);
 }
 
 std::vector<Passenger::Data>& Passenger::List()
@@ -99,6 +91,5 @@ void Passenger::create(
 	std::string address)
 {
 	didChange = true;
-
 	List().emplace_back(surName, givenName, middleName, sex, birthDate, contactNumber, address);
 }
