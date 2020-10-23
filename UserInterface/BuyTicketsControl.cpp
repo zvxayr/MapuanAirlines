@@ -3,6 +3,8 @@
 #include "FlightClass.h"
 #include "Destination.h"
 #include "FileHandler.h"
+#include "PaymentHistoryForm.h"
+#include "AdditionalServicesForm.h"
 #include <fstream>
 #include <iostream>
 
@@ -49,15 +51,16 @@ void BuyTicketsControl::FlightDetails_Entered(FlightDetailForm::Data^ flightDeta
 	MountForm(m_PassengerDetailForm);
 }
 
-void BuyTicketsControl::PassengerDetails_Entered(PassengerDetailForm::Data^ passengerDetails)
+void BuyTicketsControl::PassengerDetails_Entered(PassengerDetailForm::Data^ passengerDetails, FlightDetailForm::Data^ flightDetails)
 {
-	ofstream file("History.txt", ios::app);
+	ofstream file(flightDetails->Date + ".txt", ios::app);
 	FileHandler::WriteRow(file,
 		passengerDetails->Name,
 		passengerDetails->Sex,
 		passengerDetails->BirthDate,
 		passengerDetails->ContactNum,
-		passengerDetails->Address
+		passengerDetails->Address,
+		flightDetails->Place
 	);
 
 	MountForm(m_AdditionalServicesForm);
@@ -82,14 +85,45 @@ void BuyTicketsControl::AdditionalServices_Selected(AdditionalServicesForm::Data
 	}
 	if (additionalServices->Seats)
 	{
+		ofstream fout("Total.txt", ios::out);
+		FileHandler::WriteRow(fout, TotalBill, TotalPassengers);
 
+		m_SeatSelectionForm->Show();
+		ParentForm->Hide();
+	}
+	else
+	{
+		ofstream fout("Total.txt", ios::out);
+		FileHandler::WriteRow(fout, TotalBill, TotalPassengers);
+		double TotalBill;
+		int TotalPassengers;
+
+		ifstream fin("Total.txt", ios::in);
+		FileHandler::ReadRow(fin, TotalBill, TotalPassengers);
+
+		double TotalMoney;
+		int TotalTickets;
+
+		MessageBox::Show("Tickets Successfully Created" + "\n\r" + "Total bill: " + TotalBill.ToString() + "\n\r" + "Total number of passengers: " + TotalPassengers.ToString(), "Ok", MessageBoxButtons::OK);
+		fstream get("TotalMoney.txt", ios::in);
+		get >> TotalMoney;
+
+		fstream get2("TotalTickets.txt", ios::in);
+		get2 >> TotalTickets;
+
+		fstream file2("TotalMoney.txt", ios::out);
+		file2 << TotalMoney + TotalBill;
+
+		fstream file3("TotalTickets.txt", ios::out);
+		file3 << TotalTickets + TotalPassengers;
+
+		
+
+		ParentForm->Show();
+		MountForm(m_FlightDetailForm);
 	}
 
-	ofstream fout("Total.txt", ios::out);
-	FileHandler::WriteRow(fout, TotalBill, TotalPassengers);
-
-	m_SeatSelectionForm->Show();
-	ParentForm->Hide();
+	
 }
 
 void BuyTicketsControl::Seats_Selected(SeatSelectionForm::Data^ selectedSeats)
@@ -116,7 +150,6 @@ void BuyTicketsControl::Seats_Selected(SeatSelectionForm::Data^ selectedSeats)
 	fstream file3("TotalTickets.txt", ios::out);
 	file3 << TotalTickets + TotalPassengers;
 	
-	PaymentHistoryForm::RefreshForm();
 	m_SeatSelectionForm->Hide();
 
 	ParentForm->Show();

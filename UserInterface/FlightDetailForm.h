@@ -3,6 +3,7 @@
 #include "Destination.h"
 #include "Interop.h"
 
+using namespace std;
 using namespace System;
 using namespace System::ComponentModel;
 using namespace System::Collections;
@@ -24,6 +25,7 @@ namespace UserInterface {
         int AdultCount;
         int ChildCount;
         int InfantCount;
+        string Date;
         DataManager::FlightClass::Data FlightClass;
     };
 

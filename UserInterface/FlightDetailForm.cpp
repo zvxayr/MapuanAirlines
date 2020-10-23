@@ -1,5 +1,6 @@
 #include "FlightDetailForm.h"
 #include "DataManager.h"
+#include <ctime>
 
 using namespace UserInterface;
 
@@ -35,6 +36,14 @@ FlightDetailForm::Data^ FlightDetailForm::getData()
 {
 	using namespace DataManager;
 
+	time_t now = time(0);
+	tm* ltm = localtime(&now);
+
+	// print various components of tm structure.
+	int year = 1900 + ltm->tm_year;
+	int month = 1 + ltm->tm_mon;
+	int day = ltm->tm_mday;
+
 	Data^ data = gcnew Data;
 	data->IsOneWay = m_OneWay->Checked;
 	data->IsFlyingToPlace = m_To->Checked;
@@ -43,6 +52,7 @@ FlightDetailForm::Data^ FlightDetailForm::getData()
 	data->ChildCount = int::Parse(m_ChildCount->Text);;
 	data->InfantCount = int::Parse(m_InfantCount->Text);;
 	data->FlightClass = FlightClass::List()[m_FlightClass->SelectedIndex];
+	data->Date = (to_string(year)) + "-" + (to_string(month)) + "-" + (to_string(day));
 
 	return data;
 }

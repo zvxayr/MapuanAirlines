@@ -101,6 +101,6 @@ namespace UserInterface {
 		}
 #pragma endregion
 	public:
-		static void RefreshForm();
+		void RefreshForm();
 	};
 }
