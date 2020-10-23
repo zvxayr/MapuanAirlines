@@ -16,9 +16,11 @@ AdditionalServicesForm::~AdditionalServicesForm()
 AdditionalServicesForm::Data^ AdditionalServicesForm::getData()
 {
 	Data^ data = gcnew Data;
+
 	data->Insurance = m_Insurance->Checked;
 	data->Food = m_Food->Checked;
 	data->Seats = m_Seat->Checked;
+
 	return data;
 }
 

@@ -18,19 +18,10 @@ PassengerDetailForm::~PassengerDetailForm()
 PassengerDetailForm::Data^ PassengerDetailForm::getData()
 {
 	Data^ data = gcnew Data;
-	string Sex;
-
-	if (m_Sex_Male->Checked)
-	{
-		Sex = "Male";
-	}
-	else
-	{
-		Sex = "Female";
-	}
-
-	data->Name = Interop::ConvertString(m_Surname->Text)  + ", " + Interop::ConvertString(m_Surname->Text) + " " + Interop::ConvertString(m_Surname->Text);
-	data->Sex = Sex;
+	data->Name = Interop::ConvertString(m_Surname->Text) + ", " +
+		Interop::ConvertString(m_GivenName->Text) + " " +
+		Interop::ConvertString(m_MiddleName->Text);
+	data->Sex = m_Sex_Male->Checked ? "Male" : "Female";
 	data->BirthDate = Interop::ConvertString(m_BirthDate->Text);
 	data->ContactNum = Interop::ConvertString(m_ContactNumber->Text);
 	data->Address = Interop::ConvertString(m_Address->Text);
