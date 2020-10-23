@@ -153,6 +153,7 @@
     <ClInclude Include="FileHandler.h" />
     <ClInclude Include="FlightClass.h" />
     <ClInclude Include="Passenger.h" />
+    <ClInclude Include="UnorderedArrayBasedList.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DataManager.cpp" />

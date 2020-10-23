@@ -2,6 +2,7 @@
 #include "DataManager.h"
 #include "UnorderedArrayBasedList.h"
 #include "Passenger.h"
+#include "Interop.h"
 
 using namespace std;
 using namespace DataManager;
@@ -21,6 +22,13 @@ CancelFlightForm::~CancelFlightForm()
 System::Void CancelFlightForm::m_Search_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	//replace with the search function for array based list
+	using namespace DataManager;
+	using namespace Passenger;
+
+	int i = 0;
+
+	while(Passenger->)
+	Passenger::List()[i];
 	bool Found = true;
 	if (Found == true)
 	{

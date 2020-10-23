@@ -8,48 +8,40 @@ template <class elemType>
 class unorderedArrayListType : public arrayListType<elemType>
 {
 public:
-    void insertAt(int location, const elemType& insertItem);
-    void insertEnd(const elemType& insertItem);
-    void replaceAt(int location, const elemType& repItem);
+    void insertAt(int location, elemType& insertName, bool insertSeat);
+    void insertEnd(elemType& insertName, bool insertSeat);
+    void replaceAt(int location, elemType& insertName, bool insertSeat);
     int seqSearch(const elemType& searchItem) const;
     void remove(const elemType& removeItem);
 
-    unorderedArrayListType(int size = 100);
+    unorderedArrayListType(int size = 60);
     //Constructor
 
 };
 
 template <class elemType>
-void unorderedArrayListType<elemType>::insertAt(int location,
-    const elemType& insertItem)
+void unorderedArrayListType<elemType>::insertAt(int location, elemType& insertName, bool insertSeat)
 {
     if (location < 0 || location >= this->maxSize)
         cout << "The position of the item to be inserted "
         << "is out of range." << endl;
-    else if (this->length >= this->maxSize)  //list is full
-        cout << "Cannot insert in a full list" << endl;
     else
     {
-        for (int i = this->length; i > location; i--)
-            this->list[i] = this->list[i - 1];	//move the elements down
-
-        this->list[location] = insertItem; //insert the item at 
-                                     //the specified position
-
-        this->length++;	//increment the length
+        this->Name[location] = insertName; //insert the item at 
+        this->Seats[location] = insertSeat;
     }
 } //end insertAt
 
 template <class elemType>
 void unorderedArrayListType<elemType>::insertEnd
-(const elemType& insertItem)
+(elemType& insertName, bool insertSeat)
 {
     if (this->length >= this->maxSize)  //the list is full
         cout << "Cannot insert in a full list." << endl;
     else
     {
-        this->list[this->length] = insertItem; //insert the item at the end
-        this->length++; //increment the length
+        this->Name[this->length] = insertName; //insert the item at the end
+        this->Seats[this->length] = insertSeat;
     }
 } //end insertEnd
 
@@ -61,7 +53,7 @@ int unorderedArrayListType<elemType>::seqSearch
     bool found = false;
 
     for (loc = 0; loc < this->length; loc++)
-        if (this->list[loc] == searchItem)
+        if (this->Name[loc] == searchItem)
         {
             found = true;
             break;
@@ -95,13 +87,16 @@ void unorderedArrayListType<elemType>::remove
 
 template <class elemType>
 void unorderedArrayListType<elemType>::replaceAt(int location,
-    const elemType& repItem)
+    elemType& insertName, bool insertSeat)
 {
     if (location < 0 || location >= this->length)
         cout << "The location of the item to be "
         << "replaced is out of range." << endl;
     else
-        this->list[location] = repItem;
+    {
+        this->Name[location] = insertName;
+        this->List[location] = insertSeat;
+    }
 } //end replaceAt
 
 template <class elemType>
