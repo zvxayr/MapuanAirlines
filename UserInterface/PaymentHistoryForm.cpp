@@ -1,29 +1,23 @@
 #include "PaymentHistoryForm.h"
 #include "Interop.h"
+#include "FileHandler.h"
 #include <fstream>
 #include <iostream>
 
-using namespace std;
+using namespace DataManager;
 using namespace UserInterface;
 
 PaymentHistoryForm::PaymentHistoryForm()
 {
 	InitializeComponent();
 
-	fstream file("History.txt", ios::in);
-	string Name;
-	string Sex;
-	string BirthDate;
-	string ContactNum;
-	string Address;
+	std::ifstream file("History.txt");
 
 	while (file.peek() != EOF)
 	{
-		getline(file, Name);
-		getline(file, Sex);
-		getline(file, BirthDate);
-		getline(file, ContactNum);
-		getline(file, Address);
+		std::string Name, Sex, BirthDate, ContactNum, Address;
+		FileHandler::ReadRow(file, Name, Sex, BirthDate, ContactNum, Address);
+
 		m_PassengerList->Items->Add(Interop::ConvertString(Name));
 		m_PassengerList->Items->Add(Interop::ConvertString(Sex));
 		m_PassengerList->Items->Add(Interop::ConvertString(BirthDate));
