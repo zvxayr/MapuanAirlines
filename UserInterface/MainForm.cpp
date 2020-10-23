@@ -23,7 +23,7 @@ System::Void MainForm::MainForm_Load(System::Object^ sender, System::EventArgs^ 
 
 	// attach callbacks
 	m_TitleBar->OnExit = gcnew System::Func<bool>(this, &MainForm::Exit);
-	m_BuyTickets->OnBuy += gcnew System::Action<BuyTicketsControl::Data^>(this, &MainForm::Buy);
+	m_BuyTickets->OnBuy = gcnew System::Action<BuyTicketsControl::Data^>(this, &MainForm::Buy);
 }
 
 void MainForm::LoadControl(System::Windows::Forms::UserControl^ control)

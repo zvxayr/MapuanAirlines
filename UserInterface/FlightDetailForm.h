@@ -25,7 +25,8 @@ namespace UserInterface {
         int AdultCount;
         int ChildCount;
         int InfantCount;
-        string Date;
+        string DepartDate;
+        string ReturnDate;
         DataManager::FlightClass::Data FlightClass;
     };
 

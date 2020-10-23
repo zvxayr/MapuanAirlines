@@ -7,7 +7,6 @@
 #include "AdditionalServicesForm.h"
 #include <fstream>
 #include <iostream>
-#include <ctime>
 
 using namespace std;
 using namespace UserInterface;
@@ -33,6 +32,7 @@ void BuyTicketsControl::MountForm(System::Windows::Forms::UserControl^ form)
 void BuyTicketsControl::FlightDetails_Entered(FlightDetailForm::Data^ flightDetails)
 {
 	m_Data = gcnew Data;
+
 	m_Data->FlightDetails->IsOneWay = flightDetails->IsOneWay;
 	m_Data->FlightDetails->IsFlyingToPlace = flightDetails->IsFlyingToPlace;
 	m_Data->FlightDetails->Place = flightDetails->Place;
@@ -40,6 +40,62 @@ void BuyTicketsControl::FlightDetails_Entered(FlightDetailForm::Data^ flightDeta
 	m_Data->FlightDetails->ChildCount = flightDetails->ChildCount;
 	m_Data->FlightDetails->InfantCount = flightDetails->InfantCount;
 	m_Data->FlightDetails->FlightClass = flightDetails->FlightClass;
+	m_Data->FlightDetails->DepartDate = flightDetails->DepartDate;
+	m_Data->FlightDetails->ReturnDate = flightDetails->ReturnDate;
+
+	MountForm(m_PassengerDetailForm);
+}
+
+void BuyTicketsControl::PassengerDetails_Entered(PassengerDetailForm::Data^ passengerDetails)
+{
+	m_Data->PassengerDetails->Name = passengerDetails->Name;
+	m_Data->PassengerDetails->Sex = passengerDetails->Sex;
+	m_Data->PassengerDetails->BirthDate = passengerDetails->BirthDate;
+	m_Data->PassengerDetails->ContactNum = passengerDetails->ContactNum;
+	m_Data->PassengerDetails->Address = passengerDetails->Address;
+
+	MountForm(m_AdditionalServicesForm);
+}
+
+void BuyTicketsControl::AdditionalServices_Selected(AdditionalServicesForm::Data^ additionalServices)
+{
+	m_Data->AdditionalServices->Insurance = additionalServices->Insurance;
+	m_Data->AdditionalServices->Food = additionalServices->Food;
+	m_Data->AdditionalServices->Seats = additionalServices->Seats;
+
+	if (additionalServices->Seats)
+	{
+		m_SeatSelectionForm->Show();
+		ParentForm->Hide();
+	}
+	else
+	{
+		BuyTickets();
+
+		MountForm(m_FlightDetailForm);
+	}
+
+	
+}
+
+void BuyTicketsControl::Seats_Selected(SeatSelectionForm::Data^ selectedSeats)
+{
+	BuyTickets();
+	
+	m_SeatSelectionForm->Hide();
+
+	ParentForm->Show();
+	MountForm(m_FlightDetailForm);
+}
+
+void BuyTicketsControl::BuyTickets()
+{
+	FlightDetailForm::Data^ flightDetails = (% m_Data->FlightDetails);
+	PassengerDetailForm::Data^ passengerDetails = (% m_Data->PassengerDetails);
+	AdditionalServicesForm::Data^ additionalServices = (% m_Data->AdditionalServices);
+	SeatSelectionForm::Data^ selectedSeats = (% m_Data->SelectedSeats);
+
+	// ----------------------------------------------------
 
 	auto& fclass = flightDetails->FlightClass;
 	auto& destination = flightDetails->Place;
@@ -58,104 +114,33 @@ void BuyTicketsControl::FlightDetails_Entered(FlightDetailForm::Data^ flightDeta
 	ofstream file("Total.txt", ios::out);
 	FileHandler::WriteRow(file, TotalBill, TotalPassengers);
 
-	MountForm(m_PassengerDetailForm);
-}
+	// ----------------------------------------------------
 
-void BuyTicketsControl::PassengerDetails_Entered(PassengerDetailForm::Data^ passengerDetails)
-{
-	m_Data->PassengerDetails->Name = passengerDetails->Name;
-	m_Data->PassengerDetails->Sex = passengerDetails->Sex;
-	m_Data->PassengerDetails->BirthDate = passengerDetails->BirthDate;
-	m_Data->PassengerDetails->ContactNum = passengerDetails->ContactNum;
-	m_Data->PassengerDetails->Address = passengerDetails->Address;
+	{
+		ofstream file(flightDetails->DepartDate + ".txt", ios::app);
+		FileHandler::WriteRow(file,
+			passengerDetails->Name,
+			passengerDetails->Sex,
+			passengerDetails->BirthDate,
+			passengerDetails->ContactNum,
+			passengerDetails->Address,
+			flightDetails->Place.Name
+		);
+	}
 
-	time_t now = time(0);
-	tm* ltm = localtime(&now);
-
-	// print various components of tm structure.
-	int year = 1900 + ltm->tm_year;
-	int month = 1 + ltm->tm_mon;
-	int day = ltm->tm_mday;
-
-	ofstream file( to_string(year) + "-" + to_string(month) + "-" + to_string(day) + ".txt", ios::app);
-	FileHandler::WriteRow(file,
-		passengerDetails->Name,
-		passengerDetails->Sex,
-		passengerDetails->BirthDate,
-		passengerDetails->ContactNum,
-		passengerDetails->Address,
-		m_Data->FlightDetails->Place.Name
-	);
-
-	MountForm(m_AdditionalServicesForm);
-}
-
-void BuyTicketsControl::AdditionalServices_Selected(AdditionalServicesForm::Data^ additionalServices)
-{
-	double TotalBill;
-	int TotalPassengers;
-
-	ifstream fin("Total.txt", ios::in);
-	FileHandler::ReadRow(fin, TotalBill, TotalPassengers);
+	// ----------------------------------------------------
 
 	//TODO:
-	if (additionalServices->Insurance)
-	{
-		TotalBill = TotalBill;
-	}
-	if (additionalServices->Food)
-	{
+	if (additionalServices->Insurance);
+	if (additionalServices->Food);
 
-	}
 	if (additionalServices->Seats)
 	{
 		ofstream fout("Total.txt", ios::out);
 		FileHandler::WriteRow(fout, TotalBill, TotalPassengers);
-
-		m_SeatSelectionForm->Show();
-		ParentForm->Hide();
 	}
-	else
-	{
-		ofstream fout("Total.txt", ios::out);
-		FileHandler::WriteRow(fout, TotalBill, TotalPassengers);
-		double TotalBill;
-		int TotalPassengers;
-
-		ifstream fin("Total.txt", ios::in);
-		FileHandler::ReadRow(fin, TotalBill, TotalPassengers);
-
-		double TotalMoney;
-		int TotalTickets;
-
-		MessageBox::Show("Tickets Successfully Created" + "\n\r" + "Total bill: " + TotalBill.ToString() + "\n\r" + "Total number of passengers: " + TotalPassengers.ToString(), "Ok", MessageBoxButtons::OK);
-		fstream get("TotalMoney.txt", ios::in);
-		get >> TotalMoney;
-
-		fstream get2("TotalTickets.txt", ios::in);
-		get2 >> TotalTickets;
-
-		fstream file2("TotalMoney.txt", ios::out);
-		file2 << TotalMoney + TotalBill;
-
-		fstream file3("TotalTickets.txt", ios::out);
-		file3 << TotalTickets + TotalPassengers;
-
-
-		ParentForm->Show();
-		MountForm(m_FlightDetailForm);
-	}
-
 	
-}
-
-void BuyTicketsControl::Seats_Selected(SeatSelectionForm::Data^ selectedSeats)
-{
-	double TotalBill;
-	int TotalPassengers;
-
-	ifstream fin("Total.txt", ios::in);
-	FileHandler::ReadRow(fin, TotalBill, TotalPassengers);
+	// ----------------------------------------------------
 
 	double TotalMoney;
 	int TotalTickets;
@@ -172,18 +157,8 @@ void BuyTicketsControl::Seats_Selected(SeatSelectionForm::Data^ selectedSeats)
 
 	fstream file3("TotalTickets.txt", ios::out);
 	file3 << TotalTickets + TotalPassengers;
-	
-	m_SeatSelectionForm->Hide();
-
-	ParentForm->Show();
-	MountForm(m_FlightDetailForm);
 
 	if (OnBuy) OnBuy(m_Data);
-}
-
-void BuyTicketsControl::BuyTickets(Data^ data)
-{
-
 }
 
 System::Void BuyTicketsControl::BuyTicketsControl_Load(System::Object^ sender, System::EventArgs^ e)
@@ -199,8 +174,6 @@ System::Void BuyTicketsControl::BuyTicketsControl_Load(System::Object^ sender, S
 	m_PassengerDetailForm->OnContinue = gcnew System::Action<PassengerDetailForm::Data^>(this, &BuyTicketsControl::PassengerDetails_Entered);
 	m_AdditionalServicesForm->OnContinue = gcnew System::Action<AdditionalServicesForm::Data^>(this, &BuyTicketsControl::AdditionalServices_Selected);
 	m_SeatSelectionForm->OnContinue = gcnew System::Action<SeatSelectionForm::Data^>(this, &BuyTicketsControl::Seats_Selected);
-
-	OnBuy = gcnew System::Action<Data^>(this, &BuyTicketsControl::BuyTickets);
 
 	// mount initial form
 	MountForm(m_FlightDetailForm);
