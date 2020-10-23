@@ -5,8 +5,10 @@
 using namespace DataManager;
 
 static bool didChange = false;
+static int lastId = 0;
 
 Passenger::Data::Data(
+	int id,
 	std::string surName,
 	std::string givenName,
 	std::string middleName,
@@ -15,7 +17,8 @@ Passenger::Data::Data(
 	std::string contactNumber,
 	std::string address
 )
-	: SurName(surName)
+	: Id(id)
+	, SurName(surName)
 	, GivenName(givenName)
 	, MiddleName(middleName)
 	, Sex(sex)
@@ -58,6 +61,7 @@ void Passenger::load(const std::string& filename)
 
 	while (file.peek() != EOF)
 	{
+		int id;
 		std::string surName;
 		std::string givenName;
 		std::string middleName;
@@ -66,8 +70,8 @@ void Passenger::load(const std::string& filename)
 		std::string contactNumber;
 		std::string address;
 
-		FileHandler::ReadRow(file, surName, givenName, middleName, sex, birthDate, contactNumber, address);
-		List().emplace_back(surName, givenName, middleName, sex, birthDate, contactNumber, address);
+		FileHandler::ReadRow(file, id, surName, givenName, middleName, sex, birthDate, contactNumber, address);
+		List().emplace_back(id, surName, givenName, middleName, sex, birthDate, contactNumber, address);
 	}
 }
 
@@ -77,8 +81,8 @@ void Passenger::save(const std::string& filename)
 
 	std::ofstream file(filename);
 	FileHandler::WriteRow(file, List().size());
-	for (const auto& [SurName, GivenName, MiddleName, Sex, BirthDate, ContactNumber, Address] : List())
-		FileHandler::WriteRow(file, SurName, GivenName, MiddleName, Sex, BirthDate, ContactNumber, Address);
+	for (const auto& [Id, SurName, GivenName, MiddleName, Sex, BirthDate, ContactNumber, Address] : List())
+		FileHandler::WriteRow(file, Id, SurName, GivenName, MiddleName, Sex, BirthDate, ContactNumber, Address);
 }
 
 void Passenger::create(
@@ -91,5 +95,5 @@ void Passenger::create(
 	std::string address)
 {
 	didChange = true;
-	List().emplace_back(surName, givenName, middleName, sex, birthDate, contactNumber, address);
+	List().emplace_back(++lastId, surName, givenName, middleName, sex, birthDate, contactNumber, address);
 }

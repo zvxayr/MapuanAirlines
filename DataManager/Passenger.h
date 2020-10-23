@@ -7,7 +7,8 @@ namespace DataManager::Passenger {
 	class Data
 	{
 	public:
-		Data(std::string surName,
+		Data(int id,
+			std::string surName,
 			std::string givenName,
 			std::string middleName,
 			std::string sex,
@@ -19,6 +20,7 @@ namespace DataManager::Passenger {
 		void operator=(const Passenger::Data& a);
 
 	public:
+		int Id;
 		std::string SurName;
 		std::string GivenName;
 		std::string MiddleName;

@@ -20,8 +20,9 @@ PaymentHistoryForm::~PaymentHistoryForm()
 
 System::Void PaymentHistoryForm::RefreshForm()
 {
-	for (const auto& [SurName, GivenName, MiddleName, Sex, BirthDate, ContactNumber, Address] : Passenger::List())
+	for (const auto& [Id, SurName, GivenName, MiddleName, Sex, BirthDate, ContactNumber, Address] : Passenger::List())
 	{
+		m_PassengerList->Items->Add(Id);
 		m_PassengerList->Items->Add(Interop::ConvertString(SurName + ", " + GivenName + " " + MiddleName));
 		m_PassengerList->Items->Add(Interop::ConvertString(Sex));
 		m_PassengerList->Items->Add(Interop::ConvertString(BirthDate));
