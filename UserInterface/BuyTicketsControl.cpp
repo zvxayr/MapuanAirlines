@@ -2,6 +2,7 @@
 #include "DataManager.h"
 #include "FlightClass.h"
 #include "Destination.h"
+#include "Passenger.h"
 #include "FileHandler.h"
 #include "PaymentHistoryForm.h"
 #include "AdditionalServicesForm.h"
@@ -48,11 +49,13 @@ void BuyTicketsControl::FlightDetails_Entered(FlightDetailForm::Data^ flightDeta
 
 void BuyTicketsControl::PassengerDetails_Entered(PassengerDetailForm::Data^ passengerDetails)
 {
-	m_Data->PassengerDetails->Name = passengerDetails->Name;
-	m_Data->PassengerDetails->Sex = passengerDetails->Sex;
-	m_Data->PassengerDetails->BirthDate = passengerDetails->BirthDate;
-	m_Data->PassengerDetails->ContactNum = passengerDetails->ContactNum;
-	m_Data->PassengerDetails->Address = passengerDetails->Address;
+	m_Data->PassengerDetails->passenger.SurName = passengerDetails->passenger.SurName;
+	m_Data->PassengerDetails->passenger.GivenName = passengerDetails->passenger.GivenName;
+	m_Data->PassengerDetails->passenger.MiddleName = passengerDetails->passenger.MiddleName;
+	m_Data->PassengerDetails->passenger.Sex = passengerDetails->passenger.Sex;
+	m_Data->PassengerDetails->passenger.BirthDate = passengerDetails->passenger.BirthDate;
+	m_Data->PassengerDetails->passenger.ContactNumber = passengerDetails->passenger.ContactNumber;
+	m_Data->PassengerDetails->passenger.Address = passengerDetails->passenger.Address;
 
 	MountForm(m_AdditionalServicesForm);
 }
@@ -71,11 +74,8 @@ void BuyTicketsControl::AdditionalServices_Selected(AdditionalServicesForm::Data
 	else
 	{
 		BuyTickets();
-
 		MountForm(m_FlightDetailForm);
 	}
-
-	
 }
 
 void BuyTicketsControl::Seats_Selected(SeatSelectionForm::Data^ selectedSeats)
@@ -83,8 +83,8 @@ void BuyTicketsControl::Seats_Selected(SeatSelectionForm::Data^ selectedSeats)
 	BuyTickets();
 	
 	m_SeatSelectionForm->Hide();
-
 	ParentForm->Show();
+
 	MountForm(m_FlightDetailForm);
 }
 
@@ -119,13 +119,23 @@ void BuyTicketsControl::BuyTickets()
 	{
 		ofstream file(flightDetails->DepartDate + ".txt", ios::app);
 		FileHandler::WriteRow(file,
-			passengerDetails->Name,
-			passengerDetails->Sex,
-			passengerDetails->BirthDate,
-			passengerDetails->ContactNum,
-			passengerDetails->Address,
-			flightDetails->Place.Name
+			passengerDetails->passenger.SurName,
+			passengerDetails->passenger.GivenName,
+			passengerDetails->passenger.MiddleName,
+			passengerDetails->passenger.Sex,
+			passengerDetails->passenger.BirthDate,
+			passengerDetails->passenger.ContactNumber,
+			passengerDetails->passenger.Address
 		);
+
+		Passenger::create(
+			passengerDetails->passenger.SurName,
+			passengerDetails->passenger.GivenName,
+			passengerDetails->passenger.MiddleName,
+			passengerDetails->passenger.Sex,
+			passengerDetails->passenger.BirthDate,
+			passengerDetails->passenger.ContactNumber,
+			passengerDetails->passenger.Address);
 	}
 
 	// ----------------------------------------------------

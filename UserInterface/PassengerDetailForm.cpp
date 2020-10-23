@@ -18,13 +18,14 @@ PassengerDetailForm::~PassengerDetailForm()
 PassengerDetailForm::Data^ PassengerDetailForm::getData()
 {
 	Data^ data = gcnew Data;
-	data->Name = Interop::ConvertString(m_Surname->Text) + ", " +
-		Interop::ConvertString(m_GivenName->Text) + " " +
-		Interop::ConvertString(m_MiddleName->Text);
-	data->Sex = m_Sex_Male->Checked ? "Male" : "Female";
-	data->BirthDate = Interop::ConvertString(m_BirthDate->Text);
-	data->ContactNum = Interop::ConvertString(m_ContactNumber->Text);
-	data->Address = Interop::ConvertString(m_Address->Text);
+	auto& passenger = data->passenger;
+	passenger.SurName = Interop::ConvertString(m_Surname->Text);
+	passenger.GivenName = Interop::ConvertString(m_GivenName->Text);
+	passenger.MiddleName = Interop::ConvertString(m_MiddleName->Text);
+	passenger.Sex = m_Sex_Male->Checked ? "Male" : "Female";
+	passenger.BirthDate = Interop::ConvertString(m_BirthDate->Text);
+	passenger.ContactNumber = Interop::ConvertString(m_ContactNumber->Text);
+	passenger.Address = Interop::ConvertString(m_Address->Text);
 
 	return data;
 }

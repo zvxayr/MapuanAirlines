@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include "Passenger.h"
 #include "Interop.h"
 
 using namespace std;
@@ -8,7 +9,7 @@ using namespace System::Collections;
 using namespace System::Windows::Forms;
 using namespace System::Data;
 using namespace System::Drawing;
-
+using namespace DataManager;
 
 namespace UserInterface {
 
@@ -17,11 +18,7 @@ namespace UserInterface {
     class PassengerDetailFormData
     {
     public:
-        string Name;
-        string Sex;
-        string ContactNum;
-        string BirthDate;
-        string Address;
+        Passenger::Data passenger;
     };
 
 	/// <summary>

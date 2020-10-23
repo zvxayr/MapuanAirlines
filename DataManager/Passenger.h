@@ -1,0 +1,42 @@
+#pragma once
+#include <string>
+#include <vector>
+
+namespace DataManager::Passenger {
+
+	class Data
+	{
+	public:
+		Data(std::string surName,
+			std::string givenName,
+			std::string middleName,
+			std::string sex,
+			std::string birthDate,
+			std::string contactNumber,
+			std::string address);
+		Data() = default;
+
+		void operator=(const Passenger::Data& a);
+
+	public:
+		std::string SurName;
+		std::string GivenName;
+		std::string MiddleName;
+		std::string Sex;
+		std::string BirthDate;
+		std::string ContactNumber;
+		std::string Address;
+	};
+
+	std::vector<Passenger::Data>& List();
+	void load(const std::string& filename);
+	void save(const std::string& filename);
+	void create(
+		std::string SurName,
+		std::string GivenName,
+		std::string MiddleName,
+		std::string Sex,
+		std::string BirthDate,
+		std::string ContactNumber,
+		std::string Address);
+}
