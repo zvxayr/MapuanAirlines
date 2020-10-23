@@ -1,23 +1,23 @@
 #include "FlightStatusForm.h"
+#include "FileHandler.h"
 #include "Interop.h"
-#include <fstream>
 
-using namespace std;
+using namespace DataManager;
 using namespace UserInterface;
 
 FlightStatusForm::FlightStatusForm()
 {
 	InitializeComponent();
-	fstream file("TotalMoney.txt", ios::in);
-	string TotMoney;
-	file >> TotMoney;
+	std::ifstream money("TotalMoney.txt");
+	std::string totalMoney;
+	FileHandler::Read(money, totalMoney);
 
-	fstream file2("TotalTickets.txt", ios::in);
-	string TotTickets;
-	file2 >> TotTickets;
+	std::ifstream tickets("TotalTickets.txt");
+	std::string totalTickets;
+	FileHandler::Read(tickets, totalTickets);
 
-	m_MoneyEarned->Items->Add(Interop::ConvertString(TotMoney));
-	m_TicketsSold->Items->Add(Interop::ConvertString(TotTickets));
+	m_MoneyEarned->Items->Add(Interop::ConvertString(totalMoney));
+	m_TicketsSold->Items->Add(Interop::ConvertString(totalTickets));
 }
 
 FlightStatusForm::~FlightStatusForm()
