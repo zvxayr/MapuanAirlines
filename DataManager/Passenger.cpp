@@ -73,6 +73,8 @@ void Passenger::load(const std::string& filename)
 		FileHandler::ReadRow(file, id, surName, givenName, middleName, sex, birthDate, contactNumber, address);
 		List().emplace_back(id, surName, givenName, middleName, sex, birthDate, contactNumber, address);
 	}
+
+	lastId = List().back().Id;
 }
 
 void Passenger::save(const std::string& filename)
