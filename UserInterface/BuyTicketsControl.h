@@ -85,7 +85,7 @@ namespace UserInterface {
 
 	private:
 		Data^ m_Data;
-		void BuyTickets(Data^);
+		void BuyTickets();
 
 	public:
 		System::Action<Data^>^ OnBuy;
