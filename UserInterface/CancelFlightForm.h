@@ -57,24 +57,40 @@ namespace UserInterface {
 			m_lbl_Header->Location = System::Drawing::Point(0, 0);
 			m_lbl_Header->Margin = System::Windows::Forms::Padding(0);
 			m_lbl_Header->Name = L"m_lbl_Header";
-			m_lbl_Header->Size = System::Drawing::Size(1131, 74);
+			m_lbl_Header->Size = System::Drawing::Size(848, 60);
 			m_lbl_Header->TabIndex = 3;
 			m_lbl_Header->Text = L"WHICH FLIGHT TO CANCEL\?";
 			m_lbl_Header->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// m_SearchBox
 			// 
-			this->m_SearchBox->Location = System::Drawing::Point(247, 193);
+			this->m_SearchBox->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12));
+			this->m_SearchBox->Location = System::Drawing::Point(184, 157);
+			this->m_SearchBox->Margin = System::Windows::Forms::Padding(184, 2, 184, 2);
+			this->m_SearchBox->MaximumSize = System::Drawing::Size(480, 27);
+			this->m_SearchBox->MinimumSize = System::Drawing::Size(480, 27);
 			this->m_SearchBox->Name = L"m_SearchBox";
-			this->m_SearchBox->Size = System::Drawing::Size(619, 22);
+			this->m_SearchBox->Size = System::Drawing::Size(480, 27);
 			this->m_SearchBox->TabIndex = 4;
 			// 
 			// m_Search
 			// 
-			this->m_Search->BackColor = System::Drawing::Color::Orange;
-			this->m_Search->Location = System::Drawing::Point(505, 270);
+			this->m_Search->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(253)), static_cast<System::Int32>(static_cast<System::Byte>(215)),
+				static_cast<System::Int32>(static_cast<System::Byte>(75)));
+			this->m_Search->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(253)),
+				static_cast<System::Int32>(static_cast<System::Byte>(215)), static_cast<System::Int32>(static_cast<System::Byte>(75)));
+			this->m_Search->FlatAppearance->BorderSize = 2;
+			this->m_Search->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(254)),
+				static_cast<System::Int32>(static_cast<System::Byte>(232)), static_cast<System::Int32>(static_cast<System::Byte>(154)));
+			this->m_Search->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(254)),
+				static_cast<System::Int32>(static_cast<System::Byte>(227)), static_cast<System::Int32>(static_cast<System::Byte>(129)));
+			this->m_Search->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->m_Search->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->m_Search->Location = System::Drawing::Point(379, 219);
+			this->m_Search->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->m_Search->Name = L"m_Search";
-			this->m_Search->Size = System::Drawing::Size(111, 47);
+			this->m_Search->Size = System::Drawing::Size(83, 38);
 			this->m_Search->TabIndex = 5;
 			this->m_Search->Text = L"Search\r\n";
 			this->m_Search->UseVisualStyleBackColor = false;
@@ -82,18 +98,19 @@ namespace UserInterface {
 			// 
 			// label1
 			// 
-			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(241, 138);
+			this->label1->Location = System::Drawing::Point(2, 111);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(626, 32);
+			this->label1->Size = System::Drawing::Size(844, 31);
 			this->label1->TabIndex = 6;
-			this->label1->Text = L"Enter the full name of the person who reserved the flight";
+			this->label1->Text = L"Enter the name of the person who reserved the flight";
+			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// CancelFlightForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->m_Search);
@@ -102,10 +119,10 @@ namespace UserInterface {
 			this->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(63)),
 				static_cast<System::Int32>(static_cast<System::Byte>(1)));
 			this->Margin = System::Windows::Forms::Padding(0);
-			this->MaximumSize = System::Drawing::Size(1131, 468);
-			this->MinimumSize = System::Drawing::Size(1131, 468);
+			this->MaximumSize = System::Drawing::Size(848, 380);
+			this->MinimumSize = System::Drawing::Size(848, 380);
 			this->Name = L"CancelFlightForm";
-			this->Size = System::Drawing::Size(1131, 468);
+			this->Size = System::Drawing::Size(848, 380);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

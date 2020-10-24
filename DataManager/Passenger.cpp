@@ -30,6 +30,7 @@ Passenger::Data::Data(
 
 void Passenger::Erase(int loc)
 {
+	didChange = true;
 	List().erase(List().begin() + loc);
 }
 
