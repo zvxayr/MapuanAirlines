@@ -1,4 +1,4 @@
 3
-"Economy Class",1.0
-"Business Class",1.5
-"First Class",2.0
+"Economy Class",60,120,1.0
+"Business Class",24,60,1.5
+"First Class",0,24,2.0

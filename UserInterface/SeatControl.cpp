@@ -2,8 +2,9 @@
 
 using namespace UserInterface;
 
-SeatControl::SeatControl()
+SeatControl::SeatControl(int number)
 {
+	m_Number = number;
 	InitializeComponent();
 }
 
@@ -44,5 +45,15 @@ void SeatControl::Taken::set(bool value)
 {
 	m_Taken = value;
 	m_CheckBox->Checked = m_Taken;
-	m_CheckBox->Enabled = !m_Taken;
+	m_CheckBox->Enabled = !m_Taken && m_Available;
+}
+
+int SeatControl::Number::get()
+{
+	return m_Number;
+}
+
+System::Void SeatControl::m_CheckBox_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e)
+{
+	if (OnClick) OnClick(m_Number, m_CheckBox->Checked);
 }

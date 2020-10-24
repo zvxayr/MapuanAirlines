@@ -6,8 +6,10 @@ using namespace DataManager;
 
 static bool didChange = false;
 
-FlightClass::Data::Data(std::string& name, double multiplier)
+FlightClass::Data::Data(std::string& name, int from, int to, double multiplier)
 	: Name(name)
+	, From(from)
+	, To(to)
 	, Multiplier(multiplier)
 {
 }
@@ -29,10 +31,12 @@ void FlightClass::load(const std::string& filename)
 	while (file.peek() != EOF)
 	{
 		std::string name;
+		int from;
+		int to;
 		double multiplier;
 
-		FileHandler::ReadRow(file, name, multiplier);
-		List().emplace_back(name, multiplier);
+		FileHandler::ReadRow(file, name, from, to, multiplier);
+		List().emplace_back(name, from, to, multiplier);
 	}
 }
 
@@ -42,12 +46,14 @@ void FlightClass::save(const std::string& filename)
 
 	std::ofstream file(filename);
 	FileHandler::WriteRow(file, List().size());
-	for (auto& fclass : List())
-		FileHandler::WriteRow(file, fclass.Name, fclass.Multiplier);
+	for (auto& [Name, From, To, Multiplier] : List())
+		FileHandler::WriteRow(file, Name, From, To, Multiplier);
 }
 
 void FlightClass::Data::operator=(const FlightClass::Data& other)
 {
 	this->Name = other.Name;
+	this->From = other.From;
+	this->To = other.To;
 	this->Multiplier = other.Multiplier;
 }

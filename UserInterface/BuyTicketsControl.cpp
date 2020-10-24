@@ -66,9 +66,13 @@ void BuyTicketsControl::AdditionalServices_Selected(AdditionalServicesForm::Data
 	m_Data->AdditionalServices->Food = additionalServices->Food;
 	m_Data->AdditionalServices->Seats = additionalServices->Seats;
 
+	auto& fclass = m_Data->FlightDetails->FlightClass;
+
 	if (additionalServices->Seats)
 	{
 		m_SeatSelectionForm->Show();
+		m_SeatSelectionForm->SetWindow(fclass.From, fclass.To);
+		m_SeatSelectionForm->Use(m_Data->FlightDetails->DepartDate, m_Data->FlightDetails->IsFlyingToPlace, m_Data->FlightDetails->Place.Name);
 		ParentForm->Hide();
 	}
 	else

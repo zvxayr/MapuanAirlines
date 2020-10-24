@@ -553,8 +553,15 @@ namespace UserInterface {
     public:
         System::Action<SeatSelectionForm::Data^>^ OnContinue;
 
+    public:
+        void SetWindow(int from, int to);
+        void Use(const std::string& date, bool isGoingToPlace, const std::string& place);
+
     private:
         System::Void SeatSelectionForm_Load(System::Object^ sender, System::EventArgs^ e);
         System::Void m_Continue_Click(System::Object^ sender, System::EventArgs^ e);
+
+    private:
+        System::Collections::ArrayList^ m_SeatsContainer;
 };
 }
