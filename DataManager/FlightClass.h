@@ -7,13 +7,15 @@ namespace DataManager::FlightClass {
 	class Data
 	{
 	public:
-		Data(std::string& name, double basePrice);
+		Data(std::string& name, int from, int to, double basePrice);
 		Data() = default;
 
 		void operator=(const FlightClass::Data& a);
 
 	public:
 		std::string Name;
+		int From;
+		int To;
 		double Multiplier;
 	};
 

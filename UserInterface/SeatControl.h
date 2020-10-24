@@ -7,7 +7,6 @@ using namespace System::Windows::Forms;
 using namespace System::Data;
 using namespace System::Drawing;
 
-
 namespace UserInterface {
 
 	/// <summary>
@@ -16,7 +15,7 @@ namespace UserInterface {
 	public ref class SeatControl : public System::Windows::Forms::UserControl
 	{
 	public:
-		SeatControl();
+		SeatControl(int number);
 
 	protected:
 		~SeatControl();
@@ -58,6 +57,7 @@ namespace UserInterface {
 			this->m_CheckBox->TabIndex = 0;
 			this->m_CheckBox->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->m_CheckBox->UseVisualStyleBackColor = false;
+			this->m_CheckBox->MouseClick += gcnew System::Windows::Forms::MouseEventHandler(this, &SeatControl::m_CheckBox_MouseClick);
 			// 
 			// SeatControl
 			// 
@@ -74,9 +74,14 @@ namespace UserInterface {
 
 		}
 #pragma endregion
+	
+	public:
+		System::Action<int, bool>^ OnClick;
+	
 	private:
 		bool m_Available;
 		bool m_Taken;
+		int m_Number;
 
 	public:
 		property bool Available {
@@ -89,6 +94,12 @@ namespace UserInterface {
 			void set(bool);
 		}
 
+		property int Number {
+			int get();
+		}
+
+	private:
+		System::Void m_CheckBox_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e);
 	};
 
 }
