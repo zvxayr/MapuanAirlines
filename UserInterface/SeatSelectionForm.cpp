@@ -15,6 +15,8 @@ SeatSelectionForm::~SeatSelectionForm()
 		delete components;
 }
 
+static std::vector<int> seatNumbers;
+
 void SeatSelectionForm::SetWindow(int from, int to)
 {
     for each (SeatControl^ seat in m_SeatsContainer)
@@ -24,6 +26,7 @@ void SeatSelectionForm::SetWindow(int from, int to)
 void SeatSelectionForm::Use(const std::string& date, bool isGoingToPlace, const std::string& place)
 {
     Tickets::load(date, isGoingToPlace, place);
+    seatNumbers.clear();
 
     for (size_t i = 0; i < Tickets::List().size(); i++)
     {
@@ -40,6 +43,9 @@ System::Void SeatSelectionForm::SeatSelectionForm_Load(System::Object^ sender, S
     {
         SeatControl^ seat = gcnew SeatControl(i);
         seat->Dock = System::Windows::Forms::DockStyle::Fill;
+        // Note: Intellisense does not seem to recognize this line of code.
+        //       But it still compiles successfully.
+        seat->OnClick = gcnew System::Action<int, bool>(this, &SeatSelectionForm::SeatClicked);
         m_SeatsTable->Controls->Add(seat, (i % 6) + (i % 6) / 3, 1 + i / 6);
         m_SeatsContainer->Add(seat);
     }
@@ -47,10 +53,26 @@ System::Void SeatSelectionForm::SeatSelectionForm_Load(System::Object^ sender, S
 
 SeatSelectionForm::Data^ SeatSelectionForm::getData()
 {
-    return gcnew Data;
+    Data^ data = gcnew Data;
+    data->seatNumbers = seatNumbers;
+    return data;
 }
 
 System::Void SeatSelectionForm::m_Continue_Click(System::Object^ sender, System::EventArgs^ e)
 {
     if (OnContinue) OnContinue(getData());
+}
+
+void SeatSelectionForm::SeatClicked(int seatNumber, bool isChecked)
+{
+    if (isChecked)
+    {
+        seatNumbers.push_back(seatNumber);
+    }
+    else
+    {
+        for (int i = 0; i < seatNumbers.size(); i++)
+            if (seatNumbers[i] == seatNumber)
+                seatNumbers.erase(seatNumbers.begin() + i);
+    }
 }

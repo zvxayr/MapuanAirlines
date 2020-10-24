@@ -87,7 +87,7 @@ void Passenger::save(const std::string& filename)
 		FileHandler::WriteRow(file, Id, SurName, GivenName, MiddleName, Sex, BirthDate, ContactNumber, Address);
 }
 
-void Passenger::create(
+Passenger::Data& Passenger::create(
 	std::string surName,
 	std::string givenName,
 	std::string middleName,
@@ -98,4 +98,5 @@ void Passenger::create(
 {
 	didChange = true;
 	List().emplace_back(++lastId, surName, givenName, middleName, sex, birthDate, contactNumber, address);
+	return List().back();
 }

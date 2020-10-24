@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "SeatControl.h"
 #include "Interop.h"
+#include <vector>
 
 namespace UserInterface {
 
@@ -15,6 +16,8 @@ namespace UserInterface {
 
     class SeatSelectionFormData
     {
+    public:
+        std::vector<int> seatNumbers;
     };
 
 	/// <summary>
@@ -560,6 +563,7 @@ namespace UserInterface {
     private:
         System::Void SeatSelectionForm_Load(System::Object^ sender, System::EventArgs^ e);
         System::Void m_Continue_Click(System::Object^ sender, System::EventArgs^ e);
+        void SeatClicked(int seatNumber, bool isChecked);
 
     private:
         System::Collections::ArrayList^ m_SeatsContainer;

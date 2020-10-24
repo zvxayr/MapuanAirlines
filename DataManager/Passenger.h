@@ -34,7 +34,7 @@ namespace DataManager::Passenger {
 	void Erase(int loc);
 	void load(const std::string& filename);
 	void save(const std::string& filename);
-	void create(
+	Passenger::Data& create(
 		std::string SurName,
 		std::string GivenName,
 		std::string MiddleName,
