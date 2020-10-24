@@ -1,3 +1,4 @@
+13
 "Bangkok, Thailand",21828.40
 "Brunei, Bandar Seri Begawan",20560.50
 "Cambodia, Phnom Penh",25556.00

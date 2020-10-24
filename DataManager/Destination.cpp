@@ -21,6 +21,11 @@ std::vector<Destination::Data>& Destination::List()
 void Destination::load(const std::string& filename)
 {
 	std::ifstream file(filename);
+
+	int count;
+	FileHandler::ReadRow(file, count);
+	List().reserve(count);
+
 	while (file.peek() != EOF)
 	{
 		std::string name;
@@ -36,6 +41,7 @@ void Destination::save(const std::string& filename)
 	if (!didChange) return;
 
 	std::ofstream file(filename);
+	FileHandler::WriteRow(file, List().size());
 	for (auto& dest : List())
 		FileHandler::WriteRow(file, dest.Name, dest.BasePrice);
 }

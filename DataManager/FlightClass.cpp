@@ -21,6 +21,11 @@ std::vector<FlightClass::Data>& FlightClass::List()
 void FlightClass::load(const std::string& filename)
 {
 	std::ifstream file(filename);
+
+	int count;
+	FileHandler::ReadRow(file, count);
+	List().reserve(count);
+
 	while (file.peek() != EOF)
 	{
 		std::string name;
@@ -36,10 +41,10 @@ void FlightClass::save(const std::string& filename)
 	if (!didChange) return;
 
 	std::ofstream file(filename);
+	FileHandler::WriteRow(file, List().size());
 	for (auto& fclass : List())
 		FileHandler::WriteRow(file, fclass.Name, fclass.Multiplier);
 }
-
 
 void FlightClass::Data::operator=(const FlightClass::Data& other)
 {
