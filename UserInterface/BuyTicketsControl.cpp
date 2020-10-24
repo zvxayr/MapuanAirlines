@@ -3,11 +3,11 @@
 #include "FlightClass.h"
 #include "Destination.h"
 #include "Passenger.h"
+#include "Tickets.h"
+#include "Statistics.h"
 #include "FileHandler.h"
 #include "PaymentHistoryForm.h"
 #include "AdditionalServicesForm.h"
-#include <fstream>
-#include <iostream>
 
 using namespace std;
 using namespace UserInterface;
@@ -84,6 +84,7 @@ void BuyTicketsControl::AdditionalServices_Selected(AdditionalServicesForm::Data
 
 void BuyTicketsControl::Seats_Selected(SeatSelectionForm::Data^ selectedSeats)
 {
+	m_Data->SelectedSeats->seatNumbers = selectedSeats->seatNumbers;
 	BuyTickets();
 	
 	m_SeatSelectionForm->Hide();
@@ -91,6 +92,8 @@ void BuyTicketsControl::Seats_Selected(SeatSelectionForm::Data^ selectedSeats)
 
 	MountForm(m_FlightDetailForm);
 }
+
+#include <iostream>
 
 void BuyTicketsControl::BuyTickets()
 {
@@ -117,7 +120,23 @@ void BuyTicketsControl::BuyTickets()
 
 	// ----------------------------------------------------
 
-	Passenger::create(
+	if (additionalServices->Insurance)
+		TotalBill += 1500;
+
+	if (additionalServices->Food)
+		TotalBill += 250;
+
+	if (additionalServices->Seats)
+		TotalBill += 300;
+	
+	// ----------------------------------------------------
+
+	Statistics::NetProfit() += TotalBill;
+	Statistics::NetTicketsSold() += TotalPassengers;
+
+	// ----------------------------------------------------
+
+	auto& passenger = Passenger::create(
 		passengerDetails->passenger.SurName,
 		passengerDetails->passenger.GivenName,
 		passengerDetails->passenger.MiddleName,
@@ -128,38 +147,17 @@ void BuyTicketsControl::BuyTickets()
 
 	// ----------------------------------------------------
 
-	//TODO:
-	if (additionalServices->Insurance)
+	Tickets::load(m_Data->FlightDetails->DepartDate, m_Data->FlightDetails->IsFlyingToPlace, m_Data->FlightDetails->Place.Name);
+
+	for (int& seatNumber : selectedSeats->seatNumbers)
 	{
-		TotalBill += 1500;
-	}
-	if (additionalServices->Food)
-	{
-		TotalBill += 250;
+		Tickets::List()[seatNumber] = passenger.Id;
+		std::cout << seatNumber << std::endl;
 	}
 
-	if (additionalServices->Seats)
-	{
-		TotalBill += 300;
-	}
-	
-	// ----------------------------------------------------
+	std::cout << selectedSeats->seatNumbers.size() << std::endl;
 
-	double TotalMoney;
-	int TotalTickets;
-
-	MessageBox::Show("Tickets Successfully Created" + "\n\r" + "Total bill: " + TotalBill.ToString() + "\n\r" + "Total number of passengers: " + TotalPassengers.ToString(), "Ok", MessageBoxButtons::OK);
-	fstream get("TotalMoney.txt", ios::in);
-	get >> TotalMoney;
-
-	fstream get2("TotalTickets.txt", ios::in);
-	get2 >> TotalTickets;
-
-	fstream file2("TotalMoney.txt", ios::out);
-	file2 << TotalMoney + TotalBill;
-
-	fstream file3("TotalTickets.txt", ios::out);
-	file3 << TotalTickets + TotalPassengers;
+	Tickets::save();
 
 	if (OnBuy) OnBuy(m_Data);
 }

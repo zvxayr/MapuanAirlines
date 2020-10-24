@@ -153,6 +153,7 @@
     <ClInclude Include="FileHandler.h" />
     <ClInclude Include="FlightClass.h" />
     <ClInclude Include="Passenger.h" />
+    <ClInclude Include="Statistics.h" />
     <ClInclude Include="Tickets.h" />
     <ClInclude Include="UnorderedArrayBasedList.h" />
   </ItemGroup>
@@ -162,6 +163,7 @@
     <ClCompile Include="FileHandler.cpp" />
     <ClCompile Include="FlightClass.cpp" />
     <ClCompile Include="Passenger.cpp" />
+    <ClCompile Include="Statistics.cpp" />
     <ClCompile Include="Tickets.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

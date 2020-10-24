@@ -51,10 +51,17 @@ System::Void SeatSelectionForm::SeatSelectionForm_Load(System::Object^ sender, S
     }
 }
 
+#include <iostream>
+
 SeatSelectionForm::Data^ SeatSelectionForm::getData()
 {
     Data^ data = gcnew Data;
+    data->seatNumbers.clear();
     data->seatNumbers = seatNumbers;
+
+    for (int& seatNumber : seatNumbers)
+        std::cout << seatNumber << std::endl;
+
     return data;
 }
 
@@ -66,13 +73,9 @@ System::Void SeatSelectionForm::m_Continue_Click(System::Object^ sender, System:
 void SeatSelectionForm::SeatClicked(int seatNumber, bool isChecked)
 {
     if (isChecked)
-    {
         seatNumbers.push_back(seatNumber);
-    }
     else
-    {
-        for (int i = 0; i < seatNumbers.size(); i++)
+        for (size_t i = 0; i < seatNumbers.size(); i++)
             if (seatNumbers[i] == seatNumber)
                 seatNumbers.erase(seatNumbers.begin() + i);
-    }
 }
