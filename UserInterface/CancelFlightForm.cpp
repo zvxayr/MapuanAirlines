@@ -19,6 +19,8 @@ CancelFlightForm::~CancelFlightForm()
 		delete components;
 }
 
+#include <iostream>
+
 System::Void CancelFlightForm::m_Search_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	//replace with the search function for array based list
@@ -27,16 +29,17 @@ System::Void CancelFlightForm::m_Search_Click(System::Object^ sender, System::Ev
 
 	bool found = false;
 
-	for (int i = 0; i < Passenger::List().size() && found == false; i++)
+	for (int i = 0; i < Passenger::List().size() && !found; i++)
 	{
 		auto& passenger = Passenger::List()[i];
 		string name = passenger.SurName + ", " + passenger.GivenName + " " +  passenger.MiddleName;
+
+		std::cout << name << std::endl;
+
 		if (name == Interop::ConvertString(m_SearchBox->Text))
 		{
 			found = true;
-		}
-		if (found == true)
-		{
+
 			DialogResult Result = MessageBox::Show("Flight Reservation Found", "Are you sure you want to Cancel?" + Interop::ConvertString(to_string(i)), MessageBoxButtons::YesNo);
 			if (Result == DialogResult::Yes)
 			{
